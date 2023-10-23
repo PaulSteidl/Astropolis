@@ -555,7 +555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _delta: {x: 0, y: 0}
   _isMoving: 0
-  _MovementSpeed: 10
+  _MovementSpeed: 0.3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
