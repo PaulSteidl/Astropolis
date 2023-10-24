@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class CameraManager : MonoBehaviour
 {
-
+	GameObject self;
 	public float orthoZoomSpeed;
 
 	public Vector2 _delta;
@@ -14,6 +14,11 @@ public class CameraManager : MonoBehaviour
 
     [SerializeField] float _MovementSpeed = 10.0f;
 
+
+    private void Start()
+    {
+		self = gameObject;
+    }
     public void OnLook(InputAction.CallbackContext context)
     {
         _delta = context.ReadValue<Vector2>();  
@@ -26,12 +31,34 @@ public class CameraManager : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (_isMoving)
+
+		float a = self.transform.localPosition.z;
+		float b = self.transform.localPosition.x;
+		float c = self.transform.localPosition.y;
+
+		if (_isMoving)
         {
             var position = transform.right * (_delta.x * -_MovementSpeed);
             position += transform.up * (_delta.y * -_MovementSpeed);
             transform.position += position * Time.deltaTime;
         }
+
+        if (gameObject.transform.position.x <= -10)
+        {
+			self.transform.position = new Vector3(-9.999f, c, a);
+		}
+		if (gameObject.transform.position.x >= 10)
+		{
+			self.transform.position = new Vector3(9.999f, c, a);
+		}
+		if (gameObject.transform.position.z >= 10)
+		{			
+			self.transform.position = new Vector3(b, c, 9.999f);
+		}
+		if (gameObject.transform.position.z <= -10)
+		{
+			self.transform.position = new Vector3(b, c, -9.999f);
+		}
 
 		// If there are two touches on the device...
 		if (Input.touchCount == 2)
