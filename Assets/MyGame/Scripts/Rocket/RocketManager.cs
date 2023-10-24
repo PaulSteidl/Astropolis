@@ -24,7 +24,7 @@ public class RocketManager : MonoBehaviour
 
     public void MoneyComes(float m)
     {
-        moneyManagerCS.Money += m;
+        moneyManagerCS.Money += m; //Geld das von Rackete produziert wird
     }
 
     public void UpdateIncomePerSec()
