@@ -4,67 +4,31 @@ using UnityEngine;
 
 public class RocketManager : MonoBehaviour
 {
-    public float moneyMade;
-    public float moneyPerPerson;
-    public float peoplePerRocket;
-    public float rocketComebackTime;
-    public float rocketTakeOffTime;
+    public float rocketsMoneyMade;
+    public float rocketsNumber;
+    public float incomePerSec;
 
+    [SerializeField] Rocket rocketCS;
+    [SerializeField] MoneyManager moneyManagerCS;
 
-    [SerializeField] bool rocketStarted, automaticAllowed;
-
-    void Start()
+    private void Start()
     {
-        StartCoroutine("TakeOff");
+        rocketCS = GameObject.Find("Rocket").GetComponent<Rocket>();
+        moneyManagerCS = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
     }
-
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeOffOnTouch(); //testzwecke  touch simu        
-        }
-
-        if (rocketStarted)
-        {
-            automaticAllowed = false;
-        }
-    }
-    public void TakeOffOnTouch()
-    {       
-        if (!rocketStarted)                                 //Touch Start
-        {
-            StartCoroutine("TakeOff");        
-        }
+        
     }
 
-    public IEnumerator TakeOff()
+    public void MoneyComes(float m)
     {
-        rocketStarted = true;
-        yield return new WaitForSeconds(rocketComebackTime);    // Flug Zeit von Rackete
-        moneyMade += MoneyPerRocket();
-        rocketStarted = false;
-
-
-        //automaticAllowed = true;
-        
-        
-        //yield return new WaitForSeconds(rocketTakeOffTime);   //automatische Start Zeit    
-
-        
-       
-        
-        //if (automaticAllowed)
-        //{
-        //    StartCoroutine("TakeOff");    
-        //}      
+        moneyManagerCS.Money += m;
     }
 
-
-    float MoneyPerRocket()
+    public void UpdateIncomePerSec()
     {
-        float moneyMadeRocket = moneyPerPerson * peoplePerRocket;
-        return moneyMadeRocket;
+        incomePerSec = rocketCS.moneyPerPerson * rocketCS.peoplePerRocket / (rocketCS.rocketComebackTime + rocketCS.rocketTakeOffTime);
     }
 }
