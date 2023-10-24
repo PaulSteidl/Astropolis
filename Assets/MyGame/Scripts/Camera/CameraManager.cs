@@ -40,8 +40,8 @@ public class CameraManager : MonoBehaviour
 
 		if (_isMoving)
         {
-            var position = transform.right * (_delta.x * -_MovementSpeed);
-            position += transform.up * (_delta.y * -_MovementSpeed);
+            var position = transform.right * (_delta.x * -_MovementSpeed * (GetComponent<Camera>().orthographicSize / 60));
+            position += transform.up * (_delta.y * -_MovementSpeed * (GetComponent<Camera>().orthographicSize / 60));
             transform.position += position * Time.deltaTime;
         }
 
