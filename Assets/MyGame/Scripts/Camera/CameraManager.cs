@@ -7,6 +7,8 @@ public class CameraManager : MonoBehaviour
 {
 	GameObject self;
 	public float orthoZoomSpeed;
+	public float z_maxdrag;
+	public float x_maxdrag;
 
 	public Vector2 _delta;
 
@@ -43,21 +45,21 @@ public class CameraManager : MonoBehaviour
             transform.position += position * Time.deltaTime;
         }
 
-        if (gameObject.transform.position.x <= -10)
+        if (gameObject.transform.position.x <= -x_maxdrag)
         {
-			self.transform.position = new Vector3(-9.999f, c, a);
+			self.transform.position = new Vector3(-x_maxdrag + 0.001f, c, a);
 		}
-		if (gameObject.transform.position.x >= 10)
+		if (gameObject.transform.position.x >= x_maxdrag)
 		{
-			self.transform.position = new Vector3(9.999f, c, a);
+			self.transform.position = new Vector3(x_maxdrag - 0.001f, c, a);
 		}
-		if (gameObject.transform.position.z >= 10)
+		if (gameObject.transform.position.z >= z_maxdrag)
 		{			
-			self.transform.position = new Vector3(b, c, 9.999f);
+			self.transform.position = new Vector3(b, c, z_maxdrag - 0.001f);
 		}
-		if (gameObject.transform.position.z <= -10)
+		if (gameObject.transform.position.z <= -z_maxdrag)
 		{
-			self.transform.position = new Vector3(b, c, -9.999f);
+			self.transform.position = new Vector3(b, c, -z_maxdrag + 0.001f);
 		}
 
 		// If there are two touches on the device...
