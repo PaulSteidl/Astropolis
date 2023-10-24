@@ -226,7 +226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 789028491}
-  - component: {fileID: 789028490}
+  - component: {fileID: 789028492}
   m_Layer: 0
   m_Name: RocketManager
   m_TagString: Untagged
@@ -234,18 +234,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &789028490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789028489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99fa0e21ae15a144d90319d54e72d719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &789028491
 Transform:
   m_ObjectHideFlags: 0
@@ -261,6 +249,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &789028492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789028489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99fa0e21ae15a144d90319d54e72d719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyMade: 0
+  moneyPerPerson: 2
+  peoplePerRocket: 2
+  rocketComebackTime: 5
+  rocketTakeOffTime: 20
+  rocketStarted: 0
 --- !u!1 &2023308887
 GameObject:
   m_ObjectHideFlags: 0
