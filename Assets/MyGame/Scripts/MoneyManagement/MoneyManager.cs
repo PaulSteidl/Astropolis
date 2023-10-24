@@ -14,6 +14,7 @@ public class MoneyManager : MonoBehaviour
     void Start()
     {
         rocketManagerCS = GameObject.Find("RocketManager").GetComponent<RocketManager>();
+
     }
 
     
