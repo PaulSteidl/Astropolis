@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class CameraManager : MonoBehaviour
 {
 	GameObject self;
+	public double TimeOnScreen;
 	public float orthoZoomSpeed;
 	public float z_maxdrag;
 	public float x_maxdrag;
@@ -28,22 +29,24 @@ public class CameraManager : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        _isMoving = context.started || context.performed;
-    }
+		_isMoving = context.performed;
+	}
 
     private void LateUpdate()
     {
+
+
 
 		float a = self.transform.localPosition.z;
 		float b = self.transform.localPosition.x;
 		float c = self.transform.localPosition.y;
 
 		if (_isMoving)
-        {
-            var position = transform.right * (_delta.x * -_MovementSpeed * (GetComponent<Camera>().orthographicSize / 60));
-            position += transform.up * (_delta.y * -_MovementSpeed * (GetComponent<Camera>().orthographicSize / 60));
-            transform.position += position * Time.deltaTime;
-        }
+		{
+				var position = transform.right * (_delta.x * -_MovementSpeed * (GetComponent<Camera>().orthographicSize / 60));
+				position += transform.up * (_delta.y * -_MovementSpeed * (GetComponent<Camera>().orthographicSize / 60));
+				transform.position += position * Time.deltaTime;
+		}
 
         if (gameObject.transform.position.x <= -x_maxdrag)
         {
