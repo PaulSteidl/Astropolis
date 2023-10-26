@@ -44,7 +44,7 @@ public class Rocket : MonoBehaviour
             timeUntilTakeOff -= Time.deltaTime;
         }
         
-        if (timeUntilTakeOff == 0)
+        if (timeUntilTakeOff <= 0)
         {
             StartCoroutine("TakeOff");
         }

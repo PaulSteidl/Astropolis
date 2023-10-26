@@ -152,7 +152,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c63329afbd9eb04991d5b21ad818609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneyUpdateIncome: 0
+  moneyUpdateCost: 0
+  moneyLevel: 0
+  peopleUpdateNumber:
+  - 2
+  - 3
+  - 4
+  - 6
+  - 10
+  - 25
+  - 50
+  - 100
+  - 200
+  - 350
+  - 500
+  - 600
+  - 750
+  - 800
+  - 1000
+  peopleUpdateCost: 0
+  peopleLevel: 0
+  comebackTime:
+  - 25
+  - 20
+  - 18
+  - 16
+  - 15
+  - 14
+  - 13
+  - 12
+  - 11
+  - 10
+  - 9
+  - 8
+  - 7
+  - 6
+  - 5
+  comebackCost: 0
+  comebackLevel: 0
   rocketManagerCS: {fileID: 0}
+  moneyManagerCS: {fileID: 0}
+  rocketCS: {fileID: 0}
 --- !u!4 &13049344
 Transform:
   m_ObjectHideFlags: 0
@@ -227,6 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487455576}
   - component: {fileID: 487455575}
+  - component: {fileID: 487455577}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -311,6 +353,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &487455577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487455574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &789028489
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +423,7 @@ MonoBehaviour:
   moneyPerPerson: 2
   peoplePerRocket: 2
   rocketComebackTime: 5
-  rocketTakeOffTime: 20
+  rocketTakeOffTime: 5
   timeUntilTakeOff: 0
   rocketStarted: 0
   rocketManagerCS: {fileID: 39342158}
@@ -406,7 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be104c4de3a43e54394ba0fc20f52999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Money: 0
+  Money: 50000
   rocketManagerCS: {fileID: 0}
 --- !u!1 &2023308887
 GameObject:
