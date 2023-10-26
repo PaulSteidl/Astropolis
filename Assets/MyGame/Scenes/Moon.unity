@@ -5848,6 +5848,14 @@ PrefabInstance:
       propertyPath: Test
       value: 
       objectReference: {fileID: 267933241}
+    - target: {fileID: 4126928287538038024, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126928287538038024, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 6056885761462704651, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: m_Name
       value: Main Camera

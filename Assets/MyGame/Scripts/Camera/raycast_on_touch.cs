@@ -46,7 +46,6 @@ public class raycast_on_touch : MonoBehaviour
         RaycastHit[] hits = new RaycastHit[1];
         if (Physics.RaycastNonAlloc(ray, hits)>0)
         {
-            Debug.Log(hits[0].collider.gameObject.name);
             return hits[0].point;
         }
         return null;
