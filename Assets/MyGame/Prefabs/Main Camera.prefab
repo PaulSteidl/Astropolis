@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2933570570791884335}
   - component: {fileID: 2638702249319830313}
   - component: {fileID: 505303763728104377}
-  - component: {fileID: 3580778880116630780}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -109,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8684a8c227f4743be3576173ba3df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveing: 0
+  TimeOnScreen: 0
   orthoZoomSpeed: 0.0075
   z_maxdrag: 40
   x_maxdrag: 110
@@ -160,22 +159,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!114 &3580778880116630780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6056885761462704651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f4701d7ea2a5314c89a272a47c6e09c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  obstaclemask:
-    serializedVersion: 2
-    m_Bits: 0
-  Test: {fileID: 0}
 --- !u!1 &6669176489187827405
 GameObject:
   m_ObjectHideFlags: 0
