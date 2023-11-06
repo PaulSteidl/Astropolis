@@ -31,5 +31,6 @@ public class RocketManager : MonoBehaviour
     {
         incomePerSecR = rocketCS.moneyPerPerson * rocketCS.peoplePerRocket / (rocketCS.rocketComebackTime + rocketCS.rocketTakeOffTime);
         moneyManagerCS.rocketIncomePerSecond = incomePerSecR;
+        moneyManagerCS.UpdateMoneyPerSecond();
     }
 }
