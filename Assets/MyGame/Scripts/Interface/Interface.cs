@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Interface : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] GameObject restaurant;
     void Start()
     {
         
     }
 
-    public void TownHall()
+    public void Restaurant()
     {
-        Debug.Log("button");
+        restaurant.SetActive(!restaurant.activeSelf);
     }
 }
