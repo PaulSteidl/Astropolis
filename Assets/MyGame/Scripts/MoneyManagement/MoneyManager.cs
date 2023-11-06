@@ -6,7 +6,8 @@ public class MoneyManager : MonoBehaviour
 {
     [Header("Money")]
     [Space(10)]
-    public float Money;
+    public float money;
+    public float incomePerSecond;
 
     [Space(40)]
 

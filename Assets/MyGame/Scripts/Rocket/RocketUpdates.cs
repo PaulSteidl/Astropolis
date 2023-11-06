@@ -25,7 +25,7 @@ public class RocketUpdate : MonoBehaviour
     [Space(40)]
 
     [Header("rocketTakeOffTime")]
-    public float[] takeOffTime;
+    public float takeOffTime;
     public float takeOffCost;
     public int takeOffLevel = -1;
     [Space(40)]
@@ -64,15 +64,22 @@ public class RocketUpdate : MonoBehaviour
             ComebackUpgrade();
 
         }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            rocketManagerCS.UpdateIncomePerSec(); //muss bei jedem Update dabei stehen
+            TakeOffUpgrade();
+
+        }
     }
 
 
     public void MoneyUpgrade()
     {
         
-        if (moneyManagerCS.Money >= moneyUpdateCost)        //wenn genug geld am konto ist
+        if (moneyManagerCS.money >= moneyUpdateCost)        //wenn genug geld am konto ist
         {
-            moneyManagerCS.Money -= moneyUpdateCost;
+            moneyManagerCS.money -= moneyUpdateCost;
             moneyLevel += 1;
             MoneyUpdateCost();
             MoneyUpdateIncome();
@@ -93,9 +100,9 @@ public class RocketUpdate : MonoBehaviour
     public void PeopleUpgrade()
     {
 
-        if (moneyManagerCS.Money >= peopleUpdateCost)        //wenn genug geld am konto ist
+        if (moneyManagerCS.money >= peopleUpdateCost)        //wenn genug geld am konto ist
         {
-            moneyManagerCS.Money -= peopleUpdateCost;
+            moneyManagerCS.money -= peopleUpdateCost;
             peopleLevel += 1;
             PeopleUpdateCost();
             rocketCS.peoplePerRocket = peopleUpdateNumber[peopleLevel];
@@ -112,9 +119,9 @@ public class RocketUpdate : MonoBehaviour
     public void ComebackUpgrade()
     {
 
-        if (moneyManagerCS.Money >= comebackCost)        //wenn genug geld am konto ist
+        if (moneyManagerCS.money >= comebackCost)        //wenn genug geld am konto ist
         {
-            moneyManagerCS.Money -= comebackCost;
+            moneyManagerCS.money -= comebackCost;
             comebackLevel += 1;
             ComebackCost();
             rocketCS.rocketComebackTime = comebackTime[comebackLevel];
@@ -130,21 +137,22 @@ public class RocketUpdate : MonoBehaviour
     public void TakeOffUpgrade()
     {
 
-        if (moneyManagerCS.Money >= takeOffCost)        //wenn genug geld am konto ist
+        if (moneyManagerCS.money >= takeOffCost)        //wenn genug geld am konto ist
         {
-            moneyManagerCS.Money -= takeOffCost;
+            moneyManagerCS.money -= takeOffCost;
             takeOffLevel += 1;
             TakeOffCost();
-            rocketCS.rocketTakeOffTime = takeOffTime[takeOffLevel];
+            TakeOffTime();
+            rocketCS.rocketTakeOffTime = takeOffTime;
         }
     }
     public void TakeOffCost()
     {
-        takeOffCost = 5 * Mathf.Pow(3.5f, takeOffLevel);
-    }
-    public void TakeOffIncome()
-    {
         takeOffCost = 100 * Mathf.Pow(1.17f, takeOffLevel);
+    }
+    public void TakeOffTime()
+    {
+        takeOffTime = 40 * Mathf.Pow(0.97f, takeOffLevel);
     }
 }
 

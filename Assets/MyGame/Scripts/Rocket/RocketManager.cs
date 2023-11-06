@@ -6,7 +6,7 @@ public class RocketManager : MonoBehaviour
 {
     public float rocketsMoneyMade;
     public float rocketsNumber;
-    public float incomePerSec;
+    public float incomePerSecR;
 
     [SerializeField] Rocket rocketCS;
     [SerializeField] MoneyManager moneyManagerCS;
@@ -24,11 +24,12 @@ public class RocketManager : MonoBehaviour
 
     public void MoneyComes(float m)
     {
-        moneyManagerCS.Money += m; //Geld das von Rackete produziert wird
+        moneyManagerCS.money += m; //Geld das von Rackete produziert wird
     }
 
     public void UpdateIncomePerSec()
     {
-        incomePerSec = rocketCS.moneyPerPerson * rocketCS.peoplePerRocket / (rocketCS.rocketComebackTime + rocketCS.rocketTakeOffTime);
+        incomePerSecR = rocketCS.moneyPerPerson * rocketCS.peoplePerRocket / (rocketCS.rocketComebackTime + rocketCS.rocketTakeOffTime);
+        moneyManagerCS.incomePerSecond = incomePerSecR;
     }
 }

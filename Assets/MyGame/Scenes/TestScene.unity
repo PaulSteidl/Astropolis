@@ -191,6 +191,9 @@ MonoBehaviour:
   - 5
   comebackCost: 0
   comebackLevel: 0
+  takeOffTime: 0
+  takeOffCost: 0
+  takeOffLevel: -1
   rocketManagerCS: {fileID: 0}
   moneyManagerCS: {fileID: 0}
   rocketCS: {fileID: 0}
@@ -240,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocketsMoneyMade: 0
   rocketsNumber: 0
-  incomePerSec: 0
+  incomePerSecR: 0
   rocketCS: {fileID: 789028492}
   moneyManagerCS: {fileID: 0}
 --- !u!4 &39342159
@@ -422,11 +425,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyPerPerson: 2
   peoplePerRocket: 2
-  rocketComebackTime: 5
-  rocketTakeOffTime: 5
+  rocketComebackTime: 40
+  rocketTakeOffTime: 40
   timeUntilTakeOff: 0
   rocketStarted: 0
   rocketManagerCS: {fileID: 39342158}
+--- !u!1 &1303763138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1303763140}
+  - component: {fileID: 1303763139}
+  m_Layer: 0
+  m_Name: Restaurant
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1303763139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303763138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e2378442ccfee4b9279cbaca690a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateCost: 0
+  updateIncome: 0
+  restaurantLevel: 0
+--- !u!4 &1303763140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303763138}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1696503629
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,7 +521,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be104c4de3a43e54394ba0fc20f52999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Money: 50000
+  money: 5000
+  incomePerSecond: 0
   rocketManagerCS: {fileID: 0}
 --- !u!1 &2023308887
 GameObject:
@@ -575,3 +626,4 @@ SceneRoots:
   - {fileID: 39342159}
   - {fileID: 13049344}
   - {fileID: 1696503630}
+  - {fileID: 1303763140}
