@@ -38,6 +38,7 @@ public class Restaurant : MonoBehaviour
             MoneyUpdateCost();
             MoneyUpdateIncome();
             moneyManagerCS.RestaurantIncomePerSecond = updateIncome;
+            moneyManagerCS.UpdateMoneyPerSecond();
 
         }
     }
