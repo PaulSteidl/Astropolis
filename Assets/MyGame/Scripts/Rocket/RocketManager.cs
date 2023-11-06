@@ -30,6 +30,6 @@ public class RocketManager : MonoBehaviour
     public void UpdateIncomePerSec()
     {
         incomePerSecR = rocketCS.moneyPerPerson * rocketCS.peoplePerRocket / (rocketCS.rocketComebackTime + rocketCS.rocketTakeOffTime);
-        moneyManagerCS.incomePerSecond = incomePerSecR;
+        moneyManagerCS.rocketIncomePerSecond = incomePerSecR;
     }
 }

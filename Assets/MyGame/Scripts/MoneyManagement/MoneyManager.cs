@@ -7,7 +7,11 @@ public class MoneyManager : MonoBehaviour
     [Header("Money")]
     [Space(10)]
     public float money;
-    public float incomePerSecond;
+    public float moneyPerSecond;
+
+    [Space(10)]
+    public float rocketIncomePerSecond;
+    public float RestaurantIncomePerSecond;
 
     [Space(40)]
 
@@ -18,9 +22,9 @@ public class MoneyManager : MonoBehaviour
 
     }
 
-    
-    void Update()
+
+    public void UpdateMoneyPerSecond()
     {
-        
+        moneyPerSecond = RestaurantIncomePerSecond + rocketIncomePerSecond;
     }
 }
