@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2933570570791884335}
   - component: {fileID: 5893101183247637562}
   - component: {fileID: 2638702249319830313}
+  - component: {fileID: 5214810005664651902}
   - component: {fileID: 505303763728104377}
   m_Layer: 0
   m_Name: Main Camera
@@ -110,6 +111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sysString: 1
+  MoneyPerSecond: 1
+  Money: 1
 --- !u!114 &2638702249319830313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +132,22 @@ MonoBehaviour:
   _delta: {x: 0, y: 0}
   _isMoving: 0
   _MovementSpeed: 8
+--- !u!114 &5214810005664651902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6056885761462704651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4701d7ea2a5314c89a272a47c6e09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstaclemask:
+    serializedVersion: 2
+    m_Bits: 0
+  Test: {fileID: 0}
 --- !u!114 &505303763728104377
 MonoBehaviour:
   m_ObjectHideFlags: 0
