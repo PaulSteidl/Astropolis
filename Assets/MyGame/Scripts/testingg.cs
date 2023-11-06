@@ -15,8 +15,8 @@ public class testingg : MonoBehaviour
     {
         
     }
-    void testing()
+    public void testing()
     {
-        print("succeed");
+        Debug.Log("succeed");
     }
 }

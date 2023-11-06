@@ -11,32 +11,36 @@ public class raycast_on_touch : MonoBehaviour
 
     private void Update()
     {
-        Touch touch = Input.GetTouch(0);
 
-        if (touch.phase == TouchPhase.Began)
+        if (Input.touchCount == 1)
         {
-            TouchTime = Time.time;
-        }
+            Touch touch = Input.GetTouch(0);
 
-        if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
-        {
-            if (Time.time - TouchTime <= 0.2)
+            if (touch.phase == TouchPhase.Began)
             {
-                if (Input.touchCount == 1)
+                TouchTime = Time.time;
+            }
+
+            if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+            {
+                if (Time.time - TouchTime <= 0.2)
                 {
-                    var position = GetPosition();
-                    if (position != null)
+                    if (Input.touchCount == 1)
                     {
-                        Instantiate(Test, position.Value, new Quaternion());
+                        var position = GetPosition();
+                        if (position != null)
+                        {
+                            Instantiate(Test, position.Value, new Quaternion());
+                        }
                     }
                 }
-            }
-            else
-            {
-                // this is a long press or drag​
+                else
+                {
+                    // this is a long press or drag​
+                }
             }
         }
-
+       
     }
 
     private Vector3? GetPosition()
