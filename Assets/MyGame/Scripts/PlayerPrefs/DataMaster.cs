@@ -6,28 +6,13 @@ public class DataMaster : MonoBehaviour
 {
     DateTime currentDate;
     DateTime oldDate;
-    MoneyManager moneyManager_cs;
-
-    [Header("DeletePlayerPrefs")]
     [SerializeField] bool sysString;
-    [SerializeField] bool MoneyPerSecond;
-    [SerializeField] bool Money;
     void Start()
     {
-
-        moneyManager_cs = GameObject.FindObjectOfType<MoneyManager>();
 
         if (!sysString)
         {
             PlayerPrefs.DeleteKey("sysString");
-        }
-        if (!MoneyPerSecond)
-        {
-            PlayerPrefs.DeleteKey("MoneyPerSecond");
-        }
-        if (!Money)
-        {
-            PlayerPrefs.DeleteKey("Money");
         }
 
         if (PlayerPrefs.HasKey("sysString"))
@@ -55,21 +40,11 @@ public class DataMaster : MonoBehaviour
     {
         if (sysString)
         {
-            //Save the current system time as a string in the player prefs class
+            //Savee the current system time as a string in the player prefs class
             PlayerPrefs.SetString("sysString", System.DateTime.Now.ToBinary().ToString());
 
             print("Saving this date to prefs: " + System.DateTime.Now);
         }
-        if (MoneyPerSecond)
-        {
-            //Save the current Money/sek as a float in the player prefs class
-            PlayerPrefs.SetFloat("MoneyPerSecond", moneyManager_cs.incomePerSecond);
-        }
-        if (Money)
-        {
-            //Save the current Money as a float in the player prefs class
-            PlayerPrefs.SetFloat("Money", moneyManager_cs.money);
-        }       
     }
 
 }
