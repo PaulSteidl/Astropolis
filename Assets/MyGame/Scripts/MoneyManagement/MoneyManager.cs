@@ -14,7 +14,7 @@ public class MoneyManager : MonoBehaviour
     [SerializeField] RocketManager rocketManagerCS;
     void Start()
     {
-        rocketManagerCS = GameObject.Find("RocketManager").GetComponent<RocketManager>();
+        rocketManagerCS = GameObject.FindObjectOfType<RocketManager>;
 
     }
 
