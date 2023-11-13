@@ -11,13 +11,14 @@ public class Restaurant : MonoBehaviour
 
 
     [SerializeField] TextMeshProUGUI updateCostText, incomeText, nextIncomeText;
+    [SerializeField] BFN_ExampleComponent formatCS;
 
     MoneyManager moneyManagerCS;
     void Start()
     {
         moneyManagerCS = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
         InvokeRepeating("RestaurantMoney", 1, 1);
-        
+        transferCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
     }
 
     private void Update()
@@ -64,7 +65,7 @@ public class Restaurant : MonoBehaviour
     public void UpdateInterface()
     {
         NextUpdateIncome();
-        updateCostText.text = updateCost.ToString();
+        updateCostText.text = formatCS.Shorten_number(updateCost);
         incomeText.text = updateIncome.ToString();
     }
     
