@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 25873219}
   - component: {fileID: 25873218}
   - component: {fileID: 25873217}
+  - component: {fileID: 25873220}
   m_Layer: 5
   m_Name: Restaurant
   m_TagString: Untagged
@@ -208,7 +209,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1603285764}
         m_TargetAssemblyTypeName: Interface, Assembly-CSharp
-        m_MethodName: Restaurant
+        m_MethodName: RestaurantOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -256,6 +257,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25873215}
   m_CullTransparentMesh: 1
+--- !u!114 &25873220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25873215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e2378442ccfee4b9279cbaca690a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateCost: 0
+  updateIncome: 0
+  restaurantLevel: 0
 --- !u!1 &94426809
 GameObject:
   m_ObjectHideFlags: 0
@@ -5703,6 +5719,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 680952596}
   m_CullTransparentMesh: 1
+--- !u!1 &811724717
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 811724719}
+  - component: {fileID: 811724718}
+  m_Layer: 0
+  m_Name: MoneyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &811724718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811724717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be104c4de3a43e54394ba0fc20f52999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  moneyPerSecond: 0
+  rocketIncomePerSecond: 0
+  RestaurantIncomePerSecond: 0
+  rocketManagerCS: {fileID: 0}
+--- !u!4 &811724719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811724717}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.2685976, y: 53.1231, z: 52.891365}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &847333811
 GameObject:
   m_ObjectHideFlags: 0
@@ -5984,7 +6049,7 @@ GameObject:
   - component: {fileID: 906768958}
   - component: {fileID: 906768957}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Builds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6423,7 +6488,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1498678771}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1603285764}
+        m_TargetAssemblyTypeName: Interface, Assembly-CSharp
+        m_MethodName: RestaurantOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1498678771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6492,6 +6569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restaurant: {fileID: 2026133249}
+  restaurantCS: {fileID: 25873220}
 --- !u!4 &1603285765
 Transform:
   m_ObjectHideFlags: 0
@@ -6723,7 +6801,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1656095562}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1603285764}
+        m_TargetAssemblyTypeName: Interface, Assembly-CSharp
+        m_MethodName: RestaurantUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1656095562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10003,12 +10093,13 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2919539536065586460}
+  - {fileID: 811724719}
   - {fileID: 1603285765}
+  - {fileID: 906768960}
+  - {fileID: 543450652952865308}
   - {fileID: 648716262}
   - {fileID: 151238429}
   - {fileID: 6350875619347935811}
-  - {fileID: 543450652952865308}
   - {fileID: 267933244}
   - {fileID: 2026133253}
-  - {fileID: 906768960}
   - {fileID: 350465749}

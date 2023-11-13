@@ -5,13 +5,23 @@ using UnityEngine;
 public class Interface : MonoBehaviour
 {
     [SerializeField] GameObject restaurant;
+    [SerializeField] Restaurant restaurantCS;
     void Start()
     {
         
     }
 
-    public void Restaurant()
+    public void RestaurantOn()
     {
-        restaurant.SetActive(!restaurant.activeSelf);
+        restaurant.SetActive(true);
     }
+    public void RestaurantOff()
+    {
+        restaurant.SetActive(false);
+    }
+    public void RestaurantUpgrade()
+    {
+        restaurantCS.MoneyUpgrade();
+    }
+
 }
