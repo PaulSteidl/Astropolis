@@ -1002,7 +1002,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &437303790
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1065,7 +1065,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 437303792}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1603285764}
+        m_TargetAssemblyTypeName: Interface, Assembly-CSharp
+        m_MethodName: RocketOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &437303792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1073,7 +1085,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437303789}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -2717,7 +2729,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restaurant: {fileID: 2026133249}
+  rocket: {fileID: 524327231}
   restaurantCS: {fileID: 25873220}
+  rocketCS: {fileID: 437303796}
 --- !u!4 &1603285765
 Transform:
   m_ObjectHideFlags: 0
@@ -3221,7 +3235,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1603285764}
         m_TargetAssemblyTypeName: Interface, Assembly-CSharp
-        m_MethodName: RestaurantOff
+        m_MethodName: RocketOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
