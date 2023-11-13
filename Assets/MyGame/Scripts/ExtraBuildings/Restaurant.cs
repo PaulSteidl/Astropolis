@@ -18,7 +18,7 @@ public class Restaurant : MonoBehaviour
     {
         moneyManagerCS = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
         InvokeRepeating("RestaurantMoney", 1, 1);
-        transferCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
+        formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
     }
 
     private void Update()

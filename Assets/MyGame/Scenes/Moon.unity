@@ -275,6 +275,7 @@ MonoBehaviour:
   updateCostText: {fileID: 1263153440}
   incomeText: {fileID: 899911376}
   nextIncomeText: {fileID: 1729352739}
+  formatCS: {fileID: 0}
 --- !u!61 &25873221
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1091,7 +1092,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.24313726}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1618,7 +1619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be104c4de3a43e54394ba0fc20f52999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 5
+  money: 100000000
   moneyPerSecond: 1
   rocketIncomePerSecond: 0
   RestaurantIncomePerSecond: 0
@@ -1650,6 +1651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd34a66e5fd5eb54e90e223b2c7fb4d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _money_display: 
   _a:
     coefficient: 0
     exponent: 0
