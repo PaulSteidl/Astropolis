@@ -7,6 +7,7 @@ public class DataMaster : MonoBehaviour
     DateTime oldDate;
     MoneyManager moneyManager_cs;
     RocketUpdate rocketTakeOffTime;
+    double time;
 
     [Header("DeletePlayerPrefs")]
     [SerializeField] bool sysString;
@@ -46,13 +47,14 @@ public class DataMaster : MonoBehaviour
             //Use the Subtract method and store the result as a timespan variable
             TimeSpan difference = currentDate.Subtract(oldDate);
             print("Difference: " + difference);
-            double time = difference.TotalSeconds;
+            time = difference.TotalSeconds;
             Debug.Log(time);
         }
 
         if (PlayerPrefs.HasKey("sysString") && PlayerPrefs.HasKey("MoneyPerSecond"))
         {
-
+            moneyManager_cs.money = moneyManager_cs.money + (((float)time * PlayerPrefs.GetFloat("MoneyPerSecond")) / 10);
+            Debug.Log(moneyManager_cs.money);
         }
     }
     void OnApplicationQuit()

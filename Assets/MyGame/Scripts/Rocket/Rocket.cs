@@ -23,7 +23,7 @@ public class Rocket : MonoBehaviour
         timeUntilTakeOff = rocketTakeOffTime;
 
 
-        rocketManagerCS = GameObject.Find("RocketManager").GetComponent<RocketManager>();
+        rocketManagerCS = GameObject.FindObjectOfType<RocketManager>();
     }
 
 

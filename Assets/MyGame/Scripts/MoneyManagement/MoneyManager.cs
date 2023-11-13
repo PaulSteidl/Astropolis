@@ -16,9 +16,14 @@ public class MoneyManager : MonoBehaviour
     [Space(40)]
 
     [SerializeField] RocketManager rocketManagerCS;
+
+    private void Awake()
+    {
+        money = PlayerPrefs.GetFloat("Money");
+    }
     void Start()
     {
-        rocketManagerCS = GameObject.Find("RocketManager").GetComponent<RocketManager>();
+        rocketManagerCS = GameObject.FindObjectOfType<RocketManager>();
 
     }
 
