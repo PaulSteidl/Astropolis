@@ -17,6 +17,7 @@ public class Restaurant : MonoBehaviour
     {
         moneyManagerCS = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
         InvokeRepeating("RestaurantMoney", 1, 1);
+        
     }
 
     private void Update()
@@ -39,8 +40,8 @@ public class Restaurant : MonoBehaviour
         {
             moneyManagerCS.money -= updateCost;
             restaurantLevel += 1;
-            MoneyUpdateCost();
-            MoneyUpdateIncome();
+            updateCost = MoneyUpdateCost();
+            updateIncome = MoneyUpdateIncome();
             moneyManagerCS.RestaurantIncomePerSecond = updateIncome;
             moneyManagerCS.UpdateMoneyPerSecond();
             NextUpdateIncome();
@@ -48,19 +49,29 @@ public class Restaurant : MonoBehaviour
         }
     }
 
-    public void MoneyUpdateCost()
+    public float MoneyUpdateCost()
     {
-        updateCost = 10 * Mathf.Pow(1.2f, restaurantLevel)+ 100 * restaurantLevel;
+        return 10 * Mathf.Pow(1.2f, restaurantLevel)+ 100 * restaurantLevel;
+
     }
-    public void MoneyUpdateIncome()
+    public float MoneyUpdateIncome()
     {
-        updateIncome = 10 * Mathf.Pow(1.05f, restaurantLevel);
+        return 10 * Mathf.Pow(1.05f, restaurantLevel);
     }
 
+    
+    
+    public void UpdateInterface()
+    {
+        NextUpdateIncome();
+        updateCostText.text = updateCost.ToString();
+        incomeText.text = updateIncome.ToString();
+    }
+    
     public void NextUpdateIncome()
     {
         float nextIncome = 10 * Mathf.Pow(1.05f, restaurantLevel +1);
-        float currentIncome = 10 * Mathf.Pow(1.05f, restaurantLevel);
+        float currentIncome = MoneyUpdateIncome();
         nextIncomeText.text = (nextIncome - currentIncome).ToString();
     }
 }
