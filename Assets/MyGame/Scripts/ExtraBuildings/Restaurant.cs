@@ -45,7 +45,7 @@ public class Restaurant : MonoBehaviour
             moneyManagerCS.RestaurantIncomePerSecond = updateIncome;
             moneyManagerCS.UpdateMoneyPerSecond();
             NextUpdateIncome();
-
+            UpdateInterface();
         }
     }
 

@@ -272,9 +272,9 @@ MonoBehaviour:
   updateCost: 0
   updateIncome: 0
   restaurantLevel: 0
-  updateCostText: {fileID: 0}
-  incomeText: {fileID: 0}
-  nextIncomeText: {fileID: 0}
+  updateCostText: {fileID: 1263153440}
+  incomeText: {fileID: 899911376}
+  nextIncomeText: {fileID: 1729352739}
 --- !u!1 &94426809
 GameObject:
   m_ObjectHideFlags: 0
