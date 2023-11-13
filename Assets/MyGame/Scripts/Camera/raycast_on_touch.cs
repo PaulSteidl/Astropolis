@@ -5,7 +5,6 @@ using UnityEngine;
 public class raycast_on_touch : MonoBehaviour
 {
     public LayerMask obstaclemask;
-    public GameObject Test;
 
     float TouchTime;
 
