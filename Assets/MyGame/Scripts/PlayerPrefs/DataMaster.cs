@@ -6,15 +6,20 @@ public class DataMaster : MonoBehaviour
     DateTime currentDate;
     DateTime oldDate;
     MoneyManager moneyManager_cs;
+    RocketUpdate rocketTakeOffTime;
 
     [Header("DeletePlayerPrefs")]
     [SerializeField] bool sysString;
     [SerializeField] bool MoneyPerSecond;
     [SerializeField] bool Money;
+    [SerializeField] bool Level_takeOffTime;
+    [SerializeField] bool Level_Main_Building;
+    [SerializeField] bool Level_Rocketstation;
     void Start()
     {
 
         moneyManager_cs = GameObject.FindObjectOfType<MoneyManager>();
+        rocketTakeOffTime = GameObject.FindObjectOfType<RocketUpdate>();
 
         if (!sysString)
         {
@@ -65,6 +70,11 @@ public class DataMaster : MonoBehaviour
             //Save the current Money as a float in the player prefs class
             PlayerPrefs.SetFloat("Money", moneyManager_cs.money);
         }
+        if (Level_takeOffTime)
+        {
+            //Save the current Money as a float in the player prefs class
+            PlayerPrefs.SetInt("RocketTakeOffTime", rocketTakeOffTime.takeOffLevel);
+        }
     }
 
-}
+} 
