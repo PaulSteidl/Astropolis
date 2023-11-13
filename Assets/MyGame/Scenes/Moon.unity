@@ -6582,7 +6582,8 @@ Transform:
   m_LocalPosition: {x: 7.0889845, y: -8.876295, z: 123.49331}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2026133253}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1629492406
@@ -7004,7 +7005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2026133250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7087,7 +7088,7 @@ RectTransform:
   - {fileID: 94426810}
   - {fileID: 899911375}
   - {fileID: 1729352738}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1603285765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10101,5 +10102,4 @@ SceneRoots:
   - {fileID: 151238429}
   - {fileID: 6350875619347935811}
   - {fileID: 267933244}
-  - {fileID: 2026133253}
   - {fileID: 350465749}
