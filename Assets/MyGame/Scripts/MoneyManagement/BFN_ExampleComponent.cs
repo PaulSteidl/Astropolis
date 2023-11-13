@@ -1,12 +1,19 @@
 // src* = https://github.com/andrew-raphael-lukasik/BFN
 using UnityEngine;
+using UnityEngine.UIElements;
+
 public class BFN_ExampleComponent : MonoBehaviour
 {
-	[SerializeField] BFN _a = new BFN();
+	[Header("Text")]
+	public string _money_display;
+
+    [Space(5)]
+    [SerializeField] BFN _a = new BFN();
 	[SerializeField] BFN _b = new BFN();
 	[SerializeField] OP _operator = OP.Add;
 	[SerializeField] BFN _result = (BFN) 0;
 	MoneyManager _moneyManager;
+	
 
 	public enum OP : byte { Add , Subtract , Multiply , Divide }
 
@@ -30,6 +37,21 @@ public class BFN_ExampleComponent : MonoBehaviour
 		_moneyManager = GameObject.FindObjectOfType<MoneyManager>();		
 		Debug.Log($"{_a} {_operator} {_b} = {_result}");
 		
+	}
+	 
+	public string Shorten_number (float a)
+	{
+		float b = 0;
+		BFN result; 
+        switch (_operator)
+        {
+            case OP.Add: result = (BFN)a + b; break;
+            case OP.Subtract: result = (BFN)a - b; break;
+            case OP.Multiply: result = (BFN)a * b; break;
+            case OP.Divide: result = (BFN)a / b; break;
+            default: throw new System.NotImplementedException();
+        }
+        return result.ToString();
 	}
 
 }
