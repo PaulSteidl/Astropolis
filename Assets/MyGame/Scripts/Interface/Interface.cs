@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class Interface : MonoBehaviour
 {
-    [SerializeField] GameObject restaurant;
+    [SerializeField] GameObject restaurant, rocket;
     [SerializeField] Restaurant restaurantCS;
+    [SerializeField] Rocket rocketCS;
+
     void Start()
     {
-        
+        restaurantCS = GameObject.FindAnyObjectByType<Restaurant>();
+        rocketCS = GameObject.FindAnyObjectByType<Rocket>();
     }
 
     public void RestaurantOn()
     {
         restaurant.SetActive(true);
+        restaurantCS.UpdateInterface();
     }
     public void RestaurantOff()
     {
@@ -23,5 +27,24 @@ public class Interface : MonoBehaviour
     {
         restaurantCS.MoneyUpgrade();
     }
+
+
+
+    public void RocketOn()
+    {
+        rocket.SetActive(true);
+        //restaurantCS.UpdateInterface();
+    }
+    public void RocketOff()
+    {
+        rocket.SetActive(false);
+    }
+
+
+
+
+
+
+
 
 }

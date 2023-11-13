@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Restaurant : MonoBehaviour
 {
@@ -8,11 +9,16 @@ public class Restaurant : MonoBehaviour
     public float updateIncome;
     public int restaurantLevel;
 
+
+    [SerializeField] TextMeshProUGUI updateCostText, incomeText, nextIncomeText;
+    [SerializeField] BFN_ExampleComponent formatCS;
+
     MoneyManager moneyManagerCS;
     void Start()
     {
         moneyManagerCS = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
         InvokeRepeating("RestaurantMoney", 1, 1);
+        formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
     }
 
     private void Update()
@@ -25,7 +31,7 @@ public class Restaurant : MonoBehaviour
 
     public void RestaurantMoney()
     {
-        moneyManagerCS.money += updateIncome;
+        moneyManagerCS.money += updateIncome; //Geld wird zum Konto hinzugefügt
     }
 
     public void MoneyUpgrade()
@@ -35,20 +41,38 @@ public class Restaurant : MonoBehaviour
         {
             moneyManagerCS.money -= updateCost;
             restaurantLevel += 1;
-            MoneyUpdateCost();
-            MoneyUpdateIncome();
+            updateCost = MoneyUpdateCost();
+            updateIncome = MoneyUpdateIncome();
             moneyManagerCS.RestaurantIncomePerSecond = updateIncome;
             moneyManagerCS.UpdateMoneyPerSecond();
-
+            NextUpdateIncome();
+            UpdateInterface();
         }
     }
 
-    public void MoneyUpdateCost()
+    public float MoneyUpdateCost()
     {
-        updateCost = 10 * Mathf.Pow(1.2f, restaurantLevel)+ 100 * restaurantLevel;
+        return 10 * Mathf.Pow(1.2f, restaurantLevel)+ 100 * restaurantLevel;
+
     }
-    public void MoneyUpdateIncome()
+    public float MoneyUpdateIncome()
     {
-        updateIncome = 10 * Mathf.Pow(1.05f, restaurantLevel);
+        return 10 * Mathf.Pow(1.05f, restaurantLevel);
+    }
+
+    
+    
+    public void UpdateInterface()
+    {
+        NextUpdateIncome();
+        updateCostText.text = formatCS.Shorten_number(updateCost);
+        incomeText.text = updateIncome.ToString();
+    }
+    
+    public void NextUpdateIncome()
+    {
+        float nextIncome = 10 * Mathf.Pow(1.05f, restaurantLevel +1);
+        float currentIncome = MoneyUpdateIncome();
+        nextIncomeText.text = (nextIncome - currentIncome).ToString();
     }
 }

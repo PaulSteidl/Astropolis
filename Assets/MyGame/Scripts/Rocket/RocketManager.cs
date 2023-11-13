@@ -13,8 +13,8 @@ public class RocketManager : MonoBehaviour
 
     private void Start()
     {
-        rocketCS = GameObject.Find("Rocket").GetComponent<Rocket>();
-        moneyManagerCS = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
+        rocketCS = GameObject.FindObjectOfType<Rocket>();
+        moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
     }
 
     private void Update()
