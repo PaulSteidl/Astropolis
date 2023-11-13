@@ -13,7 +13,8 @@ public class BFN_ExampleComponent : MonoBehaviour
 	#if UNITY_EDITOR
 	void Update ()
 	{
-		switch( _operator )
+        _a = (BFN)_moneyManager.money;
+        switch ( _operator )
 		{
 			case OP.Add:		_result = _a + _b; break;
 			case OP.Subtract:	_result = _a - _b; break;
@@ -21,15 +22,14 @@ public class BFN_ExampleComponent : MonoBehaviour
 			case OP.Divide:		_result = _a / _b; break;
 			default: throw new System.NotImplementedException();
 		}
-	}
+    }
 	#endif
 	
 	void Start ()
 	{
-		_moneyManager = GameObject.FindObjectOfType<MoneyManager>();
-		_a = (BFN)_moneyManager.money;
+		_moneyManager = GameObject.FindObjectOfType<MoneyManager>();		
 		Debug.Log($"{_a} {_operator} {_b} = {_result}");
-		Debug.Log(_result);
+		
 	}
 
 }

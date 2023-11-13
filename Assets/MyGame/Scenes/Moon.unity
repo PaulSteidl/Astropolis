@@ -956,7 +956,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &437303790
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1540,6 +1540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 811724719}
   - component: {fileID: 811724718}
+  - component: {fileID: 811724720}
   m_Layer: 0
   m_Name: MoneyManager
   m_TagString: Untagged
@@ -1579,6 +1580,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &811724720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811724717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd34a66e5fd5eb54e90e223b2c7fb4d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _a:
+    coefficient: 0
+    exponent: 0
+  _b:
+    coefficient: 0
+    exponent: 0
+  _operator: 0
+  _result:
+    coefficient: 0
+    exponent: 0
 --- !u!1 &847333811
 GameObject:
   m_ObjectHideFlags: 0

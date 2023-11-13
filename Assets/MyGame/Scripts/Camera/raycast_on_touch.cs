@@ -29,7 +29,7 @@ public class raycast_on_touch : MonoBehaviour
                         var position = GetPosition();
                         if (position != null)
                         {
-                            Instantiate(Test, position.Value, new Quaternion());
+                            
                         }
                     }
                 }
