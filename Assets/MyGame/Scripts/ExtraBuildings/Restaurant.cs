@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Restaurant : MonoBehaviour
 {
     public float updateCost;
     public float updateIncome;
     public int restaurantLevel;
+
+
+    [SerializeField] TextMeshProUGUI updateCostText, incomeText, nextIncomeText;
 
     MoneyManager moneyManagerCS;
     void Start()
@@ -25,7 +29,7 @@ public class Restaurant : MonoBehaviour
 
     public void RestaurantMoney()
     {
-        moneyManagerCS.money += updateIncome;
+        moneyManagerCS.money += updateIncome; //Geld wird zum Konto hinzugefügt
     }
 
     public void MoneyUpgrade()
@@ -39,6 +43,7 @@ public class Restaurant : MonoBehaviour
             MoneyUpdateIncome();
             moneyManagerCS.RestaurantIncomePerSecond = updateIncome;
             moneyManagerCS.UpdateMoneyPerSecond();
+            NextUpdateIncome();
 
         }
     }
@@ -50,5 +55,12 @@ public class Restaurant : MonoBehaviour
     public void MoneyUpdateIncome()
     {
         updateIncome = 10 * Mathf.Pow(1.05f, restaurantLevel);
+    }
+
+    public void NextUpdateIncome()
+    {
+        float nextIncome = 10 * Mathf.Pow(1.05f, restaurantLevel +1);
+        float currentIncome = 10 * Mathf.Pow(1.05f, restaurantLevel);
+        nextIncomeText.text = (nextIncome - currentIncome).ToString();
     }
 }
