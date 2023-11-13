@@ -55,7 +55,7 @@ public class BFN_ExampleComponent : MonoBehaviour
         result_float = (float)result;
 		
 		result_float = Mathf.Round(result_float * 100) / 10;
-        return result.ToString();
+        return result_float.ToString();
 	}
 
 }
