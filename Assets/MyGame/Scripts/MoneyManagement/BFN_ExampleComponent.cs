@@ -42,7 +42,8 @@ public class BFN_ExampleComponent : MonoBehaviour
 	public string Shorten_number (float a)
 	{
 		float b = 0;
-		BFN result; 
+		BFN result;
+		float result_float;
         switch (_operator)
         {
             case OP.Add: result = (BFN)a + b; break;
@@ -51,6 +52,9 @@ public class BFN_ExampleComponent : MonoBehaviour
             case OP.Divide: result = (BFN)a / b; break;
             default: throw new System.NotImplementedException();
         }
+        result_float = (float)result;
+		
+		result_float = Mathf.Round(result_float * 100) / 10;
         return result.ToString();
 	}
 
