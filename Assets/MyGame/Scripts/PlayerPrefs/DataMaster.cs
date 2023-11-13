@@ -49,6 +49,11 @@ public class DataMaster : MonoBehaviour
             double time = difference.TotalSeconds;
             Debug.Log(time);
         }
+
+        if (PlayerPrefs.HasKey("sysString") && PlayerPrefs.HasKey("MoneyPerSecond"))
+        {
+
+        }
     }
     void OnApplicationQuit()
     {
