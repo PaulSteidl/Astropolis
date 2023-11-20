@@ -13,6 +13,7 @@ public class Restaurant : MonoBehaviour
     [SerializeField] TextMeshProUGUI updateCostText, incomeText, nextIncomeText;
     [SerializeField] BFN_ExampleComponent formatCS;
 
+
     MoneyManager moneyManagerCS;
     void Start()
     {
@@ -66,13 +67,13 @@ public class Restaurant : MonoBehaviour
     {
         NextUpdateIncome();
         updateCostText.text = formatCS.Shorten_number(updateCost);
-        incomeText.text = updateIncome.ToString();
+        incomeText.text = formatCS.Shorten_number(updateIncome);
     }
     
     public void NextUpdateIncome()
     {
         float nextIncome = 10 * Mathf.Pow(1.05f, restaurantLevel +1);
         float currentIncome = MoneyUpdateIncome();
-        nextIncomeText.text = (nextIncome - currentIncome).ToString();
+        nextIncomeText.text = formatCS.Shorten_number((nextIncome - currentIncome));
     }
 }

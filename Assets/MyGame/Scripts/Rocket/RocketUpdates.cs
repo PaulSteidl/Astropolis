@@ -37,9 +37,9 @@ public class RocketUpdate : MonoBehaviour
 
     private void Start()
     {
-        rocketManagerCS = GameObject.Find("RocketManager").GetComponent<RocketManager>();
-        moneyManagerCS = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
-        rocketCS = GameObject.Find("Rocket").GetComponent<Rocket>();
+        rocketManagerCS = GameObject.FindObjectOfType<RocketManager>();
+        moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
+        rocketCS = GameObject.FindObjectOfType<Rocket>();
     }
     
     void Update()
