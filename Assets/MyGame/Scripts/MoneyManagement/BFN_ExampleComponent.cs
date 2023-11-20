@@ -1,6 +1,7 @@
 // src* = https://github.com/andrew-raphael-lukasik/BFN
 using UnityEngine;
 using UnityEngine.UIElements;
+using System;
 
 public class BFN_ExampleComponent : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class BFN_ExampleComponent : MonoBehaviour
 			case OP.Divide:		_result = _a / _b; break;
 			default: throw new System.NotImplementedException();
 		}
+
     }
 	#endif
 	
@@ -43,6 +45,7 @@ public class BFN_ExampleComponent : MonoBehaviour
 	{
 		float b = 0;
 		BFN result;
+		string _resultString;
         switch (_operator)
         {
             case OP.Add: result = (BFN)a + b; break;
@@ -51,7 +54,24 @@ public class BFN_ExampleComponent : MonoBehaviour
             case OP.Divide: result = (BFN)a / b; break;
             default: throw new System.NotImplementedException();
         }
-        return result.ToString();
+
+		_resultString = result.ToString();
+
+		// Debug.Log(_resultString);
+
+        if (_resultString.Contains(","))
+        {
+            int commaIndex = _resultString.IndexOf(",");
+
+            if (commaIndex != -1 && commaIndex + 3 < _resultString.Length)
+            {
+                int removalLength = _resultString.Length - (commaIndex + 3);
+                _resultString = _resultString.Remove(commaIndex + 3, removalLength - 2);
+            }
+        }
+
+        return _resultString;
 	}
 
 }
+ 
