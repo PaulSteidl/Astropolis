@@ -9,6 +9,7 @@ public class MoneyManager : MonoBehaviour
     [Space(10)]
     public float money;
     public float moneyPerSecond;
+    public float moneyMultiplyer;
 
     [Space(10)]
     public float rocketIncomePerSecond;
@@ -41,5 +42,12 @@ public class MoneyManager : MonoBehaviour
         moneyPerSecond = RestaurantIncomePerSecond + rocketIncomePerSecond;
         moneyPerSecText.text = formatCS.Shorten_number(moneyPerSecond);
 
+    }
+
+    public void AddMoney(float a)
+    {
+        float b = moneyMultiplyer;
+
+        money = money +  a * b;
     }
 }
