@@ -31,6 +31,10 @@ public class MoneyManager : MonoBehaviour
         formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
     }
 
+    private void Update()
+    {
+        moneyText.text = formatCS.Shorten_number(money);
+    }
 
     public void UpdateMoneyPerSecond()
     {

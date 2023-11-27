@@ -27,6 +27,10 @@ public class Interface : MonoBehaviour
     {
         restaurantCS.MoneyUpgrade();
     }
+    public void RocketUpgrade()
+    {
+        
+    }
 
 
 
