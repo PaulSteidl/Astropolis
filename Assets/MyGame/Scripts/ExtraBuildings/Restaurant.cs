@@ -32,7 +32,7 @@ public class Restaurant : MonoBehaviour
 
     public void RestaurantMoney()
     {
-        moneyManagerCS.money += updateIncome; //Geld wird zum Konto hinzugefügt
+        moneyManagerCS.AddMoney(updateIncome); //Geld wird zum Konto hinzugefügt
     }
 
     public void MoneyUpgrade()
