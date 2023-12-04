@@ -1585,7 +1585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &524327232
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2962,9 +2962,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1603285764}
-        m_TargetAssemblyTypeName: Interface, Assembly-CSharp
-        m_MethodName: RestaurantUpgrade
+      - m_Target: {fileID: 437303794}
+        m_TargetAssemblyTypeName: RocketUpdate, Assembly-CSharp
+        m_MethodName: MoneyUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
