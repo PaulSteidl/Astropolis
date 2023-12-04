@@ -209,7 +209,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1603285764}
         m_TargetAssemblyTypeName: Interface, Assembly-CSharp
-        m_MethodName: RestaurantOn
+        m_MethodName: RocketOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1475,7 +1475,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.05490196}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1527,6 +1527,10 @@ MonoBehaviour:
   rocketManagerCS: {fileID: 0}
   moneyManagerCS: {fileID: 0}
   rocketCS: {fileID: 0}
+  updateCostText: {fileID: 0}
+  incomeText: {fileID: 0}
+  nextIncomeText: {fileID: 0}
+  formatCS: {fileID: 0}
 --- !u!114 &437303795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1581,7 +1585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &524327232
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1596,9 +1600,9 @@ RectTransform:
   m_Children:
   - {fileID: 309087500}
   - {fileID: 2009578225}
-  - {fileID: 1167656719}
   - {fileID: 100955765}
   - {fileID: 133305649}
+  - {fileID: 1167656719}
   - {fileID: 2035855838}
   - {fileID: 1116189162}
   m_Father: {fileID: 1603285765}
@@ -2045,7 +2049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: 10
   moneyPerSecond: 5
-  moneyMultiplyer: 0
+  moneyMultiplyer: 1
   rocketIncomePerSecond: 0
   RestaurantIncomePerSecond: 0
   rocketManagerCS: {fileID: 0}
@@ -3784,6 +3788,7 @@ MonoBehaviour:
   MoneyMadeOffline: {fileID: 1686210341}
   restaurantCS: {fileID: 25873220}
   rocketCS: {fileID: 437303796}
+  rocketUpdateCS: {fileID: 0}
 --- !u!4 &1603285765
 Transform:
   m_ObjectHideFlags: 0
@@ -4401,7 +4406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 1000k
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5983,7 +5988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7735071124477750086, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.82
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7735071124477750086, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: m_LocalPosition.y

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RocketUpdate : MonoBehaviour
 {
@@ -35,11 +36,15 @@ public class RocketUpdate : MonoBehaviour
     [SerializeField] MoneyManager moneyManagerCS;
     [SerializeField] Rocket rocketCS;
 
+    [SerializeField] TextMeshProUGUI updateCostText, incomeText, nextIncomeText;
+    [SerializeField] BFN_ExampleComponent formatCS;
+
     private void Start()
     {
         rocketManagerCS = GameObject.FindObjectOfType<RocketManager>();
         moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
         rocketCS = GameObject.FindObjectOfType<Rocket>();
+        formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
     }
     
     void Update()
@@ -74,9 +79,11 @@ public class RocketUpdate : MonoBehaviour
     }
 
 
+
     public void MoneyUpgrade()
     {
-        
+        rocketManagerCS.UpdateIncomePerSec(); //aktuaisiert anzeige
+
         if (moneyManagerCS.money >= moneyUpdateCost)        //wenn genug geld am konto ist
         {
             moneyManagerCS.money -= moneyUpdateCost;
@@ -99,6 +106,7 @@ public class RocketUpdate : MonoBehaviour
 
     public void PeopleUpgrade()
     {
+        rocketManagerCS.UpdateIncomePerSec(); //aktuaisiert anzeige
 
         if (moneyManagerCS.money >= peopleUpdateCost)        //wenn genug geld am konto ist
         {
@@ -118,6 +126,7 @@ public class RocketUpdate : MonoBehaviour
 
     public void ComebackUpgrade()
     {
+        rocketManagerCS.UpdateIncomePerSec(); //aktuaisiert anzeige
 
         if (moneyManagerCS.money >= comebackCost)        //wenn genug geld am konto ist
         {
@@ -136,6 +145,7 @@ public class RocketUpdate : MonoBehaviour
 
     public void TakeOffUpgrade()
     {
+        rocketManagerCS.UpdateIncomePerSec(); //aktuaisiert anzeige
 
         if (moneyManagerCS.money >= takeOffCost)        //wenn genug geld am konto ist
         {
@@ -153,6 +163,17 @@ public class RocketUpdate : MonoBehaviour
     public void TakeOffTime()
     {
         takeOffTime = 40 * Mathf.Pow(0.97f, takeOffLevel);
+    }
+
+
+
+
+
+
+    public void UpdateInterface()
+    {
+        updateCostText.text = formatCS.Shorten_number(moneyUpdateCost);
+        incomeText.text = formatCS.Shorten_number(moneyUpdateIncome);
     }
 }
 

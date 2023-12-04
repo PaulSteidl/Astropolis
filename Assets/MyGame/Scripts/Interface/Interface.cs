@@ -7,11 +7,14 @@ public class Interface : MonoBehaviour
     [SerializeField] GameObject restaurant, rocket, MoneyMadeOffline;
     [SerializeField] Restaurant restaurantCS;
     [SerializeField] Rocket rocketCS;
+    [SerializeField] RocketUpdate rocketUpdateCS;
 
     void Start()
     {
         restaurantCS = GameObject.FindAnyObjectByType<Restaurant>();
         rocketCS = GameObject.FindAnyObjectByType<Rocket>();
+        rocketUpdateCS = GameObject.FindAnyObjectByType<RocketUpdate>();
+
     }
 
     public void RestaurantOn()
@@ -41,7 +44,7 @@ public class Interface : MonoBehaviour
     public void RocketOn()
     {
         rocket.SetActive(true);
-        //restaurantCS.UpdateInterface();
+        rocketUpdateCS.UpdateInterface();
     }
     public void RocketOff()
     {
