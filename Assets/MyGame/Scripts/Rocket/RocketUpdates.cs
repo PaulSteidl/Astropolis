@@ -82,6 +82,7 @@ public class RocketUpdate : MonoBehaviour
 
     public void MoneyUpgrade()
     {
+        Debug.Log("jo");
         rocketManagerCS.UpdateIncomePerSec(); //aktuaisiert anzeige
 
         if (moneyManagerCS.money >= moneyUpdateCost)        //wenn genug geld am konto ist

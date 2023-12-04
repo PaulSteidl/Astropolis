@@ -30,6 +30,8 @@ public class Interface : MonoBehaviour
     {
         MoneyMadeOffline.SetActive(false);
     }
+   
+    
     public void RestaurantUpgrade()
     {
         restaurantCS.MoneyUpgrade();

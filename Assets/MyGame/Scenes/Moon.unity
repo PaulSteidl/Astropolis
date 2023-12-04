@@ -1975,8 +1975,8 @@ MonoBehaviour:
   rocketManagerCS: {fileID: 0}
   moneyManagerCS: {fileID: 0}
   rocketCS: {fileID: 0}
-  updateCostText: {fileID: 0}
-  incomeText: {fileID: 0}
+  updateCostText: {fileID: 2037614502}
+  incomeText: {fileID: 2035855839}
   nextIncomeText: {fileID: 0}
   formatCS: {fileID: 0}
 --- !u!114 &437303795
@@ -2933,7 +2933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be104c4de3a43e54394ba0fc20f52999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 10
+  money: 15
   moneyPerSecond: 5
   moneyMultiplyer: 1
   rocketIncomePerSecond: 0
@@ -4265,9 +4265,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1603285764}
-        m_TargetAssemblyTypeName: Interface, Assembly-CSharp
-        m_MethodName: RestaurantUpgrade
+      - m_Target: {fileID: 437303794}
+        m_TargetAssemblyTypeName: RocketUpdate, Assembly-CSharp
+        m_MethodName: MoneyUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8706,20 +8706,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Money
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: sysString
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: MoneyPerSecond
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: MoneyMadeOffline
       value: 
       objectReference: {fileID: 2076761658}
+    - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
+      propertyPath: Level_takeOffTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
+      propertyPath: Level_Main_Building
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
+      propertyPath: Level_Rocketstation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6056885761462704651, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: m_Name
       value: Main Camera
