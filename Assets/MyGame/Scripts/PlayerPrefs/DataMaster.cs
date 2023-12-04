@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using TMPro;
 public class DataMaster : MonoBehaviour
 {
     DateTime currentDate;
@@ -9,6 +10,9 @@ public class DataMaster : MonoBehaviour
     RocketUpdate rocketTakeOffTime;
     double time;
 
+    [Header("GameObjects")]
+    [SerializeField] TextMeshProUGUI MoneyMadeOffline;
+
     [Header("DeletePlayerPrefs")]
     [SerializeField] bool sysString;
     [SerializeField] bool MoneyPerSecond;
@@ -16,6 +20,11 @@ public class DataMaster : MonoBehaviour
     [SerializeField] bool Level_takeOffTime;
     [SerializeField] bool Level_Main_Building;
     [SerializeField] bool Level_Rocketstation;
+
+    private void Awake()
+    {
+        
+    }
     void Start()
     {
 
@@ -53,6 +62,9 @@ public class DataMaster : MonoBehaviour
 
         if (PlayerPrefs.HasKey("sysString") && PlayerPrefs.HasKey("MoneyPerSecond"))
         {
+            float MoneyMadeOfflinefloat;
+            MoneyMadeOfflinefloat = ((float)time * PlayerPrefs.GetFloat("MoneyPerSecond")) / 10;
+            MoneyMadeOffline.text = MoneyMadeOfflinefloat.ToString();
             moneyManager_cs.money = moneyManager_cs.money + (((float)time * PlayerPrefs.GetFloat("MoneyPerSecond")) / 10);
             Debug.Log(moneyManager_cs.money);
         }

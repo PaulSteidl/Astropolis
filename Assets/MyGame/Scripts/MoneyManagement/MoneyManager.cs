@@ -22,6 +22,7 @@ public class MoneyManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI moneyText, moneyPerSecText;
 
+
     private void Awake()
     {
         money = PlayerPrefs.GetFloat("Money");

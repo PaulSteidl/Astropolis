@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interface : MonoBehaviour
 {
-    [SerializeField] GameObject restaurant, rocket;
+    [SerializeField] GameObject restaurant, rocket, MoneyMadeOffline;
     [SerializeField] Restaurant restaurantCS;
     [SerializeField] Rocket rocketCS;
 
@@ -22,6 +22,10 @@ public class Interface : MonoBehaviour
     public void RestaurantOff()
     {
         restaurant.SetActive(false);
+    }
+    public void MoneyMadeOfflineSwitch()
+    {
+        MoneyMadeOffline.SetActive(false);
     }
     public void RestaurantUpgrade()
     {
