@@ -5968,20 +5968,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Money
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: sysString
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: MoneyPerSecond
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: MoneyMadeOffline
       value: 
       objectReference: {fileID: 2076761658}
+    - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
+      propertyPath: Level_takeOffTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
+      propertyPath: Level_Main_Building
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
+      propertyPath: Level_Rocketstation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6056885761462704651, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: m_Name
       value: Main Camera
