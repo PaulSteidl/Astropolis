@@ -1527,8 +1527,8 @@ MonoBehaviour:
   rocketManagerCS: {fileID: 0}
   moneyManagerCS: {fileID: 0}
   rocketCS: {fileID: 0}
-  updateCostText: {fileID: 0}
-  incomeText: {fileID: 0}
+  updateCostText: {fileID: 2037614502}
+  incomeText: {fileID: 2035855839}
   nextIncomeText: {fileID: 0}
   formatCS: {fileID: 0}
 --- !u!114 &437303795
@@ -1585,7 +1585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &524327232
 RectTransform:
   m_ObjectHideFlags: 0
