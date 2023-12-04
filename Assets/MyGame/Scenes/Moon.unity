@@ -2047,7 +2047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be104c4de3a43e54394ba0fc20f52999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 10
+  money: 15
   moneyPerSecond: 5
   moneyMultiplyer: 1
   rocketIncomePerSecond: 0
