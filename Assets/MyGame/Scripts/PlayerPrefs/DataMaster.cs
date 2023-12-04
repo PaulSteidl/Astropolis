@@ -27,7 +27,7 @@ public class DataMaster : MonoBehaviour
     }
     void Start()
     {
-
+        MoneyMadeOffline.gameObject.SetActive(true);
         moneyManager_cs = GameObject.FindObjectOfType<MoneyManager>();
         rocketTakeOffTime = GameObject.FindObjectOfType<RocketUpdate>();
 
