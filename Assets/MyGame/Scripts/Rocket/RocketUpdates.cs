@@ -183,9 +183,9 @@ public class RocketUpdate : MonoBehaviour
         MoneyCostText.text = formatCS.Shorten_number(moneyUpdateCost);
         MoneyIncomeText.text = formatCS.Shorten_number(moneyUpdateIncome);
 
-        MoneyCostText.text = formatCS.Shorten_number(peopleUpdateCost);
+        PeopleCostText.text = formatCS.Shorten_number(peopleUpdateCost);
         Debug.Log(peopleLevel);
-        MoneyIncomeText.text = formatCS.Shorten_number(peopleUpdateNumber[peopleLevel]);
+        PeopleIncomeText.text = formatCS.Shorten_number(peopleUpdateNumber[peopleLevel]);
         
 
 
