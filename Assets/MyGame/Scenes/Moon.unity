@@ -1912,8 +1912,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c63329afbd9eb04991d5b21ad818609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyUpdateIncome: 0
-  moneyUpdateCost: 0
+  moneyUpdateIncome: 10
+  moneyUpdateCost: 10
   moneyLevel: 0
   peopleUpdateNumber: []
   peopleUpdateCost: 0
@@ -1995,7 +1995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &524327232
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2916,7 +2916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be104c4de3a43e54394ba0fc20f52999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 15
+  money: 1000
   moneyPerSecond: 5
   moneyMultiplyer: 1
   rocketIncomePerSecond: 0
