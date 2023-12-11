@@ -6,8 +6,11 @@ public class DataMaster : MonoBehaviour
 {
     DateTime currentDate;
     DateTime oldDate;
+
     MoneyManager moneyManager_cs;
     RocketUpdate rocketTakeOffTime;
+    Restaurant Restaurant_cs;
+
     double time;
 
     [Header("GameObjects")]
@@ -20,6 +23,7 @@ public class DataMaster : MonoBehaviour
     [SerializeField] bool Level_takeOffTime;
     [SerializeField] bool Level_Main_Building;
     [SerializeField] bool Level_Rocketstation;
+    [SerializeField] bool Level_Restaurant;
 
     private void Awake()
     {
@@ -30,6 +34,7 @@ public class DataMaster : MonoBehaviour
         MoneyMadeOffline.gameObject.SetActive(true);
         moneyManager_cs = GameObject.FindObjectOfType<MoneyManager>();
         rocketTakeOffTime = GameObject.FindObjectOfType<RocketUpdate>();
+        Restaurant_cs = GameObject.FindAnyObjectByType<Restaurant>();
 
         if (!sysString)
         {
@@ -42,6 +47,19 @@ public class DataMaster : MonoBehaviour
         if (!Money)
         {
             PlayerPrefs.DeleteKey("Money");
+        }
+        if (!Level_Restaurant)
+        {
+            PlayerPrefs.DeleteKey("RestaurantLevel");
+        }
+
+
+
+
+        if (PlayerPrefs.HasKey("RestaurantLevel") && PlayerPrefs.GetInt("RestaurantLevel") != 0)       
+        {
+            Restaurant_cs.restaurantLevel = PlayerPrefs.GetInt("RestaurantLevel") - 1;
+            Restaurant_cs.LevelUpdate();
         }
 
         if (PlayerPrefs.HasKey("sysString"))
@@ -57,7 +75,6 @@ public class DataMaster : MonoBehaviour
             TimeSpan difference = currentDate.Subtract(oldDate);
             print("Difference: " + difference);
             time = difference.TotalSeconds;
-            Debug.Log(time);
         }
 
         if (PlayerPrefs.HasKey("sysString") && PlayerPrefs.HasKey("MoneyPerSecond"))
@@ -66,7 +83,6 @@ public class DataMaster : MonoBehaviour
             MoneyMadeOfflinefloat = ((float)time * PlayerPrefs.GetFloat("MoneyPerSecond")) / 10;
             MoneyMadeOffline.text = MoneyMadeOfflinefloat.ToString();
             moneyManager_cs.money = moneyManager_cs.money + (((float)time * PlayerPrefs.GetFloat("MoneyPerSecond")) / 10);
-            Debug.Log(moneyManager_cs.money);
         }
     }
     void OnApplicationQuit()
@@ -93,6 +109,11 @@ public class DataMaster : MonoBehaviour
         {
             //Save the current Money as a float in the player prefs class
             PlayerPrefs.SetInt("RocketTakeOffTime", rocketTakeOffTime.takeOffLevel);
+        }
+        if (Level_Restaurant)
+        {
+            //Save the current Money as a float in the player prefs class
+            PlayerPrefs.SetInt("RestaurantLevel", Restaurant_cs.restaurantLevel);
         }
     }
 
