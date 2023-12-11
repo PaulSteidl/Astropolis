@@ -64,7 +64,7 @@ public class DataMaster : MonoBehaviour
 
         if (PlayerPrefs.HasKey("RestaurantLevel") && PlayerPrefs.GetInt("RestaurantLevel") != 0)       
         {
-            Restaurant_cs.restaurantLevel = PlayerPrefs.GetInt("RestaurantLevel") - 1;
+            Restaurant_cs.restaurantLevel = PlayerPrefs.GetInt("RestaurantLevel");
             Restaurant_cs.LevelUpdate();
         }
 
@@ -92,6 +92,7 @@ public class DataMaster : MonoBehaviour
             moneyManager_cs.money = moneyManager_cs.money + (((float)time * PlayerPrefs.GetFloat("MoneyPerSecond")) / 10);
         }
     }
+
     void OnApplicationQuit()
     {
         if (sysString)

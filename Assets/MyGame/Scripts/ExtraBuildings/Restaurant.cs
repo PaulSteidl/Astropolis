@@ -49,7 +49,7 @@ public class Restaurant : MonoBehaviour
 
     public void LevelUpdate()
     {
-        
+        moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
         updateCost = MoneyUpdateCost();
         updateIncome = MoneyUpdateIncome();
         moneyManagerCS.RestaurantIncomePerSecond = updateIncome;
