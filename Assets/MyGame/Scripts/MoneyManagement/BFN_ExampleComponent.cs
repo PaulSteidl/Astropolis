@@ -43,34 +43,43 @@ public class BFN_ExampleComponent : MonoBehaviour
 	 
 	public string Shorten_number (float a)
 	{
-		float b = 0;
-		BFN result;
-		string _resultString;
-        switch (_operator)
+		if (a != 0)
+		{
+
+
+			float b = 0;
+			BFN result;
+			string _resultString;
+			switch (_operator)
+			{
+				case OP.Add: result = (BFN)a + b; break;
+				case OP.Subtract: result = (BFN)a - b; break;
+				case OP.Multiply: result = (BFN)a * b; break;
+				case OP.Divide: result = (BFN)a / b; break;
+				default: throw new System.NotImplementedException();
+			}
+
+			_resultString = result.ToString();
+
+			// Debug.Log(_resultString);
+
+			if (_resultString.Contains(","))
+			{
+				int commaIndex = _resultString.IndexOf(",");
+
+				if (commaIndex != -1 && commaIndex + 3 < _resultString.Length)
+				{
+					int removalLength = _resultString.Length - (commaIndex + 3);
+					_resultString = _resultString.Remove(commaIndex + 3, removalLength - 2);
+				}
+			}
+
+			return _resultString;
+		}
+        else
         {
-            case OP.Add: result = (BFN)a + b; break;
-            case OP.Subtract: result = (BFN)a - b; break;
-            case OP.Multiply: result = (BFN)a * b; break;
-            case OP.Divide: result = (BFN)a / b; break;
-            default: throw new System.NotImplementedException();
+			return "0";
         }
-
-		_resultString = result.ToString();
-
-		// Debug.Log(_resultString);
-
-        if (_resultString.Contains(","))
-        {
-            int commaIndex = _resultString.IndexOf(",");
-
-            if (commaIndex != -1 && commaIndex + 3 < _resultString.Length)
-            {
-                int removalLength = _resultString.Length - (commaIndex + 3);
-                _resultString = _resultString.Remove(commaIndex + 3, removalLength - 2);
-            }
-        }
-
-        return _resultString;
 	}
 
 }

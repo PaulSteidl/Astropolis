@@ -10,25 +10,25 @@ public class RocketUpdate : MonoBehaviour
     [Header("MoneyPerPerson")]
     public float moneyUpdateIncome;
     public float moneyUpdateCost;  
-    public int moneyLevel = -1;
+    public int moneyLevel = 0;
     [Space(40)]
 
     [Header("peoplePerRocket")]
     public float[] peopleUpdateNumber;
     public float peopleUpdateCost;
-    public int peopleLevel = -1;
+    public int peopleLevel = 0;
     [Space(40)]
 
     [Header("rocketComebackTime")]
     public float[] comebackTime;
     public float comebackCost;
-    public int comebackLevel = -1;
+    public int comebackLevel = 0;
     [Space(40)]
 
     [Header("rocketTakeOffTime")]
     public float takeOffTime;
     public float takeOffCost;
-    public int takeOffLevel = -1;
+    public int takeOffLevel = 0;
     [Space(40)]
 
 
@@ -36,7 +36,7 @@ public class RocketUpdate : MonoBehaviour
     [SerializeField] MoneyManager moneyManagerCS;
     [SerializeField] Rocket rocketCS;
 
-    [SerializeField] TextMeshProUGUI updateCostText, incomeText, nextIncomeText;
+    [SerializeField] TextMeshProUGUI MoneyCostText, MoneyIncomeText, PeopleCostText, PeopleIncomeText, ComeBackCostText, ComeBackIncomeText, TakeOffCostText, TakeOffIncomeText;
     [SerializeField] BFN_ExampleComponent formatCS;
 
     private void Start()
@@ -117,6 +117,7 @@ public class RocketUpdate : MonoBehaviour
             peopleLevel += 1;
             PeopleUpdateCost();
             rocketCS.peoplePerRocket = peopleUpdateNumber[peopleLevel];
+            UpdateInterface();
         }
     }
     public void PeopleUpdateCost()
@@ -137,6 +138,7 @@ public class RocketUpdate : MonoBehaviour
             comebackLevel += 1;
             ComebackCost();
             rocketCS.rocketComebackTime = comebackTime[comebackLevel];
+            UpdateInterface();
         }
     }
     public void ComebackCost()
@@ -157,6 +159,7 @@ public class RocketUpdate : MonoBehaviour
             TakeOffCost();
             TakeOffTime();
             rocketCS.rocketTakeOffTime = takeOffTime;
+            UpdateInterface();
         }
     }
     public void TakeOffCost()
@@ -177,12 +180,16 @@ public class RocketUpdate : MonoBehaviour
 
     public void UpdateInterface()
     {
-        Debug.Log(moneyUpdateCost);
-        Debug.Log(moneyUpdateIncome);
-        updateCostText.text = formatCS.Shorten_number(moneyUpdateCost);
-        incomeText.text = formatCS.Shorten_number(moneyUpdateIncome);
-        Debug.Log(moneyUpdateCost);
-        Debug.Log(moneyUpdateIncome);
+        MoneyCostText.text = formatCS.Shorten_number(moneyUpdateCost);
+        MoneyIncomeText.text = formatCS.Shorten_number(moneyUpdateIncome);
+
+        //MoneyCostText.text = formatCS.Shorten_number(peopleUpdateCost);
+        Debug.Log(peopleLevel);
+       // MoneyIncomeText.text = formatCS.Shorten_number(peopleUpdateNumber[peopleLevel]);
+        
+
+
+
     }
 }
 
