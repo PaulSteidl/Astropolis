@@ -84,6 +84,7 @@ public class RocketUpdate : MonoBehaviour
     {
         Debug.Log("jo");
         rocketManagerCS.UpdateIncomePerSec(); //aktuaisiert anzeige
+        
 
         if (moneyManagerCS.money >= moneyUpdateCost)        //wenn genug geld am konto ist
         {
@@ -92,6 +93,7 @@ public class RocketUpdate : MonoBehaviour
             MoneyUpdateCost();
             MoneyUpdateIncome();
             rocketCS.moneyPerPerson = moneyUpdateIncome;
+            UpdateInterface();
         }
     }
 
@@ -107,7 +109,7 @@ public class RocketUpdate : MonoBehaviour
 
     public void PeopleUpgrade()
     {
-        rocketManagerCS.UpdateIncomePerSec(); //aktuaisiert anzeige
+        rocketManagerCS.UpdateIncomePerSec(); //aktuaisiert anzeige per sec
 
         if (moneyManagerCS.money >= peopleUpdateCost)        //wenn genug geld am konto ist
         {
@@ -160,10 +162,12 @@ public class RocketUpdate : MonoBehaviour
     public void TakeOffCost()
     {
         takeOffCost = 100 * Mathf.Pow(1.17f, takeOffLevel);
+       
     }
     public void TakeOffTime()
     {
         takeOffTime = 40 * Mathf.Pow(0.97f, takeOffLevel);
+
     }
 
 
@@ -173,8 +177,12 @@ public class RocketUpdate : MonoBehaviour
 
     public void UpdateInterface()
     {
+        Debug.Log(moneyUpdateCost);
+        Debug.Log(moneyUpdateIncome);
         updateCostText.text = formatCS.Shorten_number(moneyUpdateCost);
         incomeText.text = formatCS.Shorten_number(moneyUpdateIncome);
+        Debug.Log(moneyUpdateCost);
+        Debug.Log(moneyUpdateIncome);
     }
 }
 
