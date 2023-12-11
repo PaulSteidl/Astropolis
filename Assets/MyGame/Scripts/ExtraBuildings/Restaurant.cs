@@ -20,6 +20,7 @@ public class Restaurant : MonoBehaviour
         moneyManagerCS = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
         InvokeRepeating("RestaurantMoney", 1, 1);
         formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
+        
     }
 
     private void Update()
@@ -41,14 +42,19 @@ public class Restaurant : MonoBehaviour
         if (moneyManagerCS.money >= updateCost)        //wenn genug geld am konto ist
         {
             moneyManagerCS.money -= updateCost;
-            restaurantLevel += 1;
-            updateCost = MoneyUpdateCost();
-            updateIncome = MoneyUpdateIncome();
-            moneyManagerCS.RestaurantIncomePerSecond = updateIncome;
-            moneyManagerCS.UpdateMoneyPerSecond();
-            NextUpdateIncome();
-            UpdateInterface();
+            LevelUpdate();
         }
+    }
+
+    public void LevelUpdate()
+    {
+        restaurantLevel += 1;
+        updateCost = MoneyUpdateCost();
+        updateIncome = MoneyUpdateIncome();
+        moneyManagerCS.RestaurantIncomePerSecond = updateIncome;
+        moneyManagerCS.UpdateMoneyPerSecond();
+        NextUpdateIncome();
+        UpdateInterface();
     }
 
     public float MoneyUpdateCost()
