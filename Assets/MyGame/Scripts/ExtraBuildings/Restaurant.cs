@@ -42,13 +42,14 @@ public class Restaurant : MonoBehaviour
         if (moneyManagerCS.money >= updateCost)        //wenn genug geld am konto ist
         {
             moneyManagerCS.money -= updateCost;
+            restaurantLevel += 1;
             LevelUpdate();
         }
     }
 
     public void LevelUpdate()
     {
-        restaurantLevel += 1;
+        
         updateCost = MoneyUpdateCost();
         updateIncome = MoneyUpdateIncome();
         moneyManagerCS.RestaurantIncomePerSecond = updateIncome;
