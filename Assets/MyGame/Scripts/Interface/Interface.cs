@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 
 public class Interface : MonoBehaviour
 {
-    [SerializeField] GameObject restaurant, rocket, MoneyMadeOffline;
+    public GameObject MoneyMadeOffline;
+    [SerializeField] GameObject restaurant, rocket;
     [SerializeField] Restaurant restaurantCS;
     [SerializeField] Rocket rocketCS;
     [SerializeField] RocketUpdate rocketUpdateCS;
@@ -14,7 +16,10 @@ public class Interface : MonoBehaviour
         restaurantCS = GameObject.FindAnyObjectByType<Restaurant>();
         rocketCS = GameObject.FindAnyObjectByType<Rocket>();
         rocketUpdateCS = GameObject.FindAnyObjectByType<RocketUpdate>();
-
+        if (PlayerPrefs.HasKey("sysString") && PlayerPrefs.HasKey("MoneyPerSecond") && PlayerPrefs.GetInt("FirstStartup") == 1)
+        {
+            MoneyMadeOfflineSwitch();
+        }
     }
 
     public void RestaurantOn()
@@ -28,7 +33,7 @@ public class Interface : MonoBehaviour
     }
     public void MoneyMadeOfflineSwitch()
     {
-        MoneyMadeOffline.SetActive(false);
+        MoneyMadeOffline.SetActive(!MoneyMadeOffline.gameObject.activeSelf);
     }
    
     

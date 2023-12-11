@@ -10,6 +10,7 @@ public class DataMaster : MonoBehaviour
     MoneyManager moneyManager_cs;
     RocketUpdate rocketTakeOffTime;
     Restaurant Restaurant_cs;
+    Interface InterfaceManager_cs;
 
     double time;
 
@@ -17,6 +18,7 @@ public class DataMaster : MonoBehaviour
     [SerializeField] TextMeshProUGUI MoneyMadeOffline;
 
     [Header("DeletePlayerPrefs")]
+    [SerializeField] bool FirstStartup;
     [SerializeField] bool sysString;
     [SerializeField] bool MoneyPerSecond;
     [SerializeField] bool Money;
@@ -52,6 +54,10 @@ public class DataMaster : MonoBehaviour
         {
             PlayerPrefs.DeleteKey("RestaurantLevel");
         }
+        if (!FirstStartup)
+        {
+            PlayerPrefs.SetInt("FirstStartup", 0);
+        }
 
 
 
@@ -77,7 +83,8 @@ public class DataMaster : MonoBehaviour
             time = difference.TotalSeconds;
         }
 
-        if (PlayerPrefs.HasKey("sysString") && PlayerPrefs.HasKey("MoneyPerSecond"))
+
+        if (PlayerPrefs.HasKey("sysString") && PlayerPrefs.HasKey("MoneyPerSecond") && PlayerPrefs.GetInt("FirstStartup") == 1)
         {
             float MoneyMadeOfflinefloat;
             MoneyMadeOfflinefloat = ((float)time * PlayerPrefs.GetFloat("MoneyPerSecond")) / 10;
@@ -114,6 +121,10 @@ public class DataMaster : MonoBehaviour
         {
             //Save the current Money as a float in the player prefs class
             PlayerPrefs.SetInt("RestaurantLevel", Restaurant_cs.restaurantLevel);
+        }
+        if (FirstStartup)
+        {
+            PlayerPrefs.SetInt("FirstStartup", 1);
         }
     }
 

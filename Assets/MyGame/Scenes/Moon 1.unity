@@ -5747,9 +5747,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 911090d886cc0a744bfb2c9c62ee1fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoneyMadeOffline: {fileID: 1686210341}
   restaurant: {fileID: 2026133249}
   rocket: {fileID: 524327231}
-  MoneyMadeOffline: {fileID: 1686210341}
   restaurantCS: {fileID: 25873220}
   rocketCS: {fileID: 437303796}
   rocketUpdateCS: {fileID: 0}
@@ -6306,7 +6306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1686210342
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8475,19 +8475,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Money
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: sysString
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
+      propertyPath: FirstStartup
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: MoneyPerSecond
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Level_Restaurant
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: MoneyMadeOffline
@@ -8495,15 +8499,15 @@ PrefabInstance:
       objectReference: {fileID: 2076761658}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Level_takeOffTime
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Level_Main_Building
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Level_Rocketstation
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6056885761462704651, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: m_Name

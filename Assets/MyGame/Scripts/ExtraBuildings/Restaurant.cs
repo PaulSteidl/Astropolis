@@ -17,7 +17,7 @@ public class Restaurant : MonoBehaviour
     MoneyManager moneyManagerCS;
     void Start()
     {
-        moneyManagerCS = GameObject.Find("MoneyManager").GetComponent<MoneyManager>();
+        moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
         InvokeRepeating("RestaurantMoney", 1, 1);
         formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
         
