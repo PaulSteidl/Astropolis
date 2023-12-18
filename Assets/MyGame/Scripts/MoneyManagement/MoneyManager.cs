@@ -22,9 +22,13 @@ public class MoneyManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI moneyText, moneyPerSecText;
 
-    void Awake()
+
+    private void Awake()
     {
         money = PlayerPrefs.GetFloat("Money");
+    }
+    void Start()
+    {
         rocketManagerCS = GameObject.FindObjectOfType<RocketManager>();
         formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
         moneyMultiplyer = GameObject.FindAnyObjectByType<MoneyMultiplyer>().amount;

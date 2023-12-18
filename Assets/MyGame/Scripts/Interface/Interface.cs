@@ -11,7 +11,7 @@ public class Interface : MonoBehaviour
     [SerializeField] Rocket rocketCS;
     [SerializeField] RocketUpdate rocketUpdateCS;
 
-    void Awake()
+    void Start()
     {
         restaurantCS = GameObject.FindAnyObjectByType<Restaurant>();
         rocketCS = GameObject.FindAnyObjectByType<Rocket>();

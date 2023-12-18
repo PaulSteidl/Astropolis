@@ -18,7 +18,7 @@ public class CameraManager : MonoBehaviour
     [SerializeField] float _MovementSpeed = 10.0f;
 
 
-    private void Awake()
+    private void Start()
     {
 		self = gameObject;
     }
