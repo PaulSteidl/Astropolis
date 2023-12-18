@@ -97,6 +97,7 @@ public class DataMaster : MonoBehaviour
             {
                 RocketUpdatesCS.peopleLevel = PlayerPrefs.GetInt("RPeopleLevel"); //stellt die Level ein
                 RocketUpdatesCS.LevelUpdate();
+                Debug.Log("level");
             }
 
         }
@@ -161,11 +162,14 @@ public class DataMaster : MonoBehaviour
             //Save the current Money as a float in the player prefs class
             PlayerPrefs.SetInt("RocketTakeOffTime", rocketTakeOffTime.takeOffLevel);
         }
+       
+        
         if (Level_Restaurant)
         {
             //Save the current Money as a float in the player prefs class
             PlayerPrefs.SetInt("RestaurantLevel", Restaurant_cs.restaurantLevel);
         }
+       
         if (RLevelMoney)
         {
             
