@@ -39,7 +39,7 @@ public class RocketUpdate : MonoBehaviour
     [SerializeField] TextMeshProUGUI MoneyCostText, MoneyIncomeText, PeopleCostText, PeopleIncomeText, ComeBackCostText, ComeBackIncomeText, TakeOffCostText, TakeOffIncomeText;
     [SerializeField] BFN_ExampleComponent formatCS;
 
-    private void Start()
+    private void Awake()
     {
         rocketManagerCS = GameObject.FindObjectOfType<RocketManager>();
         moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();

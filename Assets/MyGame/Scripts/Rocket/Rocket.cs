@@ -17,7 +17,7 @@ public class Rocket : MonoBehaviour
     [SerializeField] bool rocketStarted;
     [SerializeField] RocketManager rocketManagerCS;
 
-    void Start()
+    void Awake()
     {
         StartCoroutine("TakeOff");
         timeUntilTakeOff = rocketTakeOffTime;

@@ -27,11 +27,7 @@ public class DataMaster : MonoBehaviour
     [SerializeField] bool Level_Rocketstation;
     [SerializeField] bool Level_Restaurant;
 
-    private void Awake()
-    {
-        
-    }
-    void Start()
+    void Awake()
     {
         MoneyMadeOffline.gameObject.SetActive(true);
         moneyManager_cs = GameObject.FindObjectOfType<MoneyManager>();

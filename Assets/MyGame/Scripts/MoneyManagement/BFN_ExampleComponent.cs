@@ -34,7 +34,7 @@ public class BFN_ExampleComponent : MonoBehaviour
     }
 	#endif
 	
-	void Start ()
+	void Awake ()
 	{
 		_moneyManager = GameObject.FindObjectOfType<MoneyManager>();		
 		Debug.Log($"{_a} {_operator} {_b} = {_result}");

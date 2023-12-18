@@ -11,7 +11,7 @@ public class RocketManager : MonoBehaviour
     [SerializeField] Rocket rocketCS;
     [SerializeField] MoneyManager moneyManagerCS;
 
-    private void Start()
+    private void Awake()
     {
         rocketCS = GameObject.FindObjectOfType<Rocket>();
         moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
