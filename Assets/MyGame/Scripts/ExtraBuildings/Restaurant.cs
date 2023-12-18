@@ -15,7 +15,7 @@ public class Restaurant : MonoBehaviour
 
 
     MoneyManager moneyManagerCS;
-    void Start()
+    void Awake()
     {
         moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
         InvokeRepeating("RestaurantMoney", 1, 1);
