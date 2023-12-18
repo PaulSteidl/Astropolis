@@ -198,7 +198,10 @@ public class RocketUpdate : MonoBehaviour
 
     public void LevelUpdate()
     {
-
+        MoneyUpdateCost();
+        MoneyUpdateIncome();
+        
+        //UpdateInterface();
     }
 }
 

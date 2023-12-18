@@ -144,6 +144,11 @@ public class DataMaster : MonoBehaviour
             //Save the current Money as a float in the player prefs class
             PlayerPrefs.SetInt("RestaurantLevel", Restaurant_cs.restaurantLevel);
         }
+        if (Level_Rocketstation)
+        {
+            //Save the current Money as a float in the player prefs class
+            PlayerPrefs.SetInt("RMoneyLevel", RocketUpdatesCS.moneyLevel);
+        }
         if (FirstStartup)
         {
             PlayerPrefs.SetInt("FirstStartup", 1);
