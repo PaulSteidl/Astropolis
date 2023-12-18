@@ -10,6 +10,7 @@ public class DataMaster : MonoBehaviour
     MoneyManager moneyManager_cs;
     RocketUpdate rocketTakeOffTime;
     Restaurant Restaurant_cs;
+    RocketUpdate RocketUpdatesCS;
     Interface InterfaceManager_cs;
 
     double time;
@@ -37,6 +38,7 @@ public class DataMaster : MonoBehaviour
         moneyManager_cs = GameObject.FindObjectOfType<MoneyManager>();
         rocketTakeOffTime = GameObject.FindObjectOfType<RocketUpdate>();
         Restaurant_cs = GameObject.FindAnyObjectByType<Restaurant>();
+        RocketUpdatesCS = GameObject.FindAnyObjectByType<RocketUpdate>();
 
         if (!sysString)
         {
@@ -58,6 +60,8 @@ public class DataMaster : MonoBehaviour
         {
             PlayerPrefs.SetInt("FirstStartup", 0);
         }
+        
+
 
 
 
@@ -67,6 +71,23 @@ public class DataMaster : MonoBehaviour
             Restaurant_cs.restaurantLevel = PlayerPrefs.GetInt("RestaurantLevel");
             Restaurant_cs.LevelUpdate();
         }
+
+
+
+
+        if (Level_Rocketstation)
+        {
+            if (PlayerPrefs.HasKey("RMoneyLevel") && PlayerPrefs.GetInt("RMoneyLevel") != 0)
+            {
+                RocketUpdatesCS.moneyLevel = PlayerPrefs.GetInt("RMoneyLevel");
+                RocketUpdatesCS.LevelUpdate();
+            }
+            
+        }
+
+
+
+
 
         if (PlayerPrefs.HasKey("sysString"))
         {

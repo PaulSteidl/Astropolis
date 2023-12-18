@@ -195,5 +195,10 @@ public class RocketUpdate : MonoBehaviour
 
 
     }
+
+    public void LevelUpdate()
+    {
+
+    }
 }
 
