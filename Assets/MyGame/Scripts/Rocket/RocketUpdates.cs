@@ -45,6 +45,10 @@ public class RocketUpdate : MonoBehaviour
         moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
         rocketCS = GameObject.FindObjectOfType<Rocket>();
         formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
+
+
+        UpdateInterface();
+        rocketManagerCS.UpdateIncomePerSec();
     }
     
     void Update()
