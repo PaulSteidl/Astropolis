@@ -200,8 +200,8 @@ public class RocketUpdate : MonoBehaviour
     {
         MoneyUpdateCost();
         MoneyUpdateIncome();
-        
-        //UpdateInterface();
+
+        PeopleUpdateCost();
     }
 }
 

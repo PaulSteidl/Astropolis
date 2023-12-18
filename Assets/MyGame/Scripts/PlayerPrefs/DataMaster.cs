@@ -25,7 +25,9 @@ public class DataMaster : MonoBehaviour
     [SerializeField] bool Money;
     [SerializeField] bool Level_takeOffTime;
     [SerializeField] bool Level_Main_Building;
-    [SerializeField] bool Level_Rocketstation;
+    [SerializeField] bool RLevelMoney;
+    [SerializeField] bool RLevelPeople;
+
     [SerializeField] bool Level_Restaurant;
 
     private void Awake()
@@ -75,15 +77,35 @@ public class DataMaster : MonoBehaviour
 
 
 
-        if (Level_Rocketstation)
+        if (RLevelMoney)
         {
             if (PlayerPrefs.HasKey("RMoneyLevel") && PlayerPrefs.GetInt("RMoneyLevel") != 0)
             {
-                RocketUpdatesCS.moneyLevel = PlayerPrefs.GetInt("RMoneyLevel");
+                RocketUpdatesCS.moneyLevel = PlayerPrefs.GetInt("RMoneyLevel"); //stellt die Level ein
                 RocketUpdatesCS.LevelUpdate();
             }
             
         }
+        else
+        {
+            PlayerPrefs.SetInt("RMoneyLevel", 0);
+        }
+
+        if (RLevelPeople)
+        {
+            if (PlayerPrefs.HasKey("RPeopleLevel") && PlayerPrefs.GetInt("RPeopleLevel") != 0)
+            {
+                RocketUpdatesCS.peopleLevel = PlayerPrefs.GetInt("RPeopleLevel"); //stellt die Level ein
+                RocketUpdatesCS.LevelUpdate();
+            }
+
+        }
+        else
+        {
+            PlayerPrefs.SetInt("RPeopleLevel", 0);
+        }
+
+
 
 
 
@@ -144,10 +166,14 @@ public class DataMaster : MonoBehaviour
             //Save the current Money as a float in the player prefs class
             PlayerPrefs.SetInt("RestaurantLevel", Restaurant_cs.restaurantLevel);
         }
-        if (Level_Rocketstation)
+        if (RLevelMoney)
         {
-            //Save the current Money as a float in the player prefs class
+            
             PlayerPrefs.SetInt("RMoneyLevel", RocketUpdatesCS.moneyLevel);
+        }
+        if (RLevelPeople)
+        {
+            PlayerPrefs.SetInt("RPeopleLevel", RocketUpdatesCS.peopleLevel);
         }
         if (FirstStartup)
         {
