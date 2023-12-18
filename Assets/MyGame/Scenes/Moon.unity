@@ -3105,7 +3105,7 @@ MonoBehaviour:
   rocketIncomePerSecond: 0
   RestaurantIncomePerSecond: 0
   rocketManagerCS: {fileID: 0}
-  formatCS: {fileID: 0}
+  formatCS: {fileID: 811724720}
   moneyText: {fileID: 1716810199}
   moneyPerSecText: {fileID: 1498662213}
 --- !u!4 &811724719

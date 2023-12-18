@@ -87,9 +87,9 @@ public class DataMaster : MonoBehaviour
         if (PlayerPrefs.HasKey("sysString") && PlayerPrefs.HasKey("MoneyPerSecond") && PlayerPrefs.GetInt("FirstStartup") == 1)
         {
             float MoneyMadeOfflinefloat;
-            MoneyMadeOfflinefloat = ((float)time * PlayerPrefs.GetFloat("MoneyPerSecond")) / 10;
+            MoneyMadeOfflinefloat = ((float)time / 10) * PlayerPrefs.GetFloat("MoneyPerSecond");
             MoneyMadeOffline.text = MoneyMadeOfflinefloat.ToString();
-            moneyManager_cs.money = moneyManager_cs.money + (((float)time * PlayerPrefs.GetFloat("MoneyPerSecond")) / 10);
+            moneyManager_cs.money = moneyManager_cs.money + (((float)time /10) * PlayerPrefs.GetFloat("MoneyPerSecond"));
         }
     }
 
