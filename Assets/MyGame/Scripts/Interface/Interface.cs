@@ -5,14 +5,16 @@ using UnityEngine;
 public class Interface : MonoBehaviour
 {
     public GameObject MoneyMadeOffline;
-    [SerializeField] GameObject restaurant, rocket;
+    [SerializeField] GameObject restaurant, rocket, mine;
     [SerializeField] Restaurant restaurantCS;
+    [SerializeField] Mine mineCS;
     [SerializeField] Rocket rocketCS;
     [SerializeField] RocketUpdate rocketUpdateCS;
 
     void Start()
     {
         restaurantCS = GameObject.FindAnyObjectByType<Restaurant>();
+        mineCS = GameObject.FindAnyObjectByType<Mine>();
         rocketCS = GameObject.FindAnyObjectByType<Rocket>();
         rocketUpdateCS = GameObject.FindAnyObjectByType<RocketUpdate>();
         if (PlayerPrefs.HasKey("sysString") && PlayerPrefs.HasKey("MoneyPerSecond") && PlayerPrefs.GetInt("FirstStartup") == 1)
@@ -26,10 +28,23 @@ public class Interface : MonoBehaviour
         restaurant.SetActive(true);
         restaurantCS.UpdateInterface();
     }
+
+    
     public void RestaurantOff()
     {
         restaurant.SetActive(false);
     }
+
+    public void MineOn()
+    {
+        mine.SetActive(true);
+        mineCS.UpdateInterface();
+    }
+    public void MineOff()
+    {
+        mine.SetActive(false);
+    }
+
     public void MoneyMadeOfflineSwitch()
     {
         MoneyMadeOffline.SetActive(!MoneyMadeOffline.gameObject.activeSelf);
