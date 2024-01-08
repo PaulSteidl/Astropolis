@@ -190,9 +190,12 @@ public class RocketUpdate : MonoBehaviour
         PeopleCostText.text = formatCS.Shorten_number(peopleUpdateCost);
         Debug.Log(peopleLevel);
         PeopleIncomeText.text = formatCS.Shorten_number(peopleUpdateNumber[peopleLevel]);
-        
 
+        ComeBackCostText.text = formatCS.Shorten_number(comebackCost);
+        ComeBackIncomeText.text = formatCS.Shorten_number(comebackTime[comebackLevel]);
 
+        TakeOffCostText.text = formatCS.Shorten_number(takeOffCost);
+        TakeOffIncomeText.text = formatCS.Shorten_number(takeOffTime);
 
     }
 
