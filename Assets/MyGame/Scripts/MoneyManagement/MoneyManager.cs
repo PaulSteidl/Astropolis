@@ -9,7 +9,7 @@ public class MoneyManager : MonoBehaviour
     [Space(10)]
     public float money;
     public float moneyPerSecond;
-    public float moneyMultiplyer;
+    public float moneyMultiplier;
 
     [Space(10)]
     public float rocketIncomePerSecond;
@@ -31,7 +31,7 @@ public class MoneyManager : MonoBehaviour
     {
         rocketManagerCS = GameObject.FindObjectOfType<RocketManager>();
         formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
-        moneyMultiplyer = GameObject.FindAnyObjectByType<MoneyMultiplyer>().Multiplier;
+        
     }
 
     private void Update()
@@ -48,13 +48,10 @@ public class MoneyManager : MonoBehaviour
 
     }
 
-    public void Multiplyer()
-    {
-        moneyMultiplyer = GameObject.FindAnyObjectByType<MoneyMultiplyer>().Multiplier;
-    }
+    
 
-    public void AddMoney(float a)
+    public void AddMoney(float a) //wird jedes mal aufgerufen
     {
-        money = money + a * moneyMultiplyer;
+        money = money + a * moneyMultiplier;
     }
 }
