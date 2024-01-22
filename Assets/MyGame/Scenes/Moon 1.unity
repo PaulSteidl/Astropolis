@@ -1927,9 +1927,14 @@ MonoBehaviour:
   rocketManagerCS: {fileID: 0}
   moneyManagerCS: {fileID: 0}
   rocketCS: {fileID: 0}
-  updateCostText: {fileID: 2037614502}
-  incomeText: {fileID: 2035855839}
-  nextIncomeText: {fileID: 0}
+  MoneyCostText: {fileID: 0}
+  MoneyIncomeText: {fileID: 0}
+  PeopleCostText: {fileID: 0}
+  PeopleIncomeText: {fileID: 0}
+  ComeBackCostText: {fileID: 0}
+  ComeBackIncomeText: {fileID: 0}
+  TakeOffCostText: {fileID: 0}
+  TakeOffIncomeText: {fileID: 0}
   formatCS: {fileID: 0}
 --- !u!114 &437303795
 MonoBehaviour:
@@ -5750,7 +5755,9 @@ MonoBehaviour:
   MoneyMadeOffline: {fileID: 1686210341}
   restaurant: {fileID: 2026133249}
   rocket: {fileID: 524327231}
+  mine: {fileID: 0}
   restaurantCS: {fileID: 25873220}
+  mineCS: {fileID: 0}
   rocketCS: {fileID: 437303796}
   rocketUpdateCS: {fileID: 0}
 --- !u!4 &1603285765
@@ -8459,7 +8466,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 505303763728104377, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: m_Antialiasing
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3580778880116630780, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Test

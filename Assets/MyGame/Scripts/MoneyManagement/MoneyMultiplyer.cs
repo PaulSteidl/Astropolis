@@ -5,17 +5,28 @@ using UnityEngine;
 public class MoneyMultiplyer : MonoBehaviour
 {
 
-    public float amount;
+    public float Multiplier;
+    public float rocket_multiplier;
+    public float restaurant_multipier;
+    public float mine_multiplier;
 
-    // Start is called before the first frame update
-    void Start()
+    public void UpdateMultiplyer(float a)
     {
-        
+        Multiplier =+ a;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RocketMultipier(float a)
     {
-        
+        rocket_multiplier =+ a;
+    }
+
+    public void RestaurantMultipier(float a)
+    {
+        restaurant_multipier =+ a;
+    }
+
+    public void MineMultiplier(float a)
+    {
+        mine_multiplier =+ a;
     }
 }
