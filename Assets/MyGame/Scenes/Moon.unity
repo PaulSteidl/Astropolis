@@ -5663,7 +5663,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf167fb3f65bf948a480b5a202b729c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
+  Multiplier: 0
+  rocket_multiplier: 0
+  restaurant_multipier: 0
+  mine_multiplier: 0
 --- !u!1 &847333811
 GameObject:
   m_ObjectHideFlags: 0
@@ -9803,7 +9806,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf167fb3f65bf948a480b5a202b729c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 1
+  Multiplier: 1
+  rocket_multiplier: 1
+  restaurant_multipier: 1
+  mine_multiplier: 1
 --- !u!4 &1518460548 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e863b5537845e5d4d8a746ce9cdc0026, type: 3}
