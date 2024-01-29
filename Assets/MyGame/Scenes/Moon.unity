@@ -385,6 +385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6c3d42a762157ca4cadb3ccaae68d29a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1040,79 +1044,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94426809}
   m_CullTransparentMesh: 1
---- !u!1001 &96004878
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1570775151}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.53967005
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.53967005
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0253731
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -37.406
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -25.249
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_Name
-      value: MoonLandscape2
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 461666861db180b4f9337b573955eae1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 461666861db180b4f9337b573955eae1, type: 3}
 --- !u!1 &100955764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,6 +1241,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 40c997f33e949da4cb3a07795f6bb093, type: 3}
       propertyPath: m_Name
       value: Rocket_Version2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 40c997f33e949da4cb3a07795f6bb093, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2063,7 +1998,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Money x5
+  m_text: Rocket Multiplier
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2209,6 +2144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stamp_1 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e863b5537845e5d4d8a746ce9cdc0026, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2277,6 +2216,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6c3d42a762157ca4cadb3ccaae68d29a, type: 3}
       propertyPath: m_Name
       value: Fence_1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6c3d42a762157ca4cadb3ccaae68d29a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2928,11 +2871,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 357601255}
   m_CullTransparentMesh: 1
---- !u!4 &359258725 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 461666861db180b4f9337b573955eae1, type: 3}
-  m_PrefabInstance: {fileID: 96004878}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &361042581
 GameObject:
   m_ObjectHideFlags: 0
@@ -3145,6 +3083,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e863b5537845e5d4d8a746ce9cdc0026, type: 3}
       propertyPath: m_Name
       value: Stamp_1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e863b5537845e5d4d8a746ce9cdc0026, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3486,6 +3428,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9db40009dd6fe564291d1b1db8438340, type: 3}
       propertyPath: m_Name
       value: Cafe_Version3 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9db40009dd6fe564291d1b1db8438340, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4071,6 +4017,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6c3d42a762157ca4cadb3ccaae68d29a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4342,6 +4292,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 12f25445c174a91429f201b1df3b3584, type: 3}
       propertyPath: m_Name
       value: Antenne_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 12f25445c174a91429f201b1df3b3584, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5065,6 +5019,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stamp_1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e863b5537845e5d4d8a746ce9cdc0026, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5121,6 +5079,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7ddb33cfac5359642a478f172c8d2ffc, type: 3}
       propertyPath: m_Name
       value: WeirdThing_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7ddb33cfac5359642a478f172c8d2ffc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5328,6 +5290,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 6c3d42a762157ca4cadb3ccaae68d29a, type: 3}
       propertyPath: m_Name
       value: Fence_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6c3d42a762157ca4cadb3ccaae68d29a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5550,7 +5516,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 779461331}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1603285764}
+        m_TargetAssemblyTypeName: Interface, Assembly-CSharp
+        m_MethodName: MoneyMultiplierSwitch
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &779461331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5604,9 +5582,18 @@ MonoBehaviour:
   moneyMulti: []
   moneyMultiCost: []
   moneyMultiLevel: 0
+  rocketmoneyMulti: []
+  rocketmoneyMultiCost: []
+  rocketmoneyMultiLevel: 0
+  restaurantmoneyMulti: []
+  restaurentmoneyMultiCost: []
+  restaurantmoneyMultiLevel: 0
   rocket_multiplier: 1
   restaurant_multipier: 1
   mine_multiplier: 1
+  Multiplier_cost: {fileID: 0}
+  RocketMultiplier_cost: {fileID: 0}
+  RestaurantMultiplier_cost: {fileID: 0}
 --- !u!1 &784418924
 GameObject:
   m_ObjectHideFlags: 0
@@ -5802,12 +5789,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf167fb3f65bf948a480b5a202b729c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyMulti: []
-  moneyMultiCost: []
+  moneyMulti:
+  - 1
+  - 2
+  - 4
+  - 6
+  - 8
+  - 10
+  - 20
+  - 50
+  - 75
+  - 100
+  moneyMultiCost:
+  - 1e+9
+  - 1e+12
+  - 1e+15
+  - 1e+18
+  - 1e+21
+  - 1e+24
+  - 1e+27
+  - 1e+30
+  - 1e+33
+  - 1e+36
   moneyMultiLevel: 0
+  rocketmoneyMulti: []
+  rocketmoneyMultiCost:
+  - 10000
+  - 1000000
+  - 1e+9
+  - 1e+12
+  - 1e+15
+  - 1e+18
+  - 1e+21
+  - 1e+24
+  - 1e+27
+  - 1e+30
+  rocketmoneyMultiLevel: 0
+  restaurantmoneyMulti:
+  - 1
+  - 2
+  - 5
+  - 10
+  - 20
+  - 30
+  - 40
+  - 50
+  - 100
+  - 250
+  restaurentmoneyMultiCost:
+  - 10000
+  - 1000000
+  - 1e+9
+  - 1e+12
+  - 1e+15
+  - 1e+18
+  - 1e+21
+  - 1e+24
+  - 1e+27
+  - 1e+30
+  restaurantmoneyMultiLevel: 0
   rocket_multiplier: 0
   restaurant_multipier: 0
   mine_multiplier: 0
+  Multiplier_cost: {fileID: 1666435523}
+  RocketMultiplier_cost: {fileID: 361042583}
+  RestaurantMultiplier_cost: {fileID: 645305701}
 --- !u!1 &847333811
 GameObject:
   m_ObjectHideFlags: 0
@@ -6146,6 +6192,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RocketStationLvl2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c3225b5dc9e9a574baaa893db9f82e29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1066235068171334618, guid: c3225b5dc9e9a574baaa893db9f82e29, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.888
@@ -6223,6 +6273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stamp_1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e863b5537845e5d4d8a746ce9cdc0026, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6291,6 +6345,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 12f25445c174a91429f201b1df3b3584, type: 3}
       propertyPath: m_Name
       value: Antenne_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 12f25445c174a91429f201b1df3b3584, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6881,6 +6939,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence_1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6c3d42a762157ca4cadb3ccaae68d29a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7029,7 +7091,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 208}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 269.14, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &986442254
 MonoBehaviour:
@@ -7051,7 +7113,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Money X10
+  m_text: Restaurant Multiplier
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7511,6 +7573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket_Version2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 40c997f33e949da4cb3a07795f6bb093, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7688,6 +7754,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c3225b5dc9e9a574baaa893db9f82e29, type: 3}
       propertyPath: m_Name
       value: RocketStationLvl2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c3225b5dc9e9a574baaa893db9f82e29, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1066235068171334618, guid: c3225b5dc9e9a574baaa893db9f82e29, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8475,6 +8545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stamp_1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e863b5537845e5d4d8a746ce9cdc0026, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8678,6 +8752,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stamp_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e863b5537845e5d4d8a746ce9cdc0026, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8786,6 +8864,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8d02168b9c3be0f439b5d87c5def39b8, type: 3}
       propertyPath: m_Name
       value: MainHouse_Lvl1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8d02168b9c3be0f439b5d87c5def39b8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9058,6 +9140,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 12f25445c174a91429f201b1df3b3584, type: 3}
       propertyPath: m_Name
       value: Antenne_1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 12f25445c174a91429f201b1df3b3584, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9651,6 +9737,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stamp_1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e863b5537845e5d4d8a746ce9cdc0026, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10150,9 +10240,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 437303794}
-        m_TargetAssemblyTypeName: RocketUpdate, Assembly-CSharp
-        m_MethodName: MoneyUpgrade
+      - m_Target: {fileID: 811724721}
+        m_TargetAssemblyTypeName: MoneyMultiplyer, Assembly-CSharp
+        m_MethodName: UpdateMultiplyer
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10263,6 +10353,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7f2b68488eccc7c4b85f23e4c1a2e8e2, type: 3}
       propertyPath: m_Name
       value: Generator_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7f2b68488eccc7c4b85f23e4c1a2e8e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10469,7 +10563,6 @@ Transform:
   - {fileID: 1662174497}
   - {fileID: 456535576}
   - {fileID: 266155698}
-  - {fileID: 359258725}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1573414638
@@ -10531,6 +10624,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c00834ac72e1a104bb621fdf280320eb, type: 3}
       propertyPath: m_Name
       value: Generator_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c00834ac72e1a104bb621fdf280320eb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10638,6 +10735,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stamp_1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e863b5537845e5d4d8a746ce9cdc0026, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10673,7 +10774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoneyMadeOffline: {fileID: 1686210341}
-  MoneyMultiplierInterface: {fileID: 0}
+  MoneyMultiplierInterface: {fileID: 1688558894}
   restaurant: {fileID: 2026133249}
   rocket: {fileID: 524327231}
   mine: {fileID: 971552671}
@@ -11142,6 +11243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mine_lvl3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 67ad5ef1f86611d41aff4b50bff9475d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11548,7 +11653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1688558895
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12103,6 +12208,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 40c997f33e949da4cb3a07795f6bb093, type: 3}
       propertyPath: m_Name
       value: Rocket_Version2 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 40c997f33e949da4cb3a07795f6bb093, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12743,6 +12852,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Restaurant_2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3f6cdb0c74b01304cad4201bcea34149, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13189,6 +13302,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RocketStationLvl2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c3225b5dc9e9a574baaa893db9f82e29, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1066235068171334618, guid: c3225b5dc9e9a574baaa893db9f82e29, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.888
@@ -13259,7 +13376,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Money x2
+  m_text: Money Multiplier
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14163,6 +14280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stamp_1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e863b5537845e5d4d8a746ce9cdc0026, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14337,6 +14458,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7ddb33cfac5359642a478f172c8d2ffc, type: 3}
       propertyPath: m_Name
       value: WeirdThing_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7ddb33cfac5359642a478f172c8d2ffc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

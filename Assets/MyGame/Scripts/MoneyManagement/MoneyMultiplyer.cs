@@ -1,14 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MoneyMultiplyer : MonoBehaviour
 {
 
-    [Header("MoneyPerPerson")]
+    [Header("All Money Multiplier")]
     public float[] moneyMulti;
     public float[] moneyMultiCost;
     public int moneyMultiLevel = 0;
+    [Space(40)]
+
+    [Header("Rocket Money Multiplier")]
+    public float[] rocketmoneyMulti;
+    public float[] rocketmoneyMultiCost;
+    public int rocketmoneyMultiLevel = 0;
+    [Space(40)]
+
+    [Header("Restaurant Money Multiplier")]
+    public float[] restaurantmoneyMulti;
+    public float[] restaurentmoneyMultiCost;
+    public int restaurantmoneyMultiLevel = 0;
     [Space(40)]
 
 
@@ -17,10 +30,17 @@ public class MoneyMultiplyer : MonoBehaviour
     public float mine_multiplier;
 
     MoneyManager moneyManagerCS;
+    [SerializeField]TextMeshProUGUI Multiplier_cost;
+    [SerializeField] TextMeshProUGUI RocketMultiplier_cost;
+    [SerializeField] TextMeshProUGUI RestaurantMultiplier_cost;
+    BFN_ExampleComponent formatCS;
 
     private void Start()
     {
         moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
+        formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
+        moneyManagerCS.moneyMultiplier = moneyMulti[moneyMultiLevel];
+        UpdateInterface();
     }
 
     public void UpdateMultiplyer()
@@ -32,10 +52,32 @@ public class MoneyMultiplyer : MonoBehaviour
             UpdateInterface();
         }
         moneyManagerCS.moneyMultiplier = moneyMulti[moneyMultiLevel];
-
+        moneyManagerCS.UpdateMoneyPerSecond();
     }
 
+    public void rocketUpdateMultiplyer()
+    {
+        if (moneyManagerCS.money >= rocketmoneyMultiCost[rocketmoneyMultiLevel])        //wenn genug geld am konto ist
+        {
+            moneyManagerCS.money -= rocketmoneyMultiCost[rocketmoneyMultiLevel];
+            rocketmoneyMultiLevel += 1;
+            UpdateInterface();
+        }
+        moneyManagerCS.moneyMultiplier = rocketmoneyMulti[rocketmoneyMultiLevel];
+        moneyManagerCS.UpdateMoneyPerSecond();
+    }
 
+    public void restaurantUpdateMultiplyer()
+    {
+        if (moneyManagerCS.money >= restaurentmoneyMultiCost[restaurantmoneyMultiLevel])        //wenn genug geld am konto ist
+        {
+            moneyManagerCS.money -= restaurentmoneyMultiCost[restaurantmoneyMultiLevel];
+            restaurantmoneyMultiLevel += 1;
+            UpdateInterface();
+        }
+        moneyManagerCS.moneyMultiplier = restaurantmoneyMulti[restaurantmoneyMultiLevel];
+        moneyManagerCS.UpdateMoneyPerSecond();
+    }
 
 
     public void RocketMultipier(float a)
@@ -56,6 +98,8 @@ public class MoneyMultiplyer : MonoBehaviour
 
     public void UpdateInterface()
     {
-
+        Multiplier_cost.text = formatCS.Shorten_number(moneyMultiCost[moneyMultiLevel]);
+        RocketMultiplier_cost.text = formatCS.Shorten_number(rocketmoneyMultiCost[rocketmoneyMultiLevel]);
+        RestaurantMultiplier_cost.text = formatCS.Shorten_number(restaurentmoneyMultiCost[restaurantmoneyMultiLevel]);
     }
 }

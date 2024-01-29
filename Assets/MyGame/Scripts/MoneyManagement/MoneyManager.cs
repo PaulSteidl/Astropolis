@@ -43,7 +43,7 @@ public class MoneyManager : MonoBehaviour
     {
         RestaurantIncomePerSecond = GameObject.FindAnyObjectByType<Restaurant>().updateIncome;
         rocketIncomePerSecond = GameObject.FindAnyObjectByType<RocketManager>().incomePerSecR;
-        moneyPerSecond = RestaurantIncomePerSecond + rocketIncomePerSecond;
+        moneyPerSecond = (RestaurantIncomePerSecond + rocketIncomePerSecond) * moneyMultiplier;
         moneyPerSecText.text = formatCS.Shorten_number(moneyPerSecond);
 
     }
