@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/MyGame/Sprites/Materials.meta
 guid: 6d2f2c78de086754fbf53557c1187f50
 folderAsset: yes
 DefaultImporter:
+========
+guid: cfd608febe9fc3e45b8bbc02c613ce72
+NativeFormatImporter:
+>>>>>>>> 313bf0cb65ccaf78b4cd1468aa83ac40b90a8b1c:Assets/MyGame/Sprites/Materials/TownHall_1.mat.meta
   externalObjects: {}
+  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
