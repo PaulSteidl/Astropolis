@@ -11,15 +11,15 @@ public class Mine : MonoBehaviour
 
 
     [SerializeField] TextMeshProUGUI updateCostText, incomeText, nextIncomeText;
-    [SerializeField] BFN_ExampleComponent formatCS;
 
 
+    BFN_ExampleComponent formatCS;
     MoneyManager moneyManagerCS;
     void Awake()
     {
         moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
-        InvokeRepeating("RestaurantMoney", 1, 1);
         formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
+        InvokeRepeating("RestaurantMoney", 1, 1);
         
     }
 

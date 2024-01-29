@@ -5,6 +5,7 @@ using UnityEngine;
 public class Interface : MonoBehaviour
 {
     public GameObject MoneyMadeOffline;
+    [SerializeField] GameObject MoneyMultiplierInterface;
     [SerializeField] GameObject restaurant, rocket, mine;
     [SerializeField] Restaurant restaurantCS;
     [SerializeField] Mine mineCS;
@@ -49,8 +50,13 @@ public class Interface : MonoBehaviour
     {
         MoneyMadeOffline.SetActive(!MoneyMadeOffline.gameObject.activeSelf);
     }
-   
-    
+
+    public void MoneyMultiplierSwitch()
+    {
+        MoneyMultiplierInterface.SetActive(!MoneyMultiplierInterface.gameObject.activeSelf);
+    }
+
+
     public void RestaurantUpgrade()
     {
         restaurantCS.MoneyUpgrade();
