@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class InfoManager : MonoBehaviour
 {
-    [SerializeField] GameObject popUpButtons;
-    [SerializeField] GameObject[] popUpInfo;
+    [SerializeField] GameObject popUpButtons; //Button zum aufmachen
+    [SerializeField] Sprite[] popUpInfo; //Infocard
     void Start()
     {
         
@@ -25,10 +25,10 @@ public class InfoManager : MonoBehaviour
         StartCoroutine("PopUpInfos");
     }
 
-    public void PopUpInfo()
+    public void PopUpInfo()                      //Wenn Button gedrueckt wird
     {
         int index = Random.Range(0, popUpInfo.Length);
-        popUpInfo[index].SetActive(true);
+        //popUpInfo[index].
 
     }
 }
