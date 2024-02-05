@@ -10,7 +10,7 @@ public class Asteroids : MonoBehaviour
     BFN_ExampleComponent formatCS;
     MoneyManager moneyManagerCS;
 
-    private void Start()
+    private void Awake()
     {
         moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
         formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
@@ -19,6 +19,8 @@ public class Asteroids : MonoBehaviour
     public void AsteroidClicked()
     {
         asteroidMoney = moneyManagerCS.moneyPerSecond * Random.Range(30, 100);
-        moneyManagerCS.AddMoney(asteroidMoney);
+        moneyManagerCS.AddMoneyOnly(asteroidMoney);
+        Destroy(gameObject);
+        
     }
 }

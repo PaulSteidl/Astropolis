@@ -54,4 +54,9 @@ public class MoneyManager : MonoBehaviour
     {
         money = money + a * moneyMultiplier;
     }
+
+    public void AddMoneyOnly(float a)
+    {
+        money = money + a;
+    }
 }
