@@ -21,7 +21,8 @@ public class BFN_ExampleComponent : MonoBehaviour
 	#if UNITY_EDITOR
 	void Update ()
 	{
-        _a = (BFN)_moneyManager.money;
+		_a.coefficient = _moneyManager.money;
+		_a.exponent = 1;
         switch ( _operator )
 		{
 			case OP.Add:		_result = _a + _b; break;
@@ -50,7 +51,8 @@ public class BFN_ExampleComponent : MonoBehaviour
 			float b = 0;
 			BFN result;
 			string _resultString;
-			switch (_operator)
+            _a = (BFN)_moneyManager.money;
+            switch (_operator)
 			{
 				case OP.Add: result = (BFN)a + b; break;
 				case OP.Subtract: result = (BFN)a - b; break;

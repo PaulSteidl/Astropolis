@@ -63,7 +63,7 @@ public class MoneyMultiplyer : MonoBehaviour
             rocketmoneyMultiLevel += 1;
             UpdateInterface();
         }
-        moneyManagerCS.moneyMultiplier = rocketmoneyMulti[rocketmoneyMultiLevel];
+        moneyManagerCS.rocketmoneyMultiplier = rocketmoneyMulti[rocketmoneyMultiLevel];
         moneyManagerCS.UpdateMoneyPerSecond();
     }
 
@@ -75,7 +75,7 @@ public class MoneyMultiplyer : MonoBehaviour
             restaurantmoneyMultiLevel += 1;
             UpdateInterface();
         }
-        moneyManagerCS.moneyMultiplier = restaurantmoneyMulti[restaurantmoneyMultiLevel];
+        moneyManagerCS.restaurantmoneyMultiplier = restaurantmoneyMulti[restaurantmoneyMultiLevel];
         moneyManagerCS.UpdateMoneyPerSecond();
     }
 
