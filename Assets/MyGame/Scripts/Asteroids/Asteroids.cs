@@ -9,11 +9,14 @@ public class Asteroids : MonoBehaviour
     
     BFN_ExampleComponent formatCS;
     MoneyManager moneyManagerCS;
+    [SerializeField] Animator m_Animator;
 
     private void Awake()
     {
         moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
         formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
+        m_Animator = gameObject.GetComponent<Animator>();
+        m_Animator.SetBool("Meteroid_Start", true);
     }
 
     public void AsteroidClicked()
