@@ -18,7 +18,7 @@ public class DataMaster : MonoBehaviour
     [Header("GameObjects")]
     [SerializeField] TextMeshProUGUI MoneyMadeOffline;
 
-    [Header("DeletePlayerPrefs")]
+    [Header("EnablePlayerPrefs")]
     [SerializeField] bool FirstStartup;
     [SerializeField] bool sysString;
     [SerializeField] bool MoneyPerSecond;
