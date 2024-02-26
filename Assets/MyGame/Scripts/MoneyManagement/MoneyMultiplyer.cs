@@ -24,6 +24,9 @@ public class MoneyMultiplyer : MonoBehaviour
     public int restaurantmoneyMultiLevel = 0;
     [Space(40)]
 
+    [Header("Sprite Update Level")]
+    public float[] UpdateSpritesLevel;
+    [Space(40)]
 
     public float rocket_multiplier;
     public float restaurant_multipier;
@@ -101,5 +104,13 @@ public class MoneyMultiplyer : MonoBehaviour
         Multiplier_cost.text = formatCS.Shorten_number(moneyMultiCost[moneyMultiLevel]);
         RocketMultiplier_cost.text = formatCS.Shorten_number(rocketmoneyMultiCost[rocketmoneyMultiLevel]);
         RestaurantMultiplier_cost.text = formatCS.Shorten_number(restaurentmoneyMultiCost[restaurantmoneyMultiLevel]);
+    }
+
+    public void UpdateSprite()
+    {
+        for (int i = 0; i < UpdateSpritesLevel.Length; i++)
+        {
+
+        }
     }
 }
