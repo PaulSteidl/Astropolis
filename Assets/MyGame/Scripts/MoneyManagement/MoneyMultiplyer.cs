@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoneyMultiplyer : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class MoneyMultiplyer : MonoBehaviour
     public float restaurant_multipier;
     public float mine_multiplier;
     public Sprite[] Main_Building_Spirtes;
-    Sprite Main_Building_Spirte;
+    public Image Main_Building_Spirte;
     int Spritenumber;
 
     MoneyManager moneyManagerCS;
@@ -127,7 +128,7 @@ public class MoneyMultiplyer : MonoBehaviour
     {
         if (Spritenumber < Main_Building_Spirtes.Length)
         {
-            Main_Building_Spirte = Main_Building_Spirtes[Spritenumber];
+            Main_Building_Spirte.sprite = Main_Building_Spirtes[Spritenumber];
 
             Spritenumber++;
         }
