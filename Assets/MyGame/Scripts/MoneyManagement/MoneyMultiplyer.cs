@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoneyMultiplyer : MonoBehaviour
 {
@@ -31,6 +32,9 @@ public class MoneyMultiplyer : MonoBehaviour
     public float rocket_multiplier;
     public float restaurant_multipier;
     public float mine_multiplier;
+    public Sprite[] Main_Building_Spirtes;
+    public Image Main_Building_Spirte;
+    int Spritenumber;
 
     MoneyManager moneyManagerCS;
     [SerializeField]TextMeshProUGUI Multiplier_cost;
@@ -53,6 +57,7 @@ public class MoneyMultiplyer : MonoBehaviour
             moneyManagerCS.money -= moneyMultiCost[moneyMultiLevel];
             moneyMultiLevel += 1;
             UpdateInterface();
+            UpdateSprite();
         }
         moneyManagerCS.moneyMultiplier = moneyMulti[moneyMultiLevel];
         moneyManagerCS.UpdateMoneyPerSecond();
@@ -65,6 +70,7 @@ public class MoneyMultiplyer : MonoBehaviour
             moneyManagerCS.money -= rocketmoneyMultiCost[rocketmoneyMultiLevel];
             rocketmoneyMultiLevel += 1;
             UpdateInterface();
+            UpdateSprite();
         }
         moneyManagerCS.rocketmoneyMultiplier = rocketmoneyMulti[rocketmoneyMultiLevel];
         moneyManagerCS.UpdateMoneyPerSecond();
@@ -77,6 +83,7 @@ public class MoneyMultiplyer : MonoBehaviour
             moneyManagerCS.money -= restaurentmoneyMultiCost[restaurantmoneyMultiLevel];
             restaurantmoneyMultiLevel += 1;
             UpdateInterface();
+            UpdateSprite();
         }
         moneyManagerCS.restaurantmoneyMultiplier = restaurantmoneyMulti[restaurantmoneyMultiLevel];
         moneyManagerCS.UpdateMoneyPerSecond();
@@ -110,7 +117,20 @@ public class MoneyMultiplyer : MonoBehaviour
     {
         for (int i = 0; i < UpdateSpritesLevel.Length; i++)
         {
+            if (restaurantmoneyMultiLevel == UpdateSpritesLevel[i] || rocketmoneyMultiLevel == UpdateSpritesLevel[i] || moneyMultiLevel == UpdateSpritesLevel[i])
+            {
+                UpdateSpriteupone();
+            }
+        }
+    }
 
+    void UpdateSpriteupone()
+    {
+        if (Spritenumber < Main_Building_Spirtes.Length)
+        {
+            Main_Building_Spirte.sprite = Main_Building_Spirtes[Spritenumber];
+
+            Spritenumber++;
         }
     }
 }

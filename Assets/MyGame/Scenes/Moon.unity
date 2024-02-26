@@ -4990,9 +4990,22 @@ MonoBehaviour:
   - 1.0001e+27
   - 1.0001e+30
   restaurantmoneyMultiLevel: 0
+  UpdateSpritesLevel:
+  - 3
+  - 9
+  - 15
+  - 21
+  - 30
   rocket_multiplier: 0
   restaurant_multipier: 0
   mine_multiplier: 0
+  Main_Building_Spirtes:
+  - {fileID: 21300000, guid: 49182e68cd380644b92bf06b410401f0, type: 3}
+  - {fileID: 21300000, guid: 0d279f70bf8781741a25bbb0693eb334, type: 3}
+  - {fileID: 21300000, guid: 8a5e5717eedfaeb46a5fb2e37d029a74, type: 3}
+  - {fileID: 21300000, guid: b0632b0dd253f344e922f91aa811a5a9, type: 3}
+  - {fileID: 21300000, guid: 0c2696e63544778499c59fd654df46b8, type: 3}
+  Main_Building_Spirte: {fileID: 2136015922}
   Multiplier_cost: {fileID: 1666435523}
   RocketMultiplier_cost: {fileID: 361042583}
   RestaurantMultiplier_cost: {fileID: 645305701}
