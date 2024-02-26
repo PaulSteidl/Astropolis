@@ -56,6 +56,7 @@ public class Restaurant : MonoBehaviour
         moneyManagerCS.UpdateMoneyPerSecond();
         NextUpdateIncome();
         UpdateInterface();
+        UpdateSprite();
     }
 
     public float MoneyUpdateCost()
@@ -82,5 +83,10 @@ public class Restaurant : MonoBehaviour
         float nextIncome = 10 * Mathf.Pow(1.05f, restaurantLevel +1);
         float currentIncome = MoneyUpdateIncome();
         nextIncomeText.text = formatCS.Shorten_number((nextIncome - currentIncome));
+    }
+
+    public void UpdateSprite()
+    {
+
     }
 }
