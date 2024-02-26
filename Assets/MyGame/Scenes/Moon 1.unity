@@ -3511,6 +3511,8 @@ MonoBehaviour:
   money: 15
   moneyPerSecond: 5
   moneyMultiplier: 0
+  rocketmoneyMultiplier: 0
+  restaurantmoneyMultiplier: 0
   rocketIncomePerSecond: 0
   RestaurantIncomePerSecond: 0
   rocketManagerCS: {fileID: 0}
