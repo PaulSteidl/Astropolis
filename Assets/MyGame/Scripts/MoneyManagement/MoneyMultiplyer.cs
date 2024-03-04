@@ -33,8 +33,9 @@ public class MoneyMultiplyer : MonoBehaviour
     public float restaurant_multipier;
     public float mine_multiplier;
     public Sprite[] Main_Building_Spirtes;
-    public Image Main_Building_Spirte;
+    public SpriteRenderer Main_Building_Spirte;
     int Spritenumber;
+    int currentspritelevel;
 
     MoneyManager moneyManagerCS;
     [SerializeField]TextMeshProUGUI Multiplier_cost;
@@ -117,17 +118,20 @@ public class MoneyMultiplyer : MonoBehaviour
     {
         for (int i = 0; i < UpdateSpritesLevel.Length; i++)
         {
-            if (restaurantmoneyMultiLevel == UpdateSpritesLevel[i] || rocketmoneyMultiLevel == UpdateSpritesLevel[i] || moneyMultiLevel == UpdateSpritesLevel[i])
+            if (restaurantmoneyMultiLevel + rocketmoneyMultiLevel + moneyMultiLevel == UpdateSpritesLevel[i])
             {
-                UpdateSpriteupone();
+                Debug.Log("Sprite +1");
+                UpdateSpritebyOne();
             }
         }
+
     }
 
-    void UpdateSpriteupone()
+    void UpdateSpritebyOne()
     {
         if (Spritenumber < Main_Building_Spirtes.Length)
         {
+            Debug.Log("Function");
             Main_Building_Spirte.sprite = Main_Building_Spirtes[Spritenumber];
 
             Spritenumber++;
