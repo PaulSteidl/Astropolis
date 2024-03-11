@@ -13,7 +13,7 @@ public class BFN_ExampleComponent : MonoBehaviour
 	[SerializeField] BFN _b = new BFN();
 	[SerializeField] OP _operator = OP.Add;
 	[SerializeField] BFN _result = (BFN) 0;
-	MoneyManager _moneyManager;
+	public MoneyManager _moneyManager;
 	
 
 	public enum OP : byte { Add , Subtract , Multiply , Divide }
@@ -35,9 +35,10 @@ public class BFN_ExampleComponent : MonoBehaviour
     }
 	#endif
 	
-	void Start ()
+	void Awake ()
 	{
-		_moneyManager = GameObject.FindObjectOfType<MoneyManager>();		
+		_moneyManager = GameObject.FindObjectOfType<MoneyManager>();
+		Debug.Log(_moneyManager.gameObject);
 		Debug.Log($"{_a} {_operator} {_b} = {_result}");
 		
 	}
@@ -51,8 +52,10 @@ public class BFN_ExampleComponent : MonoBehaviour
 			float b = 0;
 			BFN result;
 			string _resultString;
-            _a = (BFN)_moneyManager.money;
-            switch (_operator)
+
+			_a = (BFN)_moneyManager.money;
+			print("Testing " + _a.GetType().ToString());
+			switch (_operator)
 			{
 				case OP.Add: result = (BFN)a + b; break;
 				case OP.Subtract: result = (BFN)a - b; break;

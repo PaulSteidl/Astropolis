@@ -25,11 +25,14 @@ public class AsteroidsManager : MonoBehaviour
         yield return new WaitForSeconds(1);
         
         StartCoroutine("AsteroidTimer");
+        yield return new WaitForSeconds(16);
+        Destroy(g);
     }
     public IEnumerator AsteroidTimer()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(20);
         StartCoroutine("Asteroid");
     }
+
     
 }

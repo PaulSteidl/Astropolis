@@ -20,13 +20,13 @@ public class InfoManager : MonoBehaviour
     public IEnumerator PopUpInfos()
     {
         popUpButtons.SetActive(true);
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(5);
         popUpButtons.SetActive(false);
         StartCoroutine("PopUpInfosTimer");
     }
     public IEnumerator PopUpInfosTimer()
     {
-        yield return new WaitForSeconds(30);
+        yield return new WaitForSeconds(3);
         StartCoroutine("PopUpInfos");
     }
 
@@ -55,7 +55,7 @@ public class InfoManager : MonoBehaviour
     {
         popUp.SetActive(false);
         X.SetActive(false);
-        popUpButtons.SetActive(true);
+        //popUpButtons.SetActive(true);
     }
 
     void Shuffle()

@@ -17,7 +17,7 @@ public class Asteroids : MonoBehaviour
         formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
         m_Animator = gameObject.GetComponent<Animator>();
         m_Animator.SetBool("Meteroid_Start", true);
-        Invoke("Destroy", 16);
+       
     }
 
     public void AsteroidClicked()
@@ -28,9 +28,5 @@ public class Asteroids : MonoBehaviour
         
     }
 
-    void DestroyM()
-    {
-        Debug.Log("d");
-        Destroy(gameObject);
-    }
+    
 }
