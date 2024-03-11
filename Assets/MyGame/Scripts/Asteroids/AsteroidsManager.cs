@@ -21,7 +21,7 @@ public class AsteroidsManager : MonoBehaviour
         
         g.transform.localPosition = new Vector3(0, 0, 0);
         g.transform.localRotation = new Quaternion(0, 0, 0, 0);
-        g.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        g.transform.localScale = new Vector3(2f, 2f, 2f);
         yield return new WaitForSeconds(1);
         
         StartCoroutine("AsteroidTimer");
