@@ -9,11 +9,12 @@ public class MoneyManager : MonoBehaviour
     [Space(10)]
     public float money;
     public float moneyPerSecond;
-    public float moneyMultiplier, rocketmoneyMultiplier, restaurantmoneyMultiplier;
+    public float moneyMultiplier, rocketmoneyMultiplier, restaurantmoneyMultiplier, MinemoneyMultiplier;
 
     [Space(10)]
     public float rocketIncomePerSecond;
     public float RestaurantIncomePerSecond;
+    public float MineIncomePerSecond;
 
     [Space(40)]
 
@@ -43,7 +44,7 @@ public class MoneyManager : MonoBehaviour
     {
         RestaurantIncomePerSecond = GameObject.FindAnyObjectByType<Restaurant>().updateIncome;
         rocketIncomePerSecond = GameObject.FindAnyObjectByType<RocketManager>().incomePerSecR;
-        moneyPerSecond = ((RestaurantIncomePerSecond * restaurantmoneyMultiplier) + (rocketIncomePerSecond * rocketmoneyMultiplier)) * moneyMultiplier;
+        moneyPerSecond = ((MineIncomePerSecond * MinemoneyMultiplier) + (RestaurantIncomePerSecond * restaurantmoneyMultiplier) + (rocketIncomePerSecond * rocketmoneyMultiplier)) * moneyMultiplier;
         moneyPerSecText.text = formatCS.Shorten_number(moneyPerSecond);
 
     }

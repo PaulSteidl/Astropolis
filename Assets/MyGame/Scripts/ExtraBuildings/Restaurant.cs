@@ -13,6 +13,15 @@ public class Restaurant : MonoBehaviour
     [SerializeField] TextMeshProUGUI updateCostText, incomeText, nextIncomeText;
     [SerializeField] BFN_ExampleComponent formatCS;
 
+    [Header("Sprite Update Level")]
+    public float[] UpdateSpritesLevel;
+    [SerializeField] int Spritenumber;
+    public Sprite[] Main_Building_Spirtes;
+    public SpriteRenderer Main_Building_Spirte;
+    int currentspritelevel;
+    [Space(40)]
+
+
 
     MoneyManager moneyManagerCS;
     void Awake()
@@ -84,9 +93,27 @@ public class Restaurant : MonoBehaviour
         float currentIncome = MoneyUpdateIncome();
         nextIncomeText.text = formatCS.Shorten_number((nextIncome - currentIncome));
     }
-
     public void UpdateSprite()
     {
+        for (int i = 0; i < UpdateSpritesLevel.Length; i++)
+        {
+            if (restaurantLevel == UpdateSpritesLevel[i])
+            {
+                Debug.Log("Sprite +1");
+                UpdateSpritebyOne();
+            }
+        }
 
+    }
+
+    void UpdateSpritebyOne()
+    {
+        if (Spritenumber < Main_Building_Spirtes.Length)
+        {
+            Debug.Log("Function");
+            Main_Building_Spirte.sprite = Main_Building_Spirtes[Spritenumber];
+
+            Spritenumber++;
+        }
     }
 }

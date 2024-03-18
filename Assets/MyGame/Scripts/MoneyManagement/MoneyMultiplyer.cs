@@ -25,17 +25,24 @@ public class MoneyMultiplyer : MonoBehaviour
     public int restaurantmoneyMultiLevel = 0;
     [Space(40)]
 
+    [Header("Mine Money Multiplier")]
+    public float[] minemoneyMulti;
+    public float[] minemoneyMultiCost;
+    public int minemoneyMultiLevel = 0;
+    [Space(40)]
+
+    
     [Header("Sprite Update Level")]
     public float[] UpdateSpritesLevel;
+    [SerializeField] int Spritenumber;
+    public Sprite[] Main_Building_Spirtes;
+    public SpriteRenderer Main_Building_Spirte;
+    int currentspritelevel;
     [Space(40)]
 
     public float rocket_multiplier;
     public float restaurant_multipier;
     public float mine_multiplier;
-    public Sprite[] Main_Building_Spirtes;
-    public SpriteRenderer Main_Building_Spirte;
-    int Spritenumber;
-    int currentspritelevel;
 
     MoneyManager moneyManagerCS;
     [SerializeField]TextMeshProUGUI Multiplier_cost;
@@ -87,6 +94,20 @@ public class MoneyMultiplyer : MonoBehaviour
             UpdateSprite();
         }
         moneyManagerCS.restaurantmoneyMultiplier = restaurantmoneyMulti[restaurantmoneyMultiLevel];
+        moneyManagerCS.UpdateMoneyPerSecond();
+    }
+
+
+    public void mineUpdateMultiplyer()
+    {
+        if (moneyManagerCS.money >= minemoneyMultiCost[minemoneyMultiLevel])        //wenn genug geld am konto ist
+        {
+            moneyManagerCS.money -= minemoneyMultiCost[minemoneyMultiLevel];
+            minemoneyMultiLevel += 1;
+            UpdateInterface();
+            UpdateSprite();
+        }
+        moneyManagerCS.MinemoneyMultiplier = minemoneyMulti[minemoneyMultiLevel];
         moneyManagerCS.UpdateMoneyPerSecond();
     }
 

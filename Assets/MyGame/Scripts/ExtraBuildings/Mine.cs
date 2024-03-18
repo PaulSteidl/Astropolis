@@ -52,7 +52,7 @@ public class Mine : MonoBehaviour
         moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
         updateCost = MoneyUpdateCost();
         updateIncome = MoneyUpdateIncome();
-        moneyManagerCS.RestaurantIncomePerSecond = updateIncome;
+        moneyManagerCS.MineIncomePerSecond = updateIncome;
         moneyManagerCS.UpdateMoneyPerSecond();
         NextUpdateIncome();
         UpdateInterface();
