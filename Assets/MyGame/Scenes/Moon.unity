@@ -8447,11 +8447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: b51729a6ce7873b4d86b148bf370e617, type: 2}
 --- !u!4 &1137891395
 Transform:
   m_ObjectHideFlags: 0
@@ -13048,12 +13043,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popUpButtons: {fileID: 1393626001}
   popUpInfo:
-  - {fileID: 21300000, guid: f80bf089f48681949b5090e00d2aadf0, type: 3}
-  - {fileID: 21300000, guid: 47a84f05b74b0dd4e81233c8996279ed, type: 3}
-  - {fileID: 21300000, guid: da11403d034631c4eb3669f33dbe0ff1, type: 3}
+  - {fileID: 21300000, guid: bc132912242b1ce45b4150e62ab9af75, type: 3}
+  - {fileID: 21300000, guid: bc132912242b1ce45b4150e62ab9af75, type: 3}
+  - {fileID: 21300000, guid: 092df7edf1db5f24c873ac4d2476aeca, type: 3}
+  - {fileID: 21300000, guid: 81a183f8795d1d74280249f5591e889e, type: 3}
+  - {fileID: 21300000, guid: e4a548ae3d82cbb40b79e25bc3c796b2, type: 3}
+  - {fileID: 21300000, guid: 61d50760f5fbe74408875a9dcb081b65, type: 3}
+  - {fileID: 21300000, guid: c8cf49e2d10cf83488a7014b8d9d1a23, type: 3}
+  - {fileID: 21300000, guid: 1ce674afc96ff1942822e8c862990a40, type: 3}
+  - {fileID: 21300000, guid: d1d6cb5096fedbd47b2e8b8ab8d4899d, type: 3}
+  - {fileID: 21300000, guid: e80a48be8bceaf54fa324f99e73f194f, type: 3}
+  - {fileID: 21300000, guid: eb4ab6820de92124f87e350450f2e611, type: 3}
+  - {fileID: 21300000, guid: 7f9c650b24e04ed4eba6c6d91080f1db, type: 3}
+  - {fileID: 21300000, guid: 6b0cf3b5f07890d4f80c50aff412e93c, type: 3}
+  - {fileID: 21300000, guid: ca57cb7f8549b3b45a63697e5e6610a7, type: 3}
+  - {fileID: 21300000, guid: fed7c2e4ad7dbd345a0f7844374a47c1, type: 3}
+  - {fileID: 21300000, guid: 96997822d2a28b044b249e501ac07136, type: 3}
+  - {fileID: 21300000, guid: 735eeea9baea108448dff8678aa24e22, type: 3}
+  - {fileID: 21300000, guid: d57aeb9a75b822144a237874262f1cdc, type: 3}
+  - {fileID: 21300000, guid: 07a58a112cfa6fa4283af6dec5a0fd96, type: 3}
+  - {fileID: 21300000, guid: 7032747a073c5ff41aac6c3ce4e1b392, type: 3}
+  - {fileID: 21300000, guid: 6cd9b180b4d0a2245a4701810a5411e5, type: 3}
+  - {fileID: 21300000, guid: ad24950f33d91b0479b66e22d1fe39c6, type: 3}
+  - {fileID: 21300000, guid: f7e98bbe1abc61d4c9e9d39ab1778d02, type: 3}
+  - {fileID: 21300000, guid: 9fbf8d68172cf7b4ea2db70da51c1c46, type: 3}
+  - {fileID: 21300000, guid: 795d0433fbe84eb48ad1d3d2d97871c2, type: 3}
+  - {fileID: 21300000, guid: 057c1d392ea8dcb4884ed113d48efa67, type: 3}
+  - {fileID: 21300000, guid: 2a3723b81c492e14dbafad19c4f826c2, type: 3}
+  - {fileID: 21300000, guid: 7bf6d503b0d73d644952f426b829115f, type: 3}
+  - {fileID: 21300000, guid: 56af2426eb1b4ce4280bef629aa2e3c1, type: 3}
+  - {fileID: 21300000, guid: 8fa0e37acb26024468f46d404e229dec, type: 3}
+  - {fileID: 21300000, guid: 26538a174d02c5a4aa1540de67e8ebeb, type: 3}
+  - {fileID: 21300000, guid: 42661e7fd834e3b4182df921f7198322, type: 3}
+  - {fileID: 21300000, guid: 8c91152a2c83dd74faf4af424b19fd1b, type: 3}
+  - {fileID: 21300000, guid: 2e1d50508007c7b4fa6006e71f535e03, type: 3}
+  - {fileID: 21300000, guid: 2e7b995dccd9f374c9cba4a85957e762, type: 3}
+  - {fileID: 21300000, guid: 976f709e9b908ad4989bb7f8214bc40c, type: 3}
+  - {fileID: 21300000, guid: 1258088b59dfb95409f2bcb3f4ed6ade, type: 3}
+  - {fileID: 21300000, guid: 01665ce7cefdc154ea4155a6138c1836, type: 3}
+  - {fileID: 21300000, guid: e96aeb616aea98443b2b3250bcf596a0, type: 3}
+  - {fileID: 21300000, guid: 016d3ed6d0d977546bc6145cdb1d47fa, type: 3}
+  - {fileID: 21300000, guid: 424741d6dafe3984f940476aab5a30be, type: 3}
+  - {fileID: 21300000, guid: ecb0e7ba059c9c44686151ae8af55294, type: 3}
+  - {fileID: 21300000, guid: 5d8f40f2b1177184685e8c064438d3bb, type: 3}
+  - {fileID: 21300000, guid: ec8acb1229d648b478b4bce7cb0126bc, type: 3}
   popUp: {fileID: 1576464399}
   X: {fileID: 2482116}
-  index: 0
+  index: 43
 --- !u!4 &1847265138
 Transform:
   m_ObjectHideFlags: 0
@@ -14351,17 +14387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 3
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
-  m_SoftShadowQuality: 0
 --- !u!108 &2105963028
 Light:
   m_ObjectHideFlags: 0
