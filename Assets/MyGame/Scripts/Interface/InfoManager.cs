@@ -8,17 +8,19 @@ public class InfoManager : MonoBehaviour
     [SerializeField] GameObject popUpButtons; //Button zum aufmachen
     [SerializeField] Sprite[] popUpInfo; //Infocard
     [SerializeField] GameObject popUp, X;
-    
+    MoneyManager moneyManagerCS;
+
     public int index = 0;
     private Sprite tempGO;
     void Start()
     {
-        
+        moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
         StartCoroutine("PopUpInfos");
     }
 
     public IEnumerator PopUpInfos()
     {
+        
         popUpButtons.SetActive(true);
         yield return new WaitForSeconds(10);
         popUpButtons.SetActive(false);
@@ -32,10 +34,11 @@ public class InfoManager : MonoBehaviour
 
     public void PopUpInfo()                      //Wenn Button gedrueckt wird
     {
+        moneyManagerCS.AddMoneyOnly(moneyManagerCS.moneyPerSecond * 3); 
         popUpButtons.SetActive(false);
         popUp.SetActive(true);
         X.SetActive(true);
-        
+       
         if (index < popUpInfo.Length -1)
         {
             index++;

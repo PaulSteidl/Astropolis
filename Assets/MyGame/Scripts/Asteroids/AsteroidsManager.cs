@@ -30,7 +30,7 @@ public class AsteroidsManager : MonoBehaviour
     }
     public IEnumerator AsteroidTimer()
     {
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(30);
         StartCoroutine("Asteroid");
     }
 

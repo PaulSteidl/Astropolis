@@ -22,7 +22,7 @@ public class Asteroids : MonoBehaviour
 
     public void AsteroidClicked()
     {
-        asteroidMoney = moneyManagerCS.moneyPerSecond * Random.Range(30, 100);
+        asteroidMoney = moneyManagerCS.moneyPerSecond * Random.Range(10, 100);
         moneyManagerCS.AddMoneyOnly(asteroidMoney);
         Destroy(gameObject);
         
