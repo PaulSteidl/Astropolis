@@ -12,6 +12,7 @@ public class DataMaster : MonoBehaviour
     Restaurant Restaurant_cs;
     RocketUpdate RocketUpdatesCS;
     Interface InterfaceManager_cs;
+    Mine MineCS;
 
     double time;
 
@@ -28,6 +29,7 @@ public class DataMaster : MonoBehaviour
     [SerializeField] bool RLevelMoney;
     [SerializeField] bool RLevelPeople;
     [SerializeField] bool RLevelComebackTime;
+    [SerializeField] bool MineLevel;
 
 
     [SerializeField] bool Level_Restaurant;
@@ -43,6 +45,7 @@ public class DataMaster : MonoBehaviour
         rocketTakeOffTime = GameObject.FindObjectOfType<RocketUpdate>();
         Restaurant_cs = GameObject.FindAnyObjectByType<Restaurant>();
         RocketUpdatesCS = GameObject.FindAnyObjectByType<RocketUpdate>();
+        MineCS = GameObject.FindAnyObjectByType<Mine>();
 
         if (!sysString)
         {
@@ -64,7 +67,15 @@ public class DataMaster : MonoBehaviour
         {
             PlayerPrefs.SetInt("FirstStartup", 0);
         }
-        
+        if (!RLevelComebackTime)
+        {
+            PlayerPrefs.DeleteKey("RLevelComebackTime");
+        }
+        if (!MineLevel)
+        {
+            PlayerPrefs.DeleteKey("MineLevel");
+        }
+
 
 
 
@@ -106,6 +117,15 @@ public class DataMaster : MonoBehaviour
         else
         {
             PlayerPrefs.SetInt("RPeopleLevel", 0);
+        }
+        if (RLevelComebackTime) 
+        {
+            if (PlayerPrefs.HasKey("RLevelComeBackTime") && PlayerPrefs.GetInt("RLevelComebackTime") != 0)
+            {
+                RocketUpdatesCS.peopleLevel = PlayerPrefs.GetInt("RPeopleLevel"); //stellt die Level ein
+                RocketUpdatesCS.LevelUpdate();
+                Debug.Log("level");
+            }
         }
 
 
@@ -185,6 +205,12 @@ public class DataMaster : MonoBehaviour
         {
             PlayerPrefs.SetInt("RLevelComebackTime", RocketUpdatesCS.takeOffLevel);
         }
+        if (MineLevel)
+        {
+            PlayerPrefs.SetInt("MineLevel", MineCS.mineLevel);
+        }
+
+
         if (FirstStartup)
         {
             PlayerPrefs.SetInt("FirstStartup", 1);
