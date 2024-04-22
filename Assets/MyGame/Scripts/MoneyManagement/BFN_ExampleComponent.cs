@@ -54,6 +54,7 @@ public class BFN_ExampleComponent : MonoBehaviour
 			string _resultString;
 
 			_a = (BFN)_moneyManager.money;
+			print("Testing " + _a.GetType().ToString());
 			switch (_operator)
 			{
 				case OP.Add: result = (BFN)a + b; break;

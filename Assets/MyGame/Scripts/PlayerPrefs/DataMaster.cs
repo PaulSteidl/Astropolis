@@ -27,8 +27,6 @@ public class DataMaster : MonoBehaviour
     [SerializeField] bool Level_Main_Building;
     [SerializeField] bool RLevelMoney;
     [SerializeField] bool RLevelPeople;
-    [SerializeField] bool RLevelComebackTime;
-
 
     [SerializeField] bool Level_Restaurant;
 
@@ -180,10 +178,6 @@ public class DataMaster : MonoBehaviour
         if (RLevelPeople)
         {
             PlayerPrefs.SetInt("RPeopleLevel", RocketUpdatesCS.peopleLevel);
-        }
-        if (RLevelComebackTime)
-        {
-            PlayerPrefs.SetInt("RLevelComebackTime", RocketUpdatesCS.takeOffLevel);
         }
         if (FirstStartup)
         {
