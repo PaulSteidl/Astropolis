@@ -6,40 +6,36 @@ public class raycast_on_touch : MonoBehaviour
 {
     public LayerMask obstaclemask;
 
-    float TouchTime;
+    float TouchStartTime;
 
     private void Update()
     {
-
         if (Input.touchCount == 1)
         {
             Touch touch = Input.GetTouch(0);
 
             if (touch.phase == TouchPhase.Began)
             {
-                TouchTime = Time.time;
+                TouchStartTime = Time.time;
             }
 
             if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
             {
-                if (Time.time - TouchTime <= 0.2)
+                if (Time.time - TouchStartTime <= 0.1)
                 {
-                    if (Input.touchCount == 1)
+                    var position = GetPosition();
+                    if (position != null)
                     {
-                        var position = GetPosition();
-                        if (position != null)
-                        {
-                            
-                        }
+                        // Do something with the position if needed
+                        Debug.Log("Position: " + position);
                     }
                 }
                 else
                 {
-                    // this is a long press or drag​
+                    // This is a long press or drag
                 }
             }
         }
-       
     }
 
     private Vector3? GetPosition()
