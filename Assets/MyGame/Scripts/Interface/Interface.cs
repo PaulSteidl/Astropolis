@@ -12,6 +12,8 @@ public class Interface : MonoBehaviour
     [SerializeField] Rocket rocketCS;
     [SerializeField] RocketUpdate rocketUpdateCS;
 
+    float TouchStartTime;
+
     void Start()
     {
         restaurantCS = GameObject.FindAnyObjectByType<Restaurant>();
@@ -24,42 +26,64 @@ public class Interface : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.touchCount == 1)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
+            {
+                TouchStartTime = Time.time;
+            }
+        }
+    }
+
     public void RestaurantOn()
     {
-        restaurant.SetActive(true);
-        restaurantCS.UpdateInterface();
+        if (Time.time - TouchStartTime <= 0.1)
+        {
+            restaurant.SetActive(true);
+            restaurantCS.UpdateInterface();
+        }
     }
 
     
     public void RestaurantOff()
     {
-        restaurant.SetActive(false);
+        if (Time.time - TouchStartTime <= 0.1)
+            restaurantCS.UpdateInterface(); restaurant.SetActive(false);
     }
 
     public void MineOn()
     {
-        mine.SetActive(true);
-        mineCS.UpdateInterface();
+        if (Time.time - TouchStartTime <= 0.1)
+            mine.SetActive(true); mineCS.UpdateInterface();
     }
     public void MineOff()
     {
-        mine.SetActive(false);
+        if (Time.time - TouchStartTime <= 0.1)
+            mine.SetActive(false);
     }
 
     public void MoneyMadeOfflineSwitch()
     {
-        MoneyMadeOffline.SetActive(!MoneyMadeOffline.gameObject.activeSelf);
+        if (Time.time - TouchStartTime <= 0.1)
+            MoneyMadeOffline.SetActive(!MoneyMadeOffline.gameObject.activeSelf);
     }
+            
 
     public void MoneyMultiplierSwitch()
     {
-        MoneyMultiplierInterface.SetActive(!MoneyMultiplierInterface.gameObject.activeSelf);
+        if (Time.time - TouchStartTime <= 0.1)
+           MoneyMultiplierInterface.SetActive(!MoneyMultiplierInterface.gameObject.activeSelf);           
     }
 
 
     public void RestaurantUpgrade()
     {
-        restaurantCS.MoneyUpgrade();
+        if (Time.time - TouchStartTime <= 0.1)
+            restaurantCS.MoneyUpgrade();           
     }
     public void RocketUpgrade()
     {
@@ -70,12 +94,13 @@ public class Interface : MonoBehaviour
 
     public void RocketOn()
     {
-        rocket.SetActive(true);
-        rocketUpdateCS.UpdateInterface();
+        if (Time.time - TouchStartTime <= 0.1)
+            rocket.SetActive(true); rocketUpdateCS.UpdateInterface();
     }
     public void RocketOff()
     {
-        rocket.SetActive(false);
+        if (Time.time - TouchStartTime <= 0.1)
+            rocket.SetActive(false);            
     }
 
 
