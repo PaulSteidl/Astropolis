@@ -77,6 +77,8 @@ public class Interface : MonoBehaviour
 
     }
 
+
+
     public void MoneyMadeOfflineSwitch()
     {
         if (Time.time - TouchStartTime <= 0.1)

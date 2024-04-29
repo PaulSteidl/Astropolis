@@ -4277,7 +4277,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1603285764}
         m_TargetAssemblyTypeName: Interface, Assembly-CSharp
-        m_MethodName: MineOff
+        m_MethodName: MineOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11399,7 +11399,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1603285764}
         m_TargetAssemblyTypeName: Interface, Assembly-CSharp
-        m_MethodName: RestaurantOff
+        m_MethodName: RestaurantOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11945,9 +11945,11 @@ MonoBehaviour:
   restaurant: {fileID: 2026133249}
   rocket: {fileID: 524327231}
   mine: {fileID: 971552671}
+  cafe: {fileID: 0}
   Buying_mine: {fileID: 0}
   Buying_rocket: {fileID: 0}
   Buying_restaurant: {fileID: 0}
+  Buying_cafe: {fileID: 0}
   restaurantCS: {fileID: 25873220}
   mineCS: {fileID: 0}
   rocketCS: {fileID: 437303796}
@@ -15204,7 +15206,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1603285764}
         m_TargetAssemblyTypeName: Interface, Assembly-CSharp
-        m_MethodName: RocketOff
+        m_MethodName: RocketOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
