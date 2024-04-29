@@ -14,9 +14,11 @@ public class Interface : MonoBehaviour
     [SerializeField] Cafe cafeCS;
     [SerializeField] Rocket rocketCS;
     [SerializeField] RocketUpdate rocketUpdateCS;
-    MoneyManager moneyManagerCS;
+    [SerializeField] MoneyManager moneyManagerCS;
+
     [SerializeField] float buyCafe, buyRestaurant, buyMine;
-    bool Bought_Mine, Bought_restaurant, Bought_cafe;
+
+    public bool Bought_Mine, Bought_restaurant, Bought_cafe;
 
     float TouchStartTime;
 
