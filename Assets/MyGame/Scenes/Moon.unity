@@ -16192,10 +16192,20 @@ MonoBehaviour:
   updateCostText: {fileID: 696217736}
   incomeText: {fileID: 1898326800}
   nextIncomeText: {fileID: 1462687976}
-  UpdateSpritesLevel: []
-  Spritenumber: 0
-  Main_Building_Spirtes: []
-  Main_Building_Spirte: {fileID: 0}
+  UpdateSpritesLevel:
+  - 3
+  - 9
+  - 15
+  - 21
+  - 30
+  Spritenumber: 1
+  Main_Building_Spirtes:
+  - {fileID: 21300000, guid: b03e66e06d9b3654ab159bb3847e9eb0, type: 3}
+  - {fileID: 21300000, guid: 5c6a6716ca99e78479117741480dd071, type: 3}
+  - {fileID: 21300000, guid: 15ee4d59190d362499e7415b8a8e14df, type: 3}
+  - {fileID: 21300000, guid: 302b45cefbf95504a9e3cde0a0bfa46c, type: 3}
+  - {fileID: 21300000, guid: 0ec0cbf0fa34c0a41a8f962edecb7fa5, type: 3}
+  Main_Building_Spirte: {fileID: 1038456940}
 --- !u!1 &1956808527
 GameObject:
   m_ObjectHideFlags: 0
