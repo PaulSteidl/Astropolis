@@ -7,14 +7,14 @@ public class Interface : MonoBehaviour
 {
     public GameObject MoneyMadeOffline;
     [SerializeField] GameObject MoneyMultiplierInterface;
-    [SerializeField] GameObject restaurant, rocket, mine;
-    [SerializeField] GameObject Buying_mine, Buying_rocket, Buying_restaurant;
+    [SerializeField] GameObject restaurant, rocket, mine, cafe;
+    [SerializeField] GameObject Buying_mine, Buying_rocket, Buying_restaurant, Buying_cafe;
     [SerializeField] Restaurant restaurantCS;
     [SerializeField] Mine mineCS;
     [SerializeField] Rocket rocketCS;
     [SerializeField] RocketUpdate rocketUpdateCS;
 
-    bool Bought_Mine;
+    bool Bought_Mine, Bought_restaurant, Bought_cafe;
 
     float TouchStartTime;
 
@@ -47,16 +47,17 @@ public class Interface : MonoBehaviour
     {
         if (Time.time - TouchStartTime <= 0.1)
         {
-            restaurant.SetActive(true);
-            restaurantCS.UpdateInterface();
-        }
-    }
+            if (Bought_restaurant)
+            {
+                restaurant.SetActive(!restaurant.activeSelf);
+                restaurantCS.UpdateInterface();
+            }
 
-    
-    public void RestaurantOff()
-    {
-        if (Time.time - TouchStartTime <= 0.1)
-            restaurantCS.UpdateInterface(); restaurant.SetActive(false);
+            else
+            {
+                Buying_restaurant.SetActive(!Buying_restaurant.activeSelf);
+            }
+        }
     }
 
     public void MineOn()
@@ -64,17 +65,16 @@ public class Interface : MonoBehaviour
         if (Time.time - TouchStartTime <= 0.1)
             if (Bought_Mine)
             {
-                mine.SetActive(true); mineCS.UpdateInterface();
+                mine.SetActive(!mine.activeSelf);
+                mineCS.UpdateInterface();
             }
 
-            else Buying_mine.SetActive(true);
+            else
+            {
+                Buying_mine.SetActive(!Buying_mine.activeSelf);
+            }
 
 
-    }
-    public void MineOff()
-    {
-        if (Time.time - TouchStartTime <= 0.1)
-            mine.SetActive(false);
     }
 
     public void MoneyMadeOfflineSwitch()
@@ -106,12 +106,10 @@ public class Interface : MonoBehaviour
     public void RocketOn()
     {
         if (Time.time - TouchStartTime <= 0.1)
-            rocket.SetActive(true); rocketUpdateCS.UpdateInterface();
-    }
-    public void RocketOff()
-    {
-        if (Time.time - TouchStartTime <= 0.1)
-            rocket.SetActive(false);            
+        {
+            rocket.SetActive(!rocket.activeSelf); 
+            rocketUpdateCS.UpdateInterface();
+        }
     }
 
 
