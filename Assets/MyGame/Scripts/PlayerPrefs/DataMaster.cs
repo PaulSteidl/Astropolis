@@ -42,6 +42,7 @@ public class DataMaster : MonoBehaviour
     }
     void Start()
     {
+
         MoneyMadeOffline.gameObject.SetActive(true);
         moneyManager_cs = GameObject.FindObjectOfType<MoneyManager>();
         rocketTakeOffTime = GameObject.FindObjectOfType<RocketUpdate>();
@@ -141,6 +142,32 @@ public class DataMaster : MonoBehaviour
             }
         }
 
+        if (PlayerPrefs.GetInt("Bought_cafe") == 1)
+        {
+            InterfaceCS.Bought_cafe = true;
+        }
+        else if (PlayerPrefs.GetInt("Bought_cafe") == 0)
+        {
+            InterfaceCS.Bought_cafe = false;
+        }
+
+        if (PlayerPrefs.GetInt("Bought_restaurant") == 1)
+        {
+            InterfaceCS.Bought_restaurant = true;
+        }
+        else if (PlayerPrefs.GetInt("Bought_restaurant") == 0)
+        {
+            InterfaceCS.Bought_restaurant = false;
+        }
+
+        if (PlayerPrefs.GetInt("Bought_Mine") == 1)
+        {
+            InterfaceCS.Bought_Mine = true;
+        }
+        else if (PlayerPrefs.GetInt("Bought_Mine") == 0)
+        {
+            InterfaceCS.Bought_Mine = false;
+        }
 
 
 
@@ -231,15 +258,15 @@ public class DataMaster : MonoBehaviour
 
         if (Bought_cafe)
         {
-            PlayerPrefs.DeleteKey("Bought_cafe");
+            PlayerPrefs.SetInt("Bought_cafe", Convert.ToInt16(InterfaceCS.Bought_cafe));
         }
         if (!Bought_Mine)
         {
-            PlayerPrefs.DeleteKey("Bought_Mine");
+            PlayerPrefs.SetInt("Bought_Mine", Convert.ToInt16(InterfaceCS.Bought_Mine));
         }
         if (!Bought_restaurant)
         {
-            PlayerPrefs.DeleteKey("Bought_restaurant");
+            PlayerPrefs.SetInt("Bought_restaurant", Convert.ToInt16(InterfaceCS.Bought_restaurant));
         }
     }
 
