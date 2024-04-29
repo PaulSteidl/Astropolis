@@ -260,11 +260,11 @@ public class DataMaster : MonoBehaviour
         {
             PlayerPrefs.SetInt("Bought_cafe", Convert.ToInt16(InterfaceCS.Bought_cafe));
         }
-        if (!Bought_Mine)
+        if (Bought_Mine)
         {
             PlayerPrefs.SetInt("Bought_Mine", Convert.ToInt16(InterfaceCS.Bought_Mine));
         }
-        if (!Bought_restaurant)
+        if (Bought_restaurant)
         {
             PlayerPrefs.SetInt("Bought_restaurant", Convert.ToInt16(InterfaceCS.Bought_restaurant));
         }
