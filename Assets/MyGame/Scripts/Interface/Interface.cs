@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Interface : MonoBehaviour
@@ -7,10 +8,13 @@ public class Interface : MonoBehaviour
     public GameObject MoneyMadeOffline;
     [SerializeField] GameObject MoneyMultiplierInterface;
     [SerializeField] GameObject restaurant, rocket, mine;
+    [SerializeField] GameObject Buying_mine, Buying_rocket, Buying_restaurant;
     [SerializeField] Restaurant restaurantCS;
     [SerializeField] Mine mineCS;
     [SerializeField] Rocket rocketCS;
     [SerializeField] RocketUpdate rocketUpdateCS;
+
+    bool Bought_Mine;
 
     float TouchStartTime;
 
@@ -58,7 +62,10 @@ public class Interface : MonoBehaviour
     public void MineOn()
     {
         if (Time.time - TouchStartTime <= 0.1)
-            mine.SetActive(true); mineCS.UpdateInterface();
+            if (Bought_Mine)
+                mine.SetActive(true); mineCS.UpdateInterface();
+            else
+                
     }
     public void MineOff()
     {
