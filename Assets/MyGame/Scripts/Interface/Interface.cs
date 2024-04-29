@@ -63,9 +63,13 @@ public class Interface : MonoBehaviour
     {
         if (Time.time - TouchStartTime <= 0.1)
             if (Bought_Mine)
+            {
                 mine.SetActive(true); mineCS.UpdateInterface();
-            else
-                
+            }
+
+            else Buying_mine.SetActive(true);
+
+
     }
     public void MineOff()
     {
