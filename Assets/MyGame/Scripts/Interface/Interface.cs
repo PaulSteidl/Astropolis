@@ -149,6 +149,7 @@ public class Interface : MonoBehaviour
         {
             moneyManagerCS.money -= buyCafe;
             Bought_cafe = true;
+            BuyCafeOn();
         }
     }
     public void BuyRestaurant()
@@ -158,6 +159,7 @@ public class Interface : MonoBehaviour
         {
             moneyManagerCS.money -= buyRestaurant;
             Bought_restaurant = true;
+            BuyRestaurantOn();
         }
     }
     public void BuyMine()
@@ -167,10 +169,31 @@ public class Interface : MonoBehaviour
         {
             moneyManagerCS.money -= buyMine;
             Bought_Mine = true;
+            BuyMineOn();
         }
     }
 
-
+    public void BuyRestaurantOn()
+    {
+        if (Time.time - TouchStartTime <= 0.1)
+        {
+            Buying_restaurant.SetActive(!Buying_restaurant.activeSelf);
+        }
+    }
+    public void BuyMineOn()
+    {
+        if (Time.time - TouchStartTime <= 0.1)
+        {
+            Buying_mine.SetActive(!Buying_mine.activeSelf);
+        }
+    }
+    public void BuyCafeOn()
+    {
+        if (Time.time - TouchStartTime <= 0.1)
+        {
+            Buying_cafe.SetActive(!Buying_cafe.activeSelf);
+        }
+    }
 
 
 }
