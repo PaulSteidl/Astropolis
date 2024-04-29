@@ -11945,6 +11945,9 @@ MonoBehaviour:
   restaurant: {fileID: 2026133249}
   rocket: {fileID: 524327231}
   mine: {fileID: 971552671}
+  Buying_mine: {fileID: 0}
+  Buying_rocket: {fileID: 0}
+  Buying_restaurant: {fileID: 0}
   restaurantCS: {fileID: 25873220}
   mineCS: {fileID: 0}
   rocketCS: {fileID: 437303796}
@@ -13816,8 +13819,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 638584800}
-        m_TargetAssemblyTypeName: Mine, Assembly-CSharp
+      - m_Target: {fileID: 1915793020}
+        m_TargetAssemblyTypeName: Cafe, Assembly-CSharp
         m_MethodName: MoneyUpgrade
         m_Mode: 1
         m_Arguments:
@@ -14841,9 +14844,9 @@ MonoBehaviour:
   updateCost: 0
   updateIncome: 0
   mineLevel: 0
-  updateCostText: {fileID: 0}
-  incomeText: {fileID: 0}
-  nextIncomeText: {fileID: 0}
+  updateCostText: {fileID: 696217736}
+  incomeText: {fileID: 1898326800}
+  nextIncomeText: {fileID: 1462687976}
   UpdateSpritesLevel: []
   Spritenumber: 0
   Main_Building_Spirtes: []
