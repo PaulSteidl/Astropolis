@@ -14,7 +14,8 @@ public class Interface : MonoBehaviour
     [SerializeField] Cafe cafeCS;
     [SerializeField] Rocket rocketCS;
     [SerializeField] RocketUpdate rocketUpdateCS;
-
+    MoneyManager moneyManagerCS;
+    [SerializeField] float buyCafe, buyRestaurant, buyMine;
     bool Bought_Mine, Bought_restaurant, Bought_cafe;
 
     float TouchStartTime;
@@ -26,6 +27,7 @@ public class Interface : MonoBehaviour
         rocketCS = GameObject.FindAnyObjectByType<Rocket>();
         rocketUpdateCS = GameObject.FindAnyObjectByType<RocketUpdate>();
         cafeCS = GameObject.FindAnyObjectByType<Cafe>();
+        moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
         if (PlayerPrefs.HasKey("sysString") && PlayerPrefs.HasKey("MoneyPerSecond") && PlayerPrefs.GetInt("FirstStartup") == 1)
         {
             MoneyMadeOfflineSwitch();
@@ -137,6 +139,34 @@ public class Interface : MonoBehaviour
 
 
 
+
+    public void BuyCafe()
+    {
+
+        if (moneyManagerCS.money >= buyCafe)        //wenn genug geld am konto ist
+        {
+            moneyManagerCS.money -= buyCafe;
+            Bought_cafe = true;
+        }
+    }
+    public void BuyRestaurant()
+    {
+
+        if (moneyManagerCS.money >= buyRestaurant)        //wenn genug geld am konto ist
+        {
+            moneyManagerCS.money -= buyRestaurant;
+            Bought_restaurant = true;
+        }
+    }
+    public void BuyMine()
+    {
+
+        if (moneyManagerCS.money >= buyMine)        //wenn genug geld am konto ist
+        {
+            moneyManagerCS.money -= buyMine;
+            Bought_Mine = true;
+        }
+    }
 
 
 
