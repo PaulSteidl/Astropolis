@@ -65,6 +65,7 @@ public class Interface : MonoBehaviour
     public void MineOn()
     {
         if (Time.time - TouchStartTime <= 0.1)
+        {
             if (Bought_Mine)
             {
                 mine.SetActive(!mine.activeSelf);
@@ -75,11 +76,14 @@ public class Interface : MonoBehaviour
             {
                 Buying_mine.SetActive(!Buying_mine.activeSelf);
             }
+        }
+
     }
 
     public void CafeSwitch()
     {
         if (Time.time - TouchStartTime <= 0.1)
+        {
             if (Bought_cafe)
             {
                 cafe.SetActive(!cafe.activeSelf);
@@ -90,6 +94,7 @@ public class Interface : MonoBehaviour
             {
                 Buying_cafe.SetActive(!Buying_cafe.activeSelf);
             }
+        }
     }
 
 
