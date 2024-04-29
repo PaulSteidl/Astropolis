@@ -12,6 +12,13 @@ public class Mine : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI updateCostText, incomeText, nextIncomeText;
 
+    [Header("Sprite Update Level")]
+    public float[] UpdateSpritesLevel;
+    [SerializeField] int Spritenumber;
+    public Sprite[] Main_Building_Spirtes;
+    public SpriteRenderer Main_Building_Spirte;
+    int currentspritelevel;
+    [Space(40)]
 
     BFN_ExampleComponent formatCS;
     MoneyManager moneyManagerCS;
@@ -56,6 +63,7 @@ public class Mine : MonoBehaviour
         moneyManagerCS.UpdateMoneyPerSecond();
         NextUpdateIncome();
         UpdateInterface();
+        UpdateSprite();
     }
 
     public float MoneyUpdateCost()
@@ -82,5 +90,29 @@ public class Mine : MonoBehaviour
         float nextIncome = 10 * Mathf.Pow(1.05f, mineLevel +1);
         float currentIncome = MoneyUpdateIncome();
         nextIncomeText.text = formatCS.Shorten_number((nextIncome - currentIncome));
+    }
+
+    public void UpdateSprite()
+    {
+        for (int i = 0; i < UpdateSpritesLevel.Length; i++)
+        {
+            if (mineLevel == UpdateSpritesLevel[i])
+            {
+                Debug.Log("Sprite +1");
+                UpdateSpritebyOne();
+            }
+        }
+
+    }
+
+    void UpdateSpritebyOne()
+    {
+        if (Spritenumber < Main_Building_Spirtes.Length)
+        {
+            Debug.Log("Function");
+            Main_Building_Spirte.sprite = Main_Building_Spirtes[Spritenumber];
+
+            Spritenumber++;
+        }
     }
 }
