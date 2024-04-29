@@ -13142,7 +13142,7 @@ MonoBehaviour:
   restaurant: {fileID: 2026133249}
   rocket: {fileID: 524327231}
   mine: {fileID: 971552671}
-  cafe: {fileID: 0}
+  cafe: {fileID: 1839286663}
   Buying_mine: {fileID: 1169503063}
   Buying_rocket: {fileID: 0}
   Buying_restaurant: {fileID: 1038996620}
@@ -13159,6 +13159,9 @@ MonoBehaviour:
   Bought_Mine: 0
   Bought_restaurant: 0
   Bought_cafe: 0
+  Bought_Mine_int: 0
+  Bought_restaurant_int: 0
+  Bought_cafe_int: 0
 --- !u!4 &1603285765
 Transform:
   m_ObjectHideFlags: 0
@@ -17264,7 +17267,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1603285764}
         m_TargetAssemblyTypeName: Interface, Assembly-CSharp
-        m_MethodName: MineOff
+        m_MethodName: CafeSwitch
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17963,43 +17966,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Money
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: MineLevel
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: sysString
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Bought_Mine
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Bought_cafe
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: RLevelMoney
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: FirstStartup
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: RLevelPeople
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: MoneyPerSecond
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Level_Restaurant
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: MoneyMadeOffline
@@ -18007,19 +18010,19 @@ PrefabInstance:
       objectReference: {fileID: 2076761658}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Bought_restaurant
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Level_takeOffTime
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: RLevelComebackTime
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Level_Main_Building
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Level_Rocketstation

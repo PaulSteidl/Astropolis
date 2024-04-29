@@ -20,6 +20,8 @@ public class Interface : MonoBehaviour
 
     public bool Bought_Mine, Bought_restaurant, Bought_cafe;
 
+    public int Bought_Mine_int, Bought_restaurant_int, Bought_cafe_int;
+
     float TouchStartTime;
 
     void Start()
@@ -170,6 +172,36 @@ public class Interface : MonoBehaviour
             moneyManagerCS.money -= buyMine;
             Bought_Mine = true;
             Buying_mine.SetActive(false);
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        if (Bought_cafe)
+        {
+            Bought_cafe_int = 1;
+        }
+        else
+        {
+            Bought_cafe_int = 0;
+        }
+
+        if (Bought_Mine)
+        {
+            Bought_Mine_int = 1;
+        }
+        else
+        {
+            Bought_Mine_int = 0;
+        }
+
+        if (Buying_restaurant)
+        {
+            Bought_restaurant_int = 1;
+        }
+        else
+        {
+            Bought_restaurant_int = 0;
         }
     }
 }
