@@ -20,6 +20,8 @@ public class Interface : MonoBehaviour
 
     public bool Bought_Mine, Bought_restaurant, Bought_cafe;
 
+    public int Bought_Mine_int, Bought_restaurant_int, Bought_cafe_int;
+
     float TouchStartTime;
 
     void Start()
@@ -149,7 +151,7 @@ public class Interface : MonoBehaviour
         {
             moneyManagerCS.money -= buyCafe;
             Bought_cafe = true;
-            BuyCafeOn();
+            Buying_cafe.SetActive(false);
         }
     }
     public void BuyRestaurant()
@@ -159,7 +161,7 @@ public class Interface : MonoBehaviour
         {
             moneyManagerCS.money -= buyRestaurant;
             Bought_restaurant = true;
-            BuyRestaurantOn();
+            Buying_restaurant.SetActive(false);
         }
     }
     public void BuyMine()
@@ -169,31 +171,37 @@ public class Interface : MonoBehaviour
         {
             moneyManagerCS.money -= buyMine;
             Bought_Mine = true;
-            BuyMineOn();
+            Buying_mine.SetActive(false);
         }
     }
 
-    public void BuyRestaurantOn()
+    private void OnApplicationQuit()
     {
-        if (Time.time - TouchStartTime <= 0.1)
+        if (Bought_cafe)
         {
-            Buying_restaurant.SetActive(!Buying_restaurant.activeSelf);
+            Bought_cafe_int = 1;
         }
-    }
-    public void BuyMineOn()
-    {
-        if (Time.time - TouchStartTime <= 0.1)
+        else
         {
-            Buying_mine.SetActive(!Buying_mine.activeSelf);
+            Bought_cafe_int = 0;
         }
-    }
-    public void BuyCafeOn()
-    {
-        if (Time.time - TouchStartTime <= 0.1)
-        {
-            Buying_cafe.SetActive(!Buying_cafe.activeSelf);
-        }
-    }
 
+        if (Bought_Mine)
+        {
+            Bought_Mine_int = 1;
+        }
+        else
+        {
+            Bought_Mine_int = 0;
+        }
 
+        if (Buying_restaurant)
+        {
+            Bought_restaurant_int = 1;
+        }
+        else
+        {
+            Bought_restaurant_int = 0;
+        }
+    }
 }
