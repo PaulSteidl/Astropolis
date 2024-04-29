@@ -11952,6 +11952,7 @@ MonoBehaviour:
   Buying_cafe: {fileID: 0}
   restaurantCS: {fileID: 25873220}
   mineCS: {fileID: 0}
+  cafeCS: {fileID: 0}
   rocketCS: {fileID: 437303796}
   rocketUpdateCS: {fileID: 0}
 --- !u!4 &1603285765
@@ -13995,7 +13996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1839286664
 RectTransform:
   m_ObjectHideFlags: 0

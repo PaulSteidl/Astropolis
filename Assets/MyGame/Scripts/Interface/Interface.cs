@@ -11,6 +11,7 @@ public class Interface : MonoBehaviour
     [SerializeField] GameObject Buying_mine, Buying_rocket, Buying_restaurant, Buying_cafe;
     [SerializeField] Restaurant restaurantCS;
     [SerializeField] Mine mineCS;
+    [SerializeField] Cafe cafeCS;
     [SerializeField] Rocket rocketCS;
     [SerializeField] RocketUpdate rocketUpdateCS;
 
@@ -24,6 +25,7 @@ public class Interface : MonoBehaviour
         mineCS = GameObject.FindAnyObjectByType<Mine>();
         rocketCS = GameObject.FindAnyObjectByType<Rocket>();
         rocketUpdateCS = GameObject.FindAnyObjectByType<RocketUpdate>();
+        cafeCS = GameObject.FindAnyObjectByType<Cafe>();
         if (PlayerPrefs.HasKey("sysString") && PlayerPrefs.HasKey("MoneyPerSecond") && PlayerPrefs.GetInt("FirstStartup") == 1)
         {
             MoneyMadeOfflineSwitch();
@@ -73,8 +75,21 @@ public class Interface : MonoBehaviour
             {
                 Buying_mine.SetActive(!Buying_mine.activeSelf);
             }
+    }
 
+    public void CafeSwitch()
+    {
+        if (Time.time - TouchStartTime <= 0.1)
+            if (Bought_cafe)
+            {
+                cafe.SetActive(!cafe.activeSelf);
+                cafeCS.UpdateInterface();
+            }
 
+            else
+            {
+                Buying_cafe.SetActive(!Buying_cafe.activeSelf);
+            }
     }
 
 
