@@ -13,6 +13,7 @@ public class DataMaster : MonoBehaviour
     RocketUpdate RocketUpdatesCS;
     Interface InterfaceManager_cs;
     Mine MineCS;
+    Interface InterfaceCS;
 
     double time;
 
@@ -30,6 +31,7 @@ public class DataMaster : MonoBehaviour
     [SerializeField] bool RLevelPeople;
     [SerializeField] bool RLevelComebackTime;
     [SerializeField] bool MineLevel;
+    [SerializeField] bool Bought_Mine, Bought_restaurant, Bought_cafe;
 
 
     [SerializeField] bool Level_Restaurant;
@@ -46,6 +48,7 @@ public class DataMaster : MonoBehaviour
         Restaurant_cs = GameObject.FindAnyObjectByType<Restaurant>();
         RocketUpdatesCS = GameObject.FindAnyObjectByType<RocketUpdate>();
         MineCS = GameObject.FindAnyObjectByType<Mine>();
+        InterfaceCS = GameObject.FindAnyObjectByType<Interface>();
 
         if (!sysString)
         {
@@ -75,8 +78,18 @@ public class DataMaster : MonoBehaviour
         {
             PlayerPrefs.DeleteKey("MineLevel");
         }
-
-
+        if (!Bought_cafe)
+        {
+            PlayerPrefs.DeleteKey("Bought_cafe");
+        }
+        if (!Bought_Mine)
+        {
+            PlayerPrefs.DeleteKey("Bought_Mine");
+        }
+        if (!Bought_restaurant)
+        {
+            PlayerPrefs.DeleteKey("Bought_restaurant");
+        }
 
 
 
@@ -214,6 +227,19 @@ public class DataMaster : MonoBehaviour
         if (FirstStartup)
         {
             PlayerPrefs.SetInt("FirstStartup", 1);
+        }
+
+        if (Bought_cafe)
+        {
+            PlayerPrefs.DeleteKey("Bought_cafe");
+        }
+        if (!Bought_Mine)
+        {
+            PlayerPrefs.DeleteKey("Bought_Mine");
+        }
+        if (!Bought_restaurant)
+        {
+            PlayerPrefs.DeleteKey("Bought_restaurant");
         }
     }
 
