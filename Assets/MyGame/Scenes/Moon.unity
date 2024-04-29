@@ -18383,6 +18383,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2638702249319830313, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
+      propertyPath: x_maxdrag
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638702249319830313, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
+      propertyPath: z_maxdrag
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2638702249319830313, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: _MovementSpeed
       value: 1.25
       objectReference: {fileID: 0}
