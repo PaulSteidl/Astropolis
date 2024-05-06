@@ -15,6 +15,8 @@ public class Interface : MonoBehaviour
     [SerializeField] Rocket rocketCS;
     [SerializeField] RocketUpdate rocketUpdateCS;
     [SerializeField] MoneyManager moneyManagerCS;
+    [SerializeField] GameObject Mine_sprite, Cafe_sprite, Resaurat_sprite;
+    [SerializeField] GameObject Mine_foundation_sprite, Cafe_foundation_sprite, Resaurat_foundation_sprite;
 
     [SerializeField] float buyCafe, buyRestaurant, buyMine;
 
@@ -151,7 +153,9 @@ public class Interface : MonoBehaviour
         {
             moneyManagerCS.money -= buyCafe;
             Bought_cafe = true;
+            Cafe_foundation_sprite.SetActive(false);
             Buying_cafe.SetActive(false);
+            Cafe_sprite.SetActive(true);
         }
     }
     public void BuyRestaurant()
@@ -161,7 +165,9 @@ public class Interface : MonoBehaviour
         {
             moneyManagerCS.money -= buyRestaurant;
             Bought_restaurant = true;
+            Resaurat_foundation_sprite.SetActive(false);
             Buying_restaurant.SetActive(false);
+            Resaurat_sprite.SetActive(true);
         }
     }
     public void BuyMine()
@@ -171,7 +177,9 @@ public class Interface : MonoBehaviour
         {
             moneyManagerCS.money -= buyMine;
             Bought_Mine = true;
+            Mine_foundation_sprite.SetActive(false);
             Buying_mine.SetActive(false);
+            Mine_sprite.SetActive(true);
         }
     }
 
