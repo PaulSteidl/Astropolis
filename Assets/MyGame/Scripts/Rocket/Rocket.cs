@@ -74,4 +74,6 @@ public class Rocket : MonoBehaviour
         float moneyMadeRocket = moneyPerPerson * peoplePerRocket;
         return moneyMadeRocket;
     }
+
+    
 }

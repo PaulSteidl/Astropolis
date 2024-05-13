@@ -31,10 +31,15 @@ public class RocketUpdate : MonoBehaviour
     public int takeOffLevel = 0;
     [Space(40)]
 
+    [Header("Anzahl")]
+    public float anzahl;
+    public float[] anzahlCost;
+    public int anzahlLevel = 0;
+    public GameObject[] rockets;
 
     [SerializeField] RocketManager rocketManagerCS;
     [SerializeField] MoneyManager moneyManagerCS;
-    [SerializeField] Rocket rocketCS;
+    [SerializeField] Rocket[] rocketCS;
 
     [SerializeField] TextMeshProUGUI MoneyCostText, MoneyIncomeText, PeopleCostText, PeopleIncomeText, ComeBackCostText, ComeBackIncomeText, TakeOffCostText, TakeOffIncomeText;
     [SerializeField] BFN_ExampleComponent formatCS;
@@ -43,10 +48,18 @@ public class RocketUpdate : MonoBehaviour
     {
         rocketManagerCS = GameObject.FindObjectOfType<RocketManager>();
         moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
-        rocketCS = GameObject.FindObjectOfType<Rocket>();
+        
+        rocketCS = GameObject.FindObjectsOfType<Rocket>();
         formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
 
+        for (int i = 0; i < rockets.Length; i++)
+        {
+            if (anzahl > i)
+            {
+                rockets[i].SetActive(true);
 
+            }
+        }
         UpdateInterface();
         rocketManagerCS.UpdateIncomePerSec();
     }
@@ -96,7 +109,11 @@ public class RocketUpdate : MonoBehaviour
             moneyLevel += 1;
             MoneyUpdateCost();
             MoneyUpdateIncome();
-            rocketCS.moneyPerPerson = moneyUpdateIncome;
+            for (int i = 0; i < rocketCS.Length -1; i++)
+            {
+                rocketCS[i].moneyPerPerson = moneyUpdateIncome;
+
+            }
             UpdateInterface();
         }
     }
@@ -120,7 +137,12 @@ public class RocketUpdate : MonoBehaviour
             moneyManagerCS.money -= peopleUpdateCost;
             peopleLevel += 1;
             PeopleUpdateCost();
-            rocketCS.peoplePerRocket = peopleUpdateNumber[peopleLevel];
+            for (int i = 0; i < rocketCS.Length - 1; i++)
+            {
+                
+                rocketCS[i].peoplePerRocket = peopleUpdateNumber[peopleLevel];
+
+            }
             UpdateInterface();
         }
     }
@@ -141,7 +163,12 @@ public class RocketUpdate : MonoBehaviour
             moneyManagerCS.money -= comebackCost;
             comebackLevel += 1;
             ComebackCost();
-            rocketCS.rocketComebackTime = comebackTime[comebackLevel];
+            for (int i = 0; i < rocketCS.Length - 1; i++)
+            {
+
+                rocketCS[i].rocketComebackTime = comebackTime[comebackLevel];
+            }
+            
             UpdateInterface();
         }
     }
@@ -162,7 +189,12 @@ public class RocketUpdate : MonoBehaviour
             takeOffLevel += 1;
             TakeOffCost();
             TakeOffTime();
-            rocketCS.rocketTakeOffTime = takeOffTime;
+            for (int i = 0; i < rocketCS.Length - 1; i++)
+            {
+
+                rocketCS[i].rocketTakeOffTime = takeOffTime;
+            }
+            
             UpdateInterface();
         }
     }
@@ -205,6 +237,29 @@ public class RocketUpdate : MonoBehaviour
         MoneyUpdateIncome();
 
         PeopleUpdateCost();
+    }
+
+    public void Anzahl()
+    {
+        rocketManagerCS.UpdateIncomePerSec(); //aktuaisiert anzeige
+
+        if (moneyManagerCS.money >= anzahlCost[anzahlLevel])        //wenn genug geld am konto ist
+        {
+            moneyManagerCS.money -= anzahlCost[anzahlLevel];
+            anzahlLevel += 1;
+            
+            anzahl += 1;
+            for (int i = 0; i < rockets.Length; i++)
+            {
+                if (anzahl > i)
+                {
+                    rockets[i].SetActive(true);
+
+                }
+            }
+
+            UpdateInterface();
+        }
     }
 }
 
