@@ -41,7 +41,7 @@ public class RocketUpdate : MonoBehaviour
     [SerializeField] MoneyManager moneyManagerCS;
     [SerializeField] Rocket[] rocketCS;
 
-    [SerializeField] TextMeshProUGUI MoneyCostText, MoneyIncomeText, PeopleCostText, PeopleIncomeText, ComeBackCostText, ComeBackIncomeText, TakeOffCostText, TakeOffIncomeText;
+    [SerializeField] TextMeshProUGUI AnzahlText, AnzahlCostText, MoneyCostText, MoneyIncomeText, PeopleCostText, PeopleIncomeText, ComeBackCostText, ComeBackIncomeText, TakeOffCostText, TakeOffIncomeText;
     [SerializeField] BFN_ExampleComponent formatCS;
 
     private void Start()
@@ -51,6 +51,8 @@ public class RocketUpdate : MonoBehaviour
         
         rocketCS = GameObject.FindObjectsOfType<Rocket>();
         formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
+
+        AnzahlCostText.text = anzahlCost[anzahlLevel].ToString();
 
         for (int i = 0; i < rockets.Length; i++)
         {
@@ -247,14 +249,15 @@ public class RocketUpdate : MonoBehaviour
         {
             moneyManagerCS.money -= anzahlCost[anzahlLevel];
             anzahlLevel += 1;
-            
+            AnzahlCostText.text = anzahlCost[anzahlLevel].ToString();
             anzahl += 1;
+            AnzahlText.text = anzahl.ToString();
             for (int i = 0; i < rockets.Length; i++)
             {
                 if (anzahl > i)
                 {
                     rockets[i].SetActive(true);
-
+                    
                 }
             }
 
