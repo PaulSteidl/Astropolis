@@ -251,7 +251,7 @@ public class RocketUpdate : MonoBehaviour
         {
             moneyManagerCS.money -= anzahlCost[anzahlLevel];
             anzahlLevel += 1;
-            AnzahlCostText.text = anzahlCost[anzahlLevel].ToString();
+            AnzahlCostText.text = formatCS.Shorten_number(anzahlCost[anzahlLevel]);
             anzahl += 1;
             AnzahlText.text = anzahl.ToString();
             for (int i = 0; i < rockets.Length; i++)
