@@ -44,6 +44,8 @@ public class RocketUpdate : MonoBehaviour
     [SerializeField] TextMeshProUGUI AnzahlText, AnzahlCostText, MoneyCostText, MoneyIncomeText, PeopleCostText, PeopleIncomeText, ComeBackCostText, ComeBackIncomeText, TakeOffCostText, TakeOffIncomeText;
     [SerializeField] BFN_ExampleComponent formatCS;
 
+    [SerializeField] GameObject[] rocketsPic;
+
     private void Start()
     {
         rocketManagerCS = GameObject.FindObjectOfType<RocketManager>();
@@ -257,6 +259,7 @@ public class RocketUpdate : MonoBehaviour
                 if (anzahl > i)
                 {
                     rockets[i].SetActive(true);
+                    rocketsPic[i].SetActive(true);
                     
                 }
             }

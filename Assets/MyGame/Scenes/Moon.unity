@@ -4296,6 +4296,11 @@ MonoBehaviour:
   TakeOffCostText: {fileID: 524521531}
   TakeOffIncomeText: {fileID: 1342748404}
   formatCS: {fileID: 811724720}
+  rocketsPic:
+  - {fileID: 1078183087}
+  - {fileID: 632891056}
+  - {fileID: 1374958085}
+  - {fileID: 1283256556}
 --- !u!114 &437303795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10249,6 +10254,7 @@ MonoBehaviour:
   TakeOffCostText: {fileID: 0}
   TakeOffIncomeText: {fileID: 0}
   formatCS: {fileID: 0}
+  rocketsPic: []
 --- !u!114 &987796686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12929,6 +12935,7 @@ MonoBehaviour:
   TakeOffCostText: {fileID: 0}
   TakeOffIncomeText: {fileID: 0}
   formatCS: {fileID: 0}
+  rocketsPic: []
 --- !u!114 &1352421048
 MonoBehaviour:
   m_ObjectHideFlags: 0
