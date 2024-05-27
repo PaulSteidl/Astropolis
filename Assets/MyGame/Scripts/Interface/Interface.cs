@@ -37,6 +37,25 @@ public class Interface : MonoBehaviour
         {
             MoneyMadeOfflineSwitch();
         }
+
+        if (Bought_cafe)
+        {
+            Cafe_foundation_sprite.SetActive(false);
+            Buying_cafe.SetActive(false);
+            Cafe_sprite.SetActive(true);
+        }
+        if (Bought_Mine)
+        {
+            Mine_foundation_sprite.SetActive(false);
+            Buying_mine.SetActive(false);
+            Mine_sprite.SetActive(true);
+        }
+        if (Bought_restaurant)
+        {
+            Resaurat_foundation_sprite.SetActive(false);
+            Buying_restaurant.SetActive(false);
+            Resaurat_sprite.SetActive(true);
+        }
     }
 
     private void Update()

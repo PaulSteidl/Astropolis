@@ -60,10 +60,6 @@ public class DataMaster : MonoBehaviour
         {
             PlayerPrefs.DeleteKey("MoneyPerSecond");
         }
-        else
-        {
-            moneyManager_cs.moneyPerSecond = PlayerPrefs.GetFloat("MoneyPerSecond");
-        }
         if (!Money)
         {
             PlayerPrefs.DeleteKey("Money");
@@ -71,6 +67,10 @@ public class DataMaster : MonoBehaviour
         if (!Level_Restaurant)
         {
             PlayerPrefs.DeleteKey("RestaurantLevel");
+        }
+        else
+        {
+            Restaurant_cs.restaurantLevel = PlayerPrefs.GetInt("RestaurantLevel");
         }
         if (!FirstStartup)
         {
@@ -80,9 +80,17 @@ public class DataMaster : MonoBehaviour
         {
             PlayerPrefs.DeleteKey("RLevelComebackTime");
         }
+        else
+        {
+            RocketUpdatesCS.takeOffLevel = PlayerPrefs.GetInt("RLevelComebackTime");
+        }
         if (!MineLevel)
         {
             PlayerPrefs.DeleteKey("MineLevel");
+        }
+        else
+        {
+            MineCS.mineLevel = PlayerPrefs.GetInt("MineLevel");
         }
         if (!Bought_cafe)
         {
@@ -99,6 +107,10 @@ public class DataMaster : MonoBehaviour
         if (!RocketAnzahl)
         {
             PlayerPrefs.DeleteKey("RocketAnzahl");
+        }
+        else
+        {
+            RocketUpdatesCS.anzahl = PlayerPrefs.GetInt("RocketAnzahl");
         }
 
 
