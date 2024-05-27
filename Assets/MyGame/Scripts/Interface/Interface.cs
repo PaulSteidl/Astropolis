@@ -125,6 +125,16 @@ public class Interface : MonoBehaviour
         if (Time.time - TouchStartTime <= 0.1)
             restaurantCS.MoneyUpgrade();           
     }
+    public void MineUpgrade()
+    {
+        if (Time.time - TouchStartTime <= 0.1)
+            mineCS.MoneyUpgrade();
+    }
+    public void CafeUpgrade()
+    {
+        if (Time.time - TouchStartTime <= 0.1)
+            cafeCS.MoneyUpgrade();
+    }
     public void RocketUpgrade()
     {
         
