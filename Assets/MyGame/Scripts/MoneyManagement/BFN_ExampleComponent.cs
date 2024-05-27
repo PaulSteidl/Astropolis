@@ -74,7 +74,7 @@ public class BFN_ExampleComponent : MonoBehaviour
 				if (commaIndex != -1 && commaIndex + 2 < _resultString.Length)
 				{
 					int removalLength = _resultString.Length - (commaIndex + 2);
-					_resultString = _resultString.Remove(commaIndex + 2, removalLength - 1);
+					_resultString = _resultString.Remove(commaIndex + 3, removalLength - 1);
 				}
 			}
 

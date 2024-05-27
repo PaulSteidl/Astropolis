@@ -32,6 +32,7 @@ public class DataMaster : MonoBehaviour
     [SerializeField] bool RLevelComebackTime;
     [SerializeField] bool MineLevel;
     [SerializeField] bool Bought_Mine, Bought_restaurant, Bought_cafe;
+    [SerializeField] bool RocketAnzahl;
 
 
     [SerializeField] bool Level_Restaurant;
@@ -58,6 +59,10 @@ public class DataMaster : MonoBehaviour
         if (!MoneyPerSecond)
         {
             PlayerPrefs.DeleteKey("MoneyPerSecond");
+        }
+        else
+        {
+            moneyManager_cs.moneyPerSecond = PlayerPrefs.GetFloat("MoneyPerSecond");
         }
         if (!Money)
         {
@@ -90,6 +95,10 @@ public class DataMaster : MonoBehaviour
         if (!Bought_restaurant)
         {
             PlayerPrefs.DeleteKey("Bought_restaurant");
+        }
+        if (!RocketAnzahl)
+        {
+            PlayerPrefs.DeleteKey("RocketAnzahl");
         }
 
 
@@ -268,6 +277,11 @@ public class DataMaster : MonoBehaviour
         {
             PlayerPrefs.SetInt("Bought_restaurant", InterfaceCS.Bought_restaurant_int);
         }
+        if (RocketAnzahl)
+        {
+            PlayerPrefs.SetInt("RocketAnzahl", (int)RocketUpdatesCS.anzahl);
+        }
+
     }
 
 } 
