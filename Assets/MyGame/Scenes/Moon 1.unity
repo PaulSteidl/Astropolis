@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.08601204, g: 0.043982714, b: 0.11565087, a: 1}
+  m_IndirectSpecularColor: {r: 0.007857963, g: 0.0033658005, b: 0.01242375, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -276,6 +276,10 @@ MonoBehaviour:
   incomeText: {fileID: 899911376}
   nextIncomeText: {fileID: 1729352739}
   formatCS: {fileID: 0}
+  UpdateSpritesLevel: []
+  Spritenumber: 0
+  Main_Building_Spirtes: []
+  Main_Building_Spirte: {fileID: 0}
 --- !u!61 &25873221
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1412,9 +1416,16 @@ MonoBehaviour:
   takeOffTime: 0
   takeOffCost: 0
   takeOffLevel: 0
+  anzahl: 0
+  anzahlCost: []
+  anzahlLevel: 0
+  rockets: []
   rocketManagerCS: {fileID: 0}
   moneyManagerCS: {fileID: 0}
-  rocketCS: {fileID: 0}
+  rocketCS:
+  - {fileID: 0}
+  AnzahlText: {fileID: 0}
+  AnzahlCostText: {fileID: 0}
   MoneyCostText: {fileID: 0}
   MoneyIncomeText: {fileID: 0}
   PeopleCostText: {fileID: 0}
@@ -1424,6 +1435,8 @@ MonoBehaviour:
   TakeOffCostText: {fileID: 0}
   TakeOffIncomeText: {fileID: 0}
   formatCS: {fileID: 0}
+  rocketsPic: []
+  rocketsButtons: []
 --- !u!114 &437303795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1568,6 +1581,74 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &553299962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 553299964}
+  - component: {fileID: 553299963}
+  m_Layer: 0
+  m_Name: Video Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!328 &553299963
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553299962}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 0}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!4 &553299964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553299962}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.900002, y: 9.7, z: 133.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &596326953
 GameObject:
   m_ObjectHideFlags: 0
@@ -2322,8 +2403,10 @@ MonoBehaviour:
   moneyMultiplier: 0
   rocketmoneyMultiplier: 0
   restaurantmoneyMultiplier: 0
+  MinemoneyMultiplier: 0
   rocketIncomePerSecond: 0
   RestaurantIncomePerSecond: 0
+  MineIncomePerSecond: 0
   rocketManagerCS: {fileID: 0}
   formatCS: {fileID: 0}
   moneyText: {fileID: 1716810199}
@@ -2366,6 +2449,7 @@ MonoBehaviour:
   _result:
     coefficient: 0
     exponent: 0
+  _moneyManager: {fileID: 0}
 --- !u!114 &811724721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2387,12 +2471,16 @@ MonoBehaviour:
   restaurantmoneyMulti: []
   restaurentmoneyMultiCost: []
   restaurantmoneyMultiLevel: 0
+  minemoneyMulti: []
+  minemoneyMultiCost: []
+  minemoneyMultiLevel: 0
   UpdateSpritesLevel: []
+  Spritenumber: 0
+  Main_Building_Spirtes: []
+  Main_Building_Spirte: {fileID: 0}
   rocket_multiplier: 0
   restaurant_multipier: 0
   mine_multiplier: 0
-  Main_Building_Spirtes: []
-  Main_Building_Spirte: {fileID: 0}
   Multiplier_cost: {fileID: 0}
   RocketMultiplier_cost: {fileID: 0}
   RestaurantMultiplier_cost: {fileID: 0}
@@ -4172,10 +4260,32 @@ MonoBehaviour:
   restaurant: {fileID: 2026133249}
   rocket: {fileID: 524327231}
   mine: {fileID: 0}
+  cafe: {fileID: 0}
+  Buying_mine: {fileID: 0}
+  Buying_rocket: {fileID: 0}
+  Buying_restaurant: {fileID: 0}
+  Buying_cafe: {fileID: 0}
   restaurantCS: {fileID: 25873220}
   mineCS: {fileID: 0}
+  cafeCS: {fileID: 0}
   rocketCS: {fileID: 437303796}
   rocketUpdateCS: {fileID: 0}
+  moneyManagerCS: {fileID: 0}
+  Mine_sprite: {fileID: 0}
+  Cafe_sprite: {fileID: 0}
+  Resaurat_sprite: {fileID: 0}
+  Mine_foundation_sprite: {fileID: 0}
+  Cafe_foundation_sprite: {fileID: 0}
+  Resaurat_foundation_sprite: {fileID: 0}
+  buyCafe: 0
+  buyRestaurant: 0
+  buyMine: 0
+  Bought_Mine: 0
+  Bought_restaurant: 0
+  Bought_cafe: 0
+  Bought_Mine_int: 0
+  Bought_restaurant_int: 0
+  Bought_cafe_int: 0
 --- !u!4 &1603285765
 Transform:
   m_ObjectHideFlags: 0
@@ -6073,3 +6183,4 @@ SceneRoots:
   - {fileID: 1652746284}
   - {fileID: 1119428825}
   - {fileID: 1807918458}
+  - {fileID: 553299964}

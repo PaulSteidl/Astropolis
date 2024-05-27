@@ -5,93 +5,112 @@ using UnityEngine.InputSystem;
 
 public class CameraManager : MonoBehaviour
 {
-	GameObject self;
-	public double TimeOnScreen;
-	public float orthoZoomSpeed;
-	public float z_maxdrag;
-	public float x_maxdrag;
+    private Camera _camera;
+    private Vector2 _delta;
+    private bool _isMoving;
 
-	public Vector2 _delta;
+    public float TimeOnScreen;
+    public float OrthoZoomSpeed = 0.1f;
+    public float ZoomMin = 2f;
+    public float ZoomMax = 8f;
+    public float DragMaxX = 50f;
+    public float DragMaxZ = 50f;
+    public float MovementSpeed = 10.0f;
+    public float DampTime = 0.2f; // Damping time for movement
+    public float ZoomDampTime = 0.25f; // Damping time for zooming
 
-    public bool _isMoving;
-
-    [SerializeField] float _MovementSpeed = 10.0f;
-
+    private Vector3 _velocity = Vector3.zero; // Used for SmoothDamp
+    private float _zoomVelocity = 0.0f; // Used for SmoothDamp for zooming
+    private float _zoomMultiplier = 4f;
+    private float _targetZoom;
 
     private void Start()
     {
-		self = gameObject;
+        _camera = GetComponent<Camera>();
+        _camera.orthographicSize = 45;
+        _targetZoom = _camera.orthographicSize;
     }
+
     public void OnLook(InputAction.CallbackContext context)
     {
-        _delta = context.ReadValue<Vector2>();  
+        _delta = context.ReadValue<Vector2>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-		_isMoving = context.performed;
-	}
+        _isMoving = context.performed;
+    }
 
     private void LateUpdate()
     {
+        HandleMovement();
+        HandleZoom();
+        ClampCameraPosition();
+        ClampCameraZoom();
+    }
 
-
-
-		float a = self.transform.localPosition.z;
-		float b = self.transform.localPosition.x;
-		float c = self.transform.localPosition.y;
-
-		if (_isMoving)
-		{
-				var position = transform.right * (_delta.x * -_MovementSpeed * (GetComponent<Camera>().orthographicSize / 60));
-				position += transform.up * (_delta.y * -_MovementSpeed * (GetComponent<Camera>().orthographicSize / 60));
-				transform.position += position * Time.deltaTime;
-		}
-
-        if (gameObject.transform.position.x <= -x_maxdrag)
+    private void HandleMovement()
+    {
+        if (_isMoving)
         {
-			self.transform.position = new Vector3(-x_maxdrag + 0.001f, c, a);
-		}
-		if (gameObject.transform.position.x >= x_maxdrag)
-		{
-			self.transform.position = new Vector3(x_maxdrag - 0.001f, c, a);
-		}
-		if (gameObject.transform.position.z >= z_maxdrag)
-		{			
-			self.transform.position = new Vector3(b, c, z_maxdrag - 0.001f);
-		}
-		if (gameObject.transform.position.z <= -z_maxdrag)
-		{
-			self.transform.position = new Vector3(b, c, -z_maxdrag + 0.001f);
-		}
+            Vector3 targetPosition = transform.position;
+            targetPosition += transform.right * (_delta.x * -MovementSpeed * (_camera.orthographicSize / 60));
+            targetPosition += transform.up * (_delta.y * -MovementSpeed * (_camera.orthographicSize / 60));
 
-		// If there are two touches on the device...
-		if (Input.touchCount == 2)
-		{
-			// Store both touches.
-			Touch touchZero = Input.GetTouch(0);
-			Touch touchOne = Input.GetTouch(1);
+            transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref _velocity, DampTime, Mathf.Infinity, Time.deltaTime);
+        }
+    }
 
-			// Find the position in the previous frame of each touch.
-			Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
-			Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+    private void HandleZoom()
+    {
+        // Handle zoom with mouse scroll wheel
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        if (Mathf.Abs(scroll) > 0.01f)
+        {
+            _targetZoom -= scroll * _zoomMultiplier;
+            _targetZoom = Mathf.Clamp(_targetZoom, ZoomMin, ZoomMax);
+        }
 
-			// Find the magnitude of the vector (the distance) between the touches in each frame.
-			float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
-			float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+        // Handle zoom with touch input
+        if (Input.touchCount == 2)
+        {
+            Touch touchZero = Input.GetTouch(0);
+            Touch touchOne = Input.GetTouch(1);
 
-			// Find the difference in the distances between each frame.
-			float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
 
-			// If the camera is orthographic...
-			if (GetComponent<Camera>().orthographic)
-			{
-				// ... change the orthographic size based on the change in distance between the touches.
-				GetComponent<Camera>().orthographicSize += deltaMagnitudeDiff * orthoZoomSpeed;
+            float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+            float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
 
-				// Make sure the orthographic size never drops below zero.
-				GetComponent<Camera>().orthographicSize = Mathf.Max(GetComponent<Camera>().orthographicSize, 0.1f);
-			}
-		}
-	}
+            float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+
+            Vector2 touchMidPoint = (touchZero.position + touchOne.position) / 2f;
+
+            Vector3 worldMidPointBeforeZoom = _camera.ScreenToWorldPoint(new Vector3(touchMidPoint.x, touchMidPoint.y, _camera.nearClipPlane));
+
+            _targetZoom += deltaMagnitudeDiff * OrthoZoomSpeed;
+            _targetZoom = Mathf.Clamp(_targetZoom, ZoomMin, ZoomMax);
+
+            Vector3 worldMidPointAfterZoom = _camera.ScreenToWorldPoint(new Vector3(touchMidPoint.x, touchMidPoint.y, _camera.nearClipPlane));
+            Vector3 worldDifference = worldMidPointBeforeZoom - worldMidPointAfterZoom;
+            _camera.transform.position += worldDifference;
+        }
+
+        // Smoothly interpolate the orthographic size
+        _camera.orthographicSize = Mathf.SmoothDamp(_camera.orthographicSize, _targetZoom, ref _zoomVelocity, ZoomDampTime, Mathf.Infinity, Time.deltaTime);
+    }
+
+    private void ClampCameraPosition()
+    {
+        Vector3 position = _camera.transform.position;
+        position.x = Mathf.Clamp(position.x, -DragMaxX, DragMaxX);
+        position.z = Mathf.Clamp(position.z, -DragMaxZ, DragMaxZ);
+        _camera.transform.position = position;
+    }
+
+    private void ClampCameraZoom()
+    {
+        _camera.orthographicSize = Mathf.Clamp(_camera.orthographicSize, ZoomMin, ZoomMax);
+    }
 }
