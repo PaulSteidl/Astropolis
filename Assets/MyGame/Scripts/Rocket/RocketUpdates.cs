@@ -56,11 +56,14 @@ public class RocketUpdate : MonoBehaviour
 
         AnzahlCostText.text = anzahlCost[anzahlLevel].ToString();
 
+      
         for (int i = 0; i < rockets.Length; i++)
         {
             if (anzahl > i)
             {
                 rockets[i].SetActive(true);
+                rocketsPic[i].SetActive(true);
+                rocketsButtons[i].SetActive(true);
 
             }
         }
