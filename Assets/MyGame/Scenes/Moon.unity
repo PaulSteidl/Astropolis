@@ -5964,7 +5964,7 @@ Transform:
   m_GameObject: {fileID: 487421380}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28, y: 153.5, z: -245.1}
+  m_LocalPosition: {x: -28, y: 573.3, z: -1099}
   m_LocalScale: {x: 4.5002966, y: 20.28385, z: 19.595192}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8281,8 +8281,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5fb7ec4d51a73c04797bdf200c1d6205, type: 3}
   - {fileID: 21300000, guid: 5fb7ec4d51a73c04797bdf200c1d6205, type: 3}
   Main_Building_Spirte: {fileID: 487421382}
-  Main_Building_Clips: []
-  Main_Building_Video: {fileID: 0}
+  Main_Building_Clips:
+  - {fileID: 32900000, guid: b5d2eb61814664146b1b2e4ab349cd39, type: 3}
+  - {fileID: 32900000, guid: fa03cf7d74deeba46908bfb7b3ff4f3b, type: 3}
+  - {fileID: 32900000, guid: c47e58e5fe3d3e24f8967584b29699e5, type: 3}
+  - {fileID: 32900000, guid: c47e58e5fe3d3e24f8967584b29699e5, type: 3}
+  - {fileID: 32900000, guid: c47e58e5fe3d3e24f8967584b29699e5, type: 3}
+  Main_Building_Video: {fileID: 1300402263}
 --- !u!1 &645305699
 GameObject:
   m_ObjectHideFlags: 0
@@ -11731,6 +11736,7 @@ RectTransform:
   m_Children:
   - {fileID: 25873216}
   - {fileID: 638584795}
+  - {fileID: 1300402262}
   - {fileID: 1915793014}
   - {fileID: 2136015919}
   - {fileID: 437303790}
@@ -14588,6 +14594,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 0}
 --- !u!4 &1137891395
 Transform:
   m_ObjectHideFlags: 0
@@ -15723,6 +15734,78 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1300402261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1300402262}
+  - component: {fileID: 1300402263}
+  m_Layer: 5
+  m_Name: Mine_videos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1300402262
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300402261}
+  m_LocalRotation: {x: -0.2588191, y: -0, z: -0, w: 0.9659258}
+  m_LocalPosition: {x: 0, y: 0, z: 145.13672}
+  m_LocalScale: {x: 0.6733307, y: 0.1830466, z: 0.15463936}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 906768960}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 35.447464, y: 42.555107}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!328 &1300402263
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300402261}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: b5d2eb61814664146b1b2e4ab349cd39, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 487421382}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 3
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 1
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
 --- !u!1 &1312718000
 GameObject:
   m_ObjectHideFlags: 0
@@ -25173,6 +25256,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!108 &2105963028
 Light:
   m_ObjectHideFlags: 0
