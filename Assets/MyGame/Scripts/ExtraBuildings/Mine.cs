@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Video;
 
 public class Mine : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Mine : MonoBehaviour
     [SerializeField] int Spritenumber;
     public Sprite[] Main_Building_Spirtes;
     public SpriteRenderer Main_Building_Spirte;
+    public VideoClip[] Main_Building_Clips;
+    public VideoPlayer Main_Building_Video;
     int currentspritelevel;
     [Space(40)]
 
@@ -113,6 +116,7 @@ public class Mine : MonoBehaviour
         {
             Debug.Log("Function");
             Main_Building_Spirte.sprite = Main_Building_Spirtes[Spritenumber];
+            Main_Building_Video.clip = Main_Building_Clips[Spritenumber];
 
             Spritenumber++;
         }
