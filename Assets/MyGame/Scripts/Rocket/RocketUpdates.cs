@@ -62,7 +62,7 @@ public class RocketUpdate : MonoBehaviour
         rocketManagerCS = GameObject.FindObjectOfType<RocketManager>();
         moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
         
-        rocketCS = GameObject.FindObjectsOfType<Rocket>();
+        //rocketCS = GameObject.FindObjectsOfType<Rocket>();
         formatCS = GameObject.FindAnyObjectByType<BFN_ExampleComponent>();
 
         AnzahlCostText.text = anzahlCost[anzahlLevel].ToString();
@@ -72,9 +72,9 @@ public class RocketUpdate : MonoBehaviour
         {
             if (anzahl > i)
             {
-                rockets[i].SetActive(true);
+                
                 rocketsPic[i].SetActive(true);
-                rocketsButtons[i].SetActive(true);
+               
 
             }
         }
@@ -98,7 +98,7 @@ public class RocketUpdate : MonoBehaviour
             upgradeS.Play();
             for (int i = 0; i < rocketCS.Length; i++)
             {
-                rockets[i].SetActive(true);
+               
                 rocketCS[i].moneyPerPerson = moneyUpdateIncome;
                 
             }

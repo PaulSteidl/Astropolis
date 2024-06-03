@@ -5242,7 +5242,11 @@ MonoBehaviour:
   - {fileID: 1413530011}
   rocketManagerCS: {fileID: 0}
   moneyManagerCS: {fileID: 0}
-  rocketCS: []
+  rocketCS:
+  - {fileID: 437303796}
+  - {fileID: 1830423747}
+  - {fileID: 1719581764}
+  - {fileID: 1413530017}
   AnzahlText: {fileID: 566878093}
   AnzahlCostText: {fileID: 1962514422}
   MoneyCostText: {fileID: 2037614502}
