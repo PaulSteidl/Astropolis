@@ -5,6 +5,7 @@ using TMPro;
 
 public class Restaurant : MonoBehaviour
 {
+    public AudioSource upgradeS; 
     public float updateCost;
     public float updateIncome;
     public int restaurantLevel;
@@ -52,6 +53,7 @@ public class Restaurant : MonoBehaviour
         {
             moneyManagerCS.money -= updateCost;
             restaurantLevel += 1;
+            upgradeS.Play();
             LevelUpdate();
         }
     }
