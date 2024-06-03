@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
+    public AudioSource rocketTakeOff;
+    public AudioSource rocketLanding;
     [Header("Money Parameter")]
     
     public float moneyPerPerson;
@@ -62,10 +64,27 @@ public class Rocket : MonoBehaviour
 
     public IEnumerator TakeOff()
     {
-        rocketStarted = true;
-        yield return new WaitForSeconds(rocketComebackTime);    // Flug Zeit von Rackete
+        rocketTakeOff.Play();                   
+        rocketStarted = true;                   //Startet
+        if (rocketComebackTime >= 5)
+        {
+            Invoke("LandingSound", rocketComebackTime - 5);
+
+        }
+        else
+        {
+            LandingSound();
+        }
+       
+        yield return new WaitForSeconds(rocketComebackTime);    // Flug Zeit von Racketewährend in der Luft
+                                                                                            //Landet--
         rocketManagerCS.MoneyComes(MoneyPerRocket());   //Geld wird erhöht
         rocketStarted = false;     
+    }
+
+    void LandingSound()
+    {
+        rocketLanding.Play();
     }
 
 
