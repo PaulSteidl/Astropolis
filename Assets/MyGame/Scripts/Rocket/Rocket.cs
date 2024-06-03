@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video;
 
 public class Rocket : MonoBehaviour
 {
@@ -14,16 +13,6 @@ public class Rocket : MonoBehaviour
     public float peoplePerRocket;
     public float rocketComebackTime;
     public float rocketTakeOffTime;
-    [Space(40)]
-
-    [Header("Sprite Update Level")]
-    public float[] UpdateSpritesLevel;
-    [SerializeField] int Spritenumber;
-    public Sprite[] Main_Building_Spirtes;
-    public SpriteRenderer Main_Building_Spirte;
-    public VideoClip[] Main_Building_Clips;
-    public VideoPlayer Main_Building_Video;
-    int currentspritelevel;
     [Space(40)]
 
     public float timeUntilTakeOff;
@@ -134,29 +123,5 @@ public class Rocket : MonoBehaviour
         return moneyMadeRocket;
     }
 
-    public void UpdateSprite()
-    {
-        for (int i = 0; i < UpdateSpritesLevel.Length; i++)
-        {
-            if (peoplePerRocket == UpdateSpritesLevel[i])
-            {
-                Debug.Log("Sprite +1");
-                UpdateSpritebyOne();
-            }
-        }
-
-    }
-
-    void UpdateSpritebyOne()
-    {
-        if (Spritenumber < Main_Building_Spirtes.Length)
-        {
-            Debug.Log("Function");
-            Main_Building_Spirte.sprite = Main_Building_Spirtes[Spritenumber];
-            Main_Building_Video.clip = Main_Building_Clips[Spritenumber];
-            upgradeSprite.Play();
-            Spritenumber++;
-        }
-    }
-
+    
 }

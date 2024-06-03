@@ -79,38 +79,6 @@ public class RocketUpdate : MonoBehaviour
         UpdateInterface();
         rocketManagerCS.UpdateIncomePerSec();
     }
-    
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            rocketManagerCS.UpdateIncomePerSec(); //muss bei jedem Update dabei stehen
-            MoneyUpgrade();
-            
-        }
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            rocketManagerCS.UpdateIncomePerSec(); //muss bei jedem Update dabei stehen
-            PeopleUpgrade();
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            rocketManagerCS.UpdateIncomePerSec(); //muss bei jedem Update dabei stehen
-            ComebackUpgrade();
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            rocketManagerCS.UpdateIncomePerSec(); //muss bei jedem Update dabei stehen
-            TakeOffUpgrade();
-
-        }
-    }
-
 
 
     public void MoneyUpgrade()
@@ -161,6 +129,7 @@ public class RocketUpdate : MonoBehaviour
                 rocketCS[i].peoplePerRocket = peopleUpdateNumber[peopleLevel];
 
             }
+            UpdateSprite();
             UpdateInterface();
         }
     }
@@ -304,9 +273,9 @@ public class RocketUpdate : MonoBehaviour
         if (Spritenumber < Rocket_Version_Update.Length)
         {
             Debug.Log("Function");
-            Rocket_Version_Update[Spritenumber].SetActive(true);
-            Rocket_Version_Update[Spritenumber - 1].SetActive(false);
-            Spritenumber++;
+            Rocket_Version_Update[Spritenumber].SetActive(false); Rocket_Version_Update[Spritenumber + 1].SetActive(false); Rocket_Version_Update[Spritenumber + 2].SetActive(false); Rocket_Version_Update[Spritenumber + 3].SetActive(false);
+            Rocket_Version_Update[Spritenumber + 4].SetActive(true); Rocket_Version_Update[Spritenumber + 5].SetActive(true); Rocket_Version_Update[Spritenumber + 6].SetActive(true); Rocket_Version_Update[Spritenumber + 7].SetActive(true);
+            Spritenumber =+ 4;
         }
     }
 }
