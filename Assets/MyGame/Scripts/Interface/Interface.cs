@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Interface : MonoBehaviour
 {
+    public AudioSource soundS;
     public GameObject MoneyMadeOffline;
     [SerializeField] GameObject MoneyMultiplierInterface;
     [SerializeField] GameObject restaurant, rocket, mine, cafe;
@@ -184,6 +185,7 @@ public class Interface : MonoBehaviour
             Cafe_foundation_sprite.SetActive(false);
             Buying_cafe.SetActive(false);
             Cafe_sprite.SetActive(true);
+            soundS.Play();
         }
     }
     public void BuyRestaurant()
@@ -196,6 +198,7 @@ public class Interface : MonoBehaviour
             Resaurat_foundation_sprite.SetActive(false);
             Buying_restaurant.SetActive(false);
             Resaurat_sprite.SetActive(true);
+            soundS.Play();
         }
     }
     public void BuyMine()
@@ -208,6 +211,7 @@ public class Interface : MonoBehaviour
             Mine_foundation_sprite.SetActive(false);
             Buying_mine.SetActive(false);
             Mine_sprite.SetActive(true);
+            soundS.Play();
         }
     }
 
