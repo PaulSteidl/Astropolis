@@ -57,6 +57,8 @@ public class RocketUpdate : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(this.gameObject.name + " Updater");
+
         rocketManagerCS = GameObject.FindObjectOfType<RocketManager>();
         moneyManagerCS = GameObject.FindObjectOfType<MoneyManager>();
         
@@ -94,10 +96,11 @@ public class RocketUpdate : MonoBehaviour
             MoneyUpdateCost();
             MoneyUpdateIncome();
             upgradeS.Play();
-            for (int i = 0; i < rocketCS.Length -1; i++)
+            for (int i = 0; i < rocketCS.Length; i++)
             {
+                rockets[i].SetActive(true);
                 rocketCS[i].moneyPerPerson = moneyUpdateIncome;
-
+                
             }
             UpdateInterface();
         }
@@ -117,17 +120,18 @@ public class RocketUpdate : MonoBehaviour
     {
         rocketManagerCS.UpdateIncomePerSec(); //aktuaisiert anzeige per sec
 
-        if (moneyManagerCS.money >= peopleUpdateCost)        //wenn genug geld am konto ist
+        if (moneyManagerCS.money >= peopleUpdateCost && peopleUpdateNumber[peopleLevel] < peopleUpdateNumber.Length -1)        //wenn genug geld am konto ist
         {
             moneyManagerCS.money -= peopleUpdateCost;
             peopleLevel += 1;
             PeopleUpdateCost();
             upgradeS.Play();
-            for (int i = 0; i < rocketCS.Length - 1; i++)
+            for (int i = 0; i < rocketCS.Length; i++)
             {
-                
+                //rockets[i].SetActive(true);
                 rocketCS[i].peoplePerRocket = peopleUpdateNumber[peopleLevel];
-
+                //Debug.Log(i + "for");
+               // rockets[i].SetActive(false);
             }
             UpdateSprite();
             UpdateInterface();
@@ -135,7 +139,7 @@ public class RocketUpdate : MonoBehaviour
     }
     public void PeopleUpdateCost()
     {
-        peopleUpdateCost = 10 * Mathf.Pow(4, peopleLevel);
+        peopleUpdateCost = 10 * Mathf.Pow(10, peopleLevel);
     }
 
 
@@ -151,7 +155,7 @@ public class RocketUpdate : MonoBehaviour
             comebackLevel += 1;
             upgradeS.Play();
             ComebackCost();
-            for (int i = 0; i < rocketCS.Length - 1; i++)
+            for (int i = 0; i < rocketCS.Length; i++)
             {
 
                 rocketCS[i].rocketComebackTime = comebackTime[comebackLevel];
@@ -178,7 +182,7 @@ public class RocketUpdate : MonoBehaviour
             TakeOffCost();
             TakeOffTime();
             upgradeS.Play();
-            for (int i = 0; i < rocketCS.Length - 1; i++)
+            for (int i = 0; i < rocketCS.Length; i++)
             {
 
                 rocketCS[i].rocketTakeOffTime = takeOffTime;
@@ -250,8 +254,28 @@ public class RocketUpdate : MonoBehaviour
 
                 }
             }
-
             UpdateInterface();
+            for (int i = 0; i < rocketCS.Length; i++)
+            {
+
+                rocketCS[i].peoplePerRocket = peopleUpdateNumber[peopleLevel];
+                Debug.Log(i + "for");
+            }
+            for (int i = 0; i < rocketCS.Length; i++)
+            {
+
+                rocketCS[i].rocketTakeOffTime = takeOffTime;
+            }
+            for (int i = 0; i < rocketCS.Length; i++)
+            {
+
+                rocketCS[i].rocketComebackTime = comebackTime[comebackLevel];
+            }
+            for (int i = 0; i < rocketCS.Length; i++)
+            {
+                rocketCS[i].moneyPerPerson = moneyUpdateIncome;
+
+            }
         }
     }
 
