@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Video;
 
 public class RocketUpdate : MonoBehaviour
 {
 
     public AudioSource upgradeS;
+
+    [Header("Sprite Update Level")]
+    public float[] UpdateSpritesLevel;
+    [SerializeField] int Spritenumber;
+    public GameObject[] Rocket_Version_Update;
+    int currentspritelevel;
+    [Space(40)]
 
     [Header("MoneyPerPerson")]
     public float moneyUpdateIncome;
@@ -275,6 +283,30 @@ public class RocketUpdate : MonoBehaviour
             }
 
             UpdateInterface();
+        }
+    }
+
+    public void UpdateSprite()
+    {
+        for (int i = 0; i < UpdateSpritesLevel.Length; i++)
+        {
+            if (peopleLevel == UpdateSpritesLevel[i])
+            {
+                Debug.Log("Sprite +1");
+                UpdateSpritebyOne();
+            }
+        }
+
+    }
+
+    void UpdateSpritebyOne()
+    {
+        if (Spritenumber < Rocket_Version_Update.Length)
+        {
+            Debug.Log("Function");
+            Rocket_Version_Update[Spritenumber].SetActive(true);
+            Rocket_Version_Update[Spritenumber - 1].SetActive(false);
+            Spritenumber++;
         }
     }
 }
