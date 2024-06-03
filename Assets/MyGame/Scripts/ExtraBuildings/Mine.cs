@@ -6,7 +6,7 @@ using UnityEngine.Video;
 
 public class Mine : MonoBehaviour
 {
-    public AudioSource upgradeS;
+    public AudioSource upgradeS, upgradeSprite;
     public float updateCost;
     public float updateIncome;
     public int mineLevel;
@@ -117,7 +117,7 @@ public class Mine : MonoBehaviour
             Debug.Log("Function");
             Main_Building_Spirte.sprite = Main_Building_Spirtes[Spritenumber];
             Main_Building_Video.clip = Main_Building_Clips[Spritenumber];
-
+            upgradeSprite.Play();
             Spritenumber++;
         }
     }

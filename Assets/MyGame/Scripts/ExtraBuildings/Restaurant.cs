@@ -5,7 +5,7 @@ using TMPro;
 
 public class Restaurant : MonoBehaviour
 {
-    public AudioSource upgradeS; 
+    public AudioSource upgradeS, upgradeSprite; 
     public float updateCost;
     public float updateIncome;
     public int restaurantLevel;
@@ -114,7 +114,7 @@ public class Restaurant : MonoBehaviour
         {
             Debug.Log("Function");
             Main_Building_Spirte.sprite = Main_Building_Spirtes[Spritenumber];
-
+            upgradeSprite.Play();
             Spritenumber++;
         }
     }
