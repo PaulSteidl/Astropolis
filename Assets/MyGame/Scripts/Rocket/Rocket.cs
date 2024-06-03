@@ -69,7 +69,7 @@ public class Rocket : MonoBehaviour
         rocketTakeOff.Play();                   
         rocketStarted = true;                   //Startet
         rocketAnim.SetBool("Start", true);
-       
+        Invoke("TF", 0.1f);
         if (rocketComebackTime >= 5)
         {
             Invoke("LandingSound", rocketComebackTime - 5);
@@ -104,8 +104,17 @@ public class Rocket : MonoBehaviour
     void LandingAnim()
     {
         rocketAnim.SetBool("Landing", true);
-        
+        Invoke("LF", 0.1f);
     }
+    void LF()
+    {
+        rocketAnim.SetBool("Landing", false);
+    }
+    void TF()
+    {
+        rocketAnim.SetBool("Start", false);
+    }
+
 
 
     float MoneyPerRocket()
