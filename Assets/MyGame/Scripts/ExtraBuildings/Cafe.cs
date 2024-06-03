@@ -5,6 +5,7 @@ using TMPro;
 
 public class Cafe : MonoBehaviour
 {
+    public AudioSource upgradeS;
     public float updateCost;
     public float updateIncome;
     public int mineLevel;
@@ -50,6 +51,7 @@ public class Cafe : MonoBehaviour
         {
             moneyManagerCS.money -= updateCost;
             mineLevel += 1;
+            upgradeS.Play();
             LevelUpdate();
         }
     }

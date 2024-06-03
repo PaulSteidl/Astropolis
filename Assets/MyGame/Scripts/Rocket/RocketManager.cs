@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RocketManager : MonoBehaviour
 {
+    
     public float rocketsMoneyMade;
     public float rocketsNumber;
     public float incomePerSecR;

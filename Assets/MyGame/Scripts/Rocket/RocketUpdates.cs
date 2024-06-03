@@ -5,7 +5,8 @@ using TMPro;
 
 public class RocketUpdate : MonoBehaviour
 {
-   
+
+    public AudioSource upgradeS;
 
     [Header("MoneyPerPerson")]
     public float moneyUpdateIncome;
@@ -116,6 +117,7 @@ public class RocketUpdate : MonoBehaviour
             moneyLevel += 1;
             MoneyUpdateCost();
             MoneyUpdateIncome();
+            upgradeS.Play();
             for (int i = 0; i < rocketCS.Length -1; i++)
             {
                 rocketCS[i].moneyPerPerson = moneyUpdateIncome;
@@ -144,6 +146,7 @@ public class RocketUpdate : MonoBehaviour
             moneyManagerCS.money -= peopleUpdateCost;
             peopleLevel += 1;
             PeopleUpdateCost();
+            upgradeS.Play();
             for (int i = 0; i < rocketCS.Length - 1; i++)
             {
                 
@@ -169,6 +172,7 @@ public class RocketUpdate : MonoBehaviour
         {
             moneyManagerCS.money -= comebackCost;
             comebackLevel += 1;
+            upgradeS.Play();
             ComebackCost();
             for (int i = 0; i < rocketCS.Length - 1; i++)
             {
@@ -196,6 +200,7 @@ public class RocketUpdate : MonoBehaviour
             takeOffLevel += 1;
             TakeOffCost();
             TakeOffTime();
+            upgradeS.Play();
             for (int i = 0; i < rocketCS.Length - 1; i++)
             {
 
@@ -257,6 +262,7 @@ public class RocketUpdate : MonoBehaviour
             AnzahlCostText.text = formatCS.Shorten_number(anzahlCost[anzahlLevel]);
             anzahl += 1;
             AnzahlText.text = anzahl.ToString();
+            upgradeS.Play();
             for (int i = 0; i < rockets.Length; i++)
             {
                 if (anzahl > i)

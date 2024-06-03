@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MoneyMultiplyer : MonoBehaviour
 {
-
+    public AudioSource upgradeS;
     [Header("All Money Multiplier")]
     public float[] moneyMulti;
     public float[] moneyMultiCost;
@@ -66,6 +66,7 @@ public class MoneyMultiplyer : MonoBehaviour
             moneyMultiLevel += 1;
             UpdateInterface();
             UpdateSprite();
+            upgradeS.Play();
         }
         moneyManagerCS.moneyMultiplier = moneyMulti[moneyMultiLevel];
         moneyManagerCS.UpdateMoneyPerSecond();
@@ -79,6 +80,7 @@ public class MoneyMultiplyer : MonoBehaviour
             rocketmoneyMultiLevel += 1;
             UpdateInterface();
             UpdateSprite();
+            upgradeS.Play();
         }
         moneyManagerCS.rocketmoneyMultiplier = rocketmoneyMulti[rocketmoneyMultiLevel];
         moneyManagerCS.UpdateMoneyPerSecond();
@@ -92,6 +94,7 @@ public class MoneyMultiplyer : MonoBehaviour
             restaurantmoneyMultiLevel += 1;
             UpdateInterface();
             UpdateSprite();
+            upgradeS.Play();
         }
         moneyManagerCS.restaurantmoneyMultiplier = restaurantmoneyMulti[restaurantmoneyMultiLevel];
         moneyManagerCS.UpdateMoneyPerSecond();
@@ -106,6 +109,7 @@ public class MoneyMultiplyer : MonoBehaviour
             minemoneyMultiLevel += 1;
             UpdateInterface();
             UpdateSprite();
+            upgradeS.Play();
         }
         moneyManagerCS.MinemoneyMultiplier = minemoneyMulti[minemoneyMultiLevel];
         moneyManagerCS.UpdateMoneyPerSecond();

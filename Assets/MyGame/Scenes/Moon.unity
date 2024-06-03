@@ -401,6 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e2378442ccfee4b9279cbaca690a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeS: {fileID: 594065183}
   updateCost: 0
   updateIncome: 0
   restaurantLevel: 0
@@ -4450,6 +4451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c63329afbd9eb04991d5b21ad818609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeS: {fileID: 594065183}
   moneyUpdateIncome: 0
   moneyUpdateCost: 0
   moneyLevel: 0
@@ -6080,15 +6082,30 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 594065182}
-  - component: {fileID: 594065181}
+  - component: {fileID: 594065183}
   m_Layer: 0
-  m_Name: Sounds
+  m_Name: UpgradeSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &594065181
+--- !u!4 &594065182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594065180}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.199678, y: -170.32346, z: 303.01254}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &594065183
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6099,8 +6116,8 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ecb110ffb80bc204997a4ba19c3844d4, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6184,21 +6201,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &594065182
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 594065180}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.199678, y: -170.32346, z: 303.01254}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &605001982
 GameObject:
   m_ObjectHideFlags: 0
@@ -7004,6 +7006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e222623c303334242b9626f97d1daa8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeS: {fileID: 594065183}
   updateCost: 0
   updateIncome: 0
   mineLevel: 0
@@ -9017,6 +9020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf167fb3f65bf948a480b5a202b729c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeS: {fileID: 594065183}
   moneyMulti:
   - 1
   - 2
@@ -10690,6 +10694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c63329afbd9eb04991d5b21ad818609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeS: {fileID: 0}
   moneyUpdateIncome: 0
   moneyUpdateCost: 0
   moneyLevel: 0
@@ -13809,6 +13814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c63329afbd9eb04991d5b21ad818609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeS: {fileID: 0}
   moneyUpdateIncome: 0
   moneyUpdateCost: 0
   moneyLevel: 0
@@ -19501,6 +19507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1ef9a0274352bd4494374d87b09ea84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradeS: {fileID: 594065183}
   updateCost: 0
   updateIncome: 0
   mineLevel: 0
