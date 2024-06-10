@@ -74,7 +74,7 @@ public class Interface : MonoBehaviour
 
     public void RestaurantOn()
     {
-        if (Time.time - TouchStartTime <= 0.1)
+        if (Time.time - TouchStartTime <= 0.2)
         {
             if (Bought_restaurant)
             {
@@ -91,7 +91,7 @@ public class Interface : MonoBehaviour
 
     public void MineOn()
     {
-        if (Time.time - TouchStartTime <= 0.1)
+        if (Time.time - TouchStartTime <= 0.2)
         {
             if (Bought_Mine)
             {
@@ -109,7 +109,7 @@ public class Interface : MonoBehaviour
 
     public void CafeSwitch()
     {
-        if (Time.time - TouchStartTime <= 0.1)
+        if (Time.time - TouchStartTime <= 0.2)
         {
             if (Bought_cafe)
             {
@@ -128,31 +128,31 @@ public class Interface : MonoBehaviour
 
     public void MoneyMadeOfflineSwitch()
     {
-        if (Time.time - TouchStartTime <= 0.1)
+        if (Time.time - TouchStartTime <= 0.2)
             MoneyMadeOffline.SetActive(!MoneyMadeOffline.gameObject.activeSelf);
     }
             
 
     public void MoneyMultiplierSwitch()
     {
-        if (Time.time - TouchStartTime <= 0.1)
+        if (Time.time - TouchStartTime <= 0.2)
            MoneyMultiplierInterface.SetActive(!MoneyMultiplierInterface.gameObject.activeSelf);           
     }
 
 
     public void RestaurantUpgrade()
     {
-        if (Time.time - TouchStartTime <= 0.1)
+        if (Time.time - TouchStartTime <= 0.2)
             restaurantCS.MoneyUpgrade();           
     }
     public void MineUpgrade()
     {
-        if (Time.time - TouchStartTime <= 0.1)
+        if (Time.time - TouchStartTime <= 0.2)
             mineCS.MoneyUpgrade();
     }
     public void CafeUpgrade()
     {
-        if (Time.time - TouchStartTime <= 0.1)
+        if (Time.time - TouchStartTime <= 0.2)
             cafeCS.MoneyUpgrade();
     }
     public void RocketUpgrade()
@@ -164,7 +164,7 @@ public class Interface : MonoBehaviour
 
     public void RocketOn()
     {
-        if (Time.time - TouchStartTime <= 0.1)
+        if (Time.time - TouchStartTime <= 0.2)
         {
             rocket.SetActive(!rocket.activeSelf); 
             rocketUpdateCS.UpdateInterface();

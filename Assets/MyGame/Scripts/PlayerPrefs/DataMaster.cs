@@ -220,7 +220,7 @@ public class DataMaster : MonoBehaviour
         }
     }
 
-    void OnApplicationQuit()
+    void Update()
     {
         if (sysString)
         {

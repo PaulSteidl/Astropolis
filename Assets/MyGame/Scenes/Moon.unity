@@ -5948,6 +5948,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487421381}
   - component: {fileID: 487421382}
+  - component: {fileID: 487421383}
   m_Layer: 0
   m_Name: Mine_1
   m_TagString: Untagged
@@ -5964,8 +5965,8 @@ Transform:
   m_GameObject: {fileID: 487421380}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28, y: 573.3, z: -1099}
-  m_LocalScale: {x: 4.5002966, y: 20.28385, z: 19.595192}
+  m_LocalPosition: {x: -22.7, y: 578.8, z: -1099}
+  m_LocalScale: {x: 573.22424, y: 1629.317, z: 1573.9999}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 298955640}
@@ -6011,7 +6012,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7363b118104bb60408e6da50b7cb089b, type: 3}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6022,6 +6023,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &487421383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487421380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b7bfb2a917415c40bb171d8a04fd5dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Video: {fileID: 1300402261}
 --- !u!1 &491737142
 GameObject:
   m_ObjectHideFlags: 0
@@ -8275,11 +8289,11 @@ MonoBehaviour:
   - 25
   Spritenumber: 1
   Main_Building_Spirtes:
-  - {fileID: 21300000, guid: 7363b118104bb60408e6da50b7cb089b, type: 3}
-  - {fileID: 21300000, guid: 45458adfb40106b45b78b83125f6b647, type: 3}
-  - {fileID: 21300000, guid: 5fb7ec4d51a73c04797bdf200c1d6205, type: 3}
-  - {fileID: 21300000, guid: 5fb7ec4d51a73c04797bdf200c1d6205, type: 3}
-  - {fileID: 21300000, guid: 5fb7ec4d51a73c04797bdf200c1d6205, type: 3}
+  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   Main_Building_Spirte: {fileID: 487421382}
   Main_Building_Clips:
   - {fileID: 32900000, guid: b5d2eb61814664146b1b2e4ab349cd39, type: 3}
@@ -26069,47 +26083,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Money
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: MineLevel
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: sysString
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Bought_Mine
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Bought_cafe
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: RLevelMoney
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: FirstStartup
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: RLevelPeople
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: RocketAnzahl
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: MoneyPerSecond
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Level_Restaurant
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: MoneyMadeOffline
@@ -26117,19 +26131,19 @@ PrefabInstance:
       objectReference: {fileID: 2076761658}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Bought_restaurant
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Level_takeOffTime
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: RLevelComebackTime
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Level_Main_Building
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5893101183247637562, guid: 339422894f0a21f488c1cdee1e5d5227, type: 3}
       propertyPath: Level_Rocketstation

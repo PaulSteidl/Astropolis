@@ -21,7 +21,7 @@ public class raycast_on_touch : MonoBehaviour
 
             if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
             {
-                if (Time.time - TouchStartTime <= 0.1)
+                if (Time.time - TouchStartTime <= 0.2)
                 {
                     var position = GetPosition();
                     if (position != null)
@@ -40,7 +40,7 @@ public class raycast_on_touch : MonoBehaviour
 
     private Vector3? GetPosition()
     {
-        if (Time.time - TouchStartTime <= 0.1)
+        if (Time.time - TouchStartTime <= 0.2)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);

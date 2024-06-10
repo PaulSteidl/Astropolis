@@ -121,4 +121,9 @@ public class Mine : MonoBehaviour
             Spritenumber++;
         }
     }
+
+    void Activate()
+    {
+
+    }
 }
